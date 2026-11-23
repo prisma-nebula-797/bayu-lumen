@@ -57,3 +57,42 @@ test.describe('prayer times in Jakarta', () => {
     await expect(widget.locator('.pr-dhuhr .pr-t')).toHaveText('—');
   });
 });
+
+// Reminders: a message on the panel and a vibration N minutes before a prayer (or at its time), once per prayer.
+test.describe('prayer reminders in Jakarta', () => {
+  test.use({ timezoneId: 'Asia/Jakarta' });
+
+  async function openWithBridge(page, options, time) {
+    await page.clock.install({ time });
+    await page.addInitScript((json) => {
+      localStorage.setItem('cfg', json);
+      localStorage.setItem('pb-demo-config', json);
+      window.__phoneboxKey = 'pb-key-test';
+      window.__buzz = [];
+      window.Android = {
+        battery: () => '{}', version: () => 'test', haptic() {}, setBrightness() {}, setVolumeKeys() {}, is24Hour: () => true,
+        transport: () => 'usb', pcs: () => '[]', buzz: (key, p) => { if (key === 'pb-key-test') window.__buzz.push(p); },
+      };
+    }, config(options));
+    await page.goto('/panel/');
+  }
+
+  test('ten minutes before Dhuhr the panel says so and vibrates, once', async ({ page }) => {
+    await openWithBridge(page, { remind: '10', chime: false }, new Date('2026-11-23T11:31:20+07:00'));
+    await expect(page.locator('#toast.on')).toContainText('Dhuhr in 10 min');
+    await expect.poll(() => page.evaluate(() => window.__buzz.length)).toBe(1);
+    await page.clock.runFor(45_000); // later updates in the same window do not ring again
+    expect(await page.evaluate(() => window.__buzz.length)).toBe(1);
+  });
+
+  test('"at the prayer time" says it is time, and "off" stays quiet', async ({ page }) => {
+    await openWithBridge(page, { remind: '0', chime: false }, new Date('2026-11-23T11:41:10+07:00'));
+    await expect(page.locator('#toast.on')).toContainText('Time for Dhuhr');
+  });
+
+  test('reminders are off by default', async ({ page }) => {
+    await openWithBridge(page, {}, new Date('2026-11-23T11:41:10+07:00'));
+    await page.clock.runFor(35_000);
+    expect(await page.evaluate(() => window.__buzz.length)).toBe(0);
+  });
+});

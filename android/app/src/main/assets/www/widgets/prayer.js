@@ -1,5 +1,26 @@
-import { DEFAULT_CFG, LOCALE, cfg, fmtDur, fmtHM, h, en, tp, tpv } from '../main.js';
+import { DEFAULT_CFG, LOCALE, buzz, cfg, chime, fmtDur, fmtHM, h, en, toast, tp, tpv } from '../main.js';
 import { W } from '../registry.js';
+
+// Reminders already given, shared by every prayer widget so two on the panel do not both ring.
+const reminded = new Set();
+// How long after its moment a missed reminder (the panel was asleep) still fires.
+const REMIND_GRACE_MS = 2 * 60_000;
+
+/**
+ * The reminder due now, if any: the next prayer whose reminder moment (its time minus `lead` minutes) has come in the
+ * last two minutes and has not been given yet. Exported for the tests.
+ */
+export function dueReminder(times, now, lead, given = reminded) {
+  if (!times || !Number.isFinite(lead) || lead < 0) return null;
+  for (const p of PRAYERS) {
+    const at = times[p];
+    if (!at) continue;
+    const moment = at.getTime() - lead * 60_000;
+    const key = `${p}@${at.getTime()}@${lead}`;
+    if (now >= moment && now < moment + REMIND_GRACE_MS && !given.has(key)) return { prayer: p, at, key };
+  }
+  return null;
+}
 
 // ---------------------------------------------------------------- prayer times
 // Computed on the phone from the weather location, with the usual astronomical formulas (sun declination and the
@@ -132,6 +153,8 @@ W.prayer = {
   needs: ['tick'],
   create(box, { o }) {
     const opts = { method: o.method || 'kemenag', asr: o.asr === 'hanafi' ? 'hanafi' : 'shafi' };
+    // minutes before the prayer to remind (0 = at the time); "off" or anything else turns reminders off
+    const remind = ['0', '5', '10', '15', '30'].includes(String(o.remind)) ? Number(o.remind) : null;
     const shown = o.imsak === false ? Object.keys(NAMES).filter((k) => k !== 'imsak') : Object.keys(NAMES);
     const city = h('span', 'w-sub');
     const nextName = h('b', 'pr-next-name'), nextTime = h('span', 'pr-next-time'), nextIn = h('small', 'pr-next-in');
@@ -188,6 +211,15 @@ W.prayer = {
           rows[p].row.classList.toggle('next', p === next && (today[p] > now));
         }
         box.classList.toggle('soon', !!at && at - now < 15 * 60_000);
+        // the reminder: a message on the panel, a vibration and, if chosen, a chime
+        const due = remind !== null ? dueReminder(today, now, remind) : null;
+        if (due) {
+          reminded.add(due.key);
+          const name = tp(NAMES[due.prayer]);
+          toast(remind === 0 ? tpv('Time for {prayer}', { prayer: name }) : tpv('{prayer} in {n} min', { prayer: name, n: remind }), '', tp('Prayer times'), 8);
+          buzz('0,120,90,120,90,240');
+          if (o.chime !== false) chime(70, true);
+        }
       },
     };
   },

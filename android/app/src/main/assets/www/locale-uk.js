@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Завантаження…"
     },
     "catalog": {
+      "Reminder": "Нагадування",
+      "Off": "Вимк.",
+      "At the prayer time": "У час намазу",
+      "Chime with the reminder": "Звук із нагадуванням",
+      "5 minutes before": "За 5 хвилин",
+      "10 minutes before": "За 10 хвилин",
+      "15 minutes before": "За 15 хвилин",
+      "30 minutes before": "За 30 хвилин",
       "Black chrome": "Чорний хром",
       "Blue titanium chrome": "Синій титановий хром",
       "Mirror chrome": "Дзеркальний хром",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Плейлисти Plex (нічого не позначено = усі)"
     },
     "panel": {
+      "Time for {prayer}": "Час {prayer}",
+      "{prayer} in {n} min": "{prayer} через {n} хв",
       "Keyboard": "Клавіатура",
       "Enable keyboard control in widget settings": "Увімкніть керування клавіатурою в налаштуваннях віджета",
       "Tap here and type": "Торкніться тут і друкуйте",

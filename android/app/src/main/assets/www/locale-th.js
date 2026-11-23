@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "กำลังโหลด…"
     },
     "catalog": {
+      "Reminder": "การแจ้งเตือน",
+      "Off": "ปิด",
+      "At the prayer time": "เมื่อถึงเวลาละหมาด",
+      "Chime with the reminder": "เล่นเสียงพร้อมการแจ้งเตือน",
+      "5 minutes before": "ก่อน 5 นาที",
+      "10 minutes before": "ก่อน 10 นาที",
+      "15 minutes before": "ก่อน 15 นาที",
+      "30 minutes before": "ก่อน 30 นาที",
       "Black chrome": "โครมดำ",
       "Blue titanium chrome": "โครมไทเทเนียมน้ำเงิน",
       "Mirror chrome": "โครมกระจก",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "เพลย์ลิสต์ Plex (ไม่เลือกเลย = ทั้งหมด)"
     },
     "panel": {
+      "Time for {prayer}": "ถึงเวลา{prayer}แล้ว",
+      "{prayer} in {n} min": "อีก {n} นาทีถึง{prayer}",
       "Keyboard": "แป้นพิมพ์",
       "Enable keyboard control in widget settings": "เปิดการควบคุมแป้นพิมพ์ในการตั้งค่าวิดเจ็ต",
       "Tap here and type": "แตะที่นี่แล้วพิมพ์",

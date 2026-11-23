@@ -421,6 +421,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Yükleniyor…"
     },
     "catalog": {
+      "Reminder": "Hatırlatıcı",
+      "Off": "Kapalı",
+      "At the prayer time": "Vakit girince",
+      "Chime with the reminder": "Hatırlatıcıyla ses çal",
+      "5 minutes before": "5 dakika önce",
+      "10 minutes before": "10 dakika önce",
+      "15 minutes before": "15 dakika önce",
+      "30 minutes before": "30 dakika önce",
       "Black chrome": "Siyah krom",
       "Blue titanium chrome": "Mavi titanyum krom",
       "Mirror chrome": "Ayna krom",
@@ -1177,6 +1185,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex çalma listeleri (hiçbiri işaretli değil = hepsi)"
     },
     "panel": {
+      "Time for {prayer}": "{prayer} vakti",
+      "{prayer} in {n} min": "{prayer} vaktine {n} dk",
       "Keyboard": "Klavye",
       "Enable keyboard control in widget settings": "Klavye denetimini widget ayarlarından açın",
       "Tap here and type": "Buraya dokunun ve yazın",

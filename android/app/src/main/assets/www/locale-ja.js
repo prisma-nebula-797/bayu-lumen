@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "読み込み中…"
     },
     "catalog": {
+      "Reminder": "リマインダー",
+      "Off": "オフ",
+      "At the prayer time": "礼拝の時刻に",
+      "Chime with the reminder": "リマインダーで音を鳴らす",
+      "5 minutes before": "5 分前",
+      "10 minutes before": "10 分前",
+      "15 minutes before": "15 分前",
+      "30 minutes before": "30 分前",
       "Black chrome": "ブラッククローム",
       "Blue titanium chrome": "ブルーチタンクローム",
       "Mirror chrome": "ミラークローム",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex プレイリスト（未選択 = すべて）"
     },
     "panel": {
+      "Time for {prayer}": "{prayer}の時刻です",
+      "{prayer} in {n} min": "{prayer}まであと {n} 分",
       "Keyboard": "キーボード",
       "Enable keyboard control in widget settings": "ウィジェットの設定でキーボード操作をオンにしてください",
       "Tap here and type": "ここをタップして入力",

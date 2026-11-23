@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "लोड हो रहा है…"
     },
     "catalog": {
+      "Reminder": "रिमाइंडर",
+      "Off": "बंद",
+      "At the prayer time": "नमाज़ के समय पर",
+      "Chime with the reminder": "रिमाइंडर के साथ ध्वनि बजाएँ",
+      "5 minutes before": "5 मिनट पहले",
+      "10 minutes before": "10 मिनट पहले",
+      "15 minutes before": "15 मिनट पहले",
+      "30 minutes before": "30 मिनट पहले",
       "Black chrome": "काला क्रोम",
       "Blue titanium chrome": "नीला टाइटेनियम क्रोम",
       "Mirror chrome": "आईना क्रोम",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex प्लेलिस्ट (कोई चयनित नहीं = सभी)"
     },
     "panel": {
+      "Time for {prayer}": "{prayer} का समय हो गया",
+      "{prayer} in {n} min": "{n} मिनट में {prayer}",
       "Keyboard": "कीबोर्ड",
       "Enable keyboard control in widget settings": "विजेट सेटिंग में कीबोर्ड नियंत्रण चालू करें",
       "Tap here and type": "यहाँ टैप करके टाइप करें",

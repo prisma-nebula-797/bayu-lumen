@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在載入…"
     },
     "catalog": {
+      "Reminder": "提醒",
+      "Off": "關閉",
+      "At the prayer time": "禮拜時間到時",
+      "Chime with the reminder": "提醒時播放提示音",
+      "5 minutes before": "提前 5 分鐘",
+      "10 minutes before": "提前 10 分鐘",
+      "15 minutes before": "提前 15 分鐘",
+      "30 minutes before": "提前 30 分鐘",
       "Black chrome": "黑鉻",
       "Blue titanium chrome": "藍鈦鉻",
       "Mirror chrome": "鏡面鉻",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 播放清單（未勾選 = 全部）"
     },
     "panel": {
+      "Time for {prayer}": "{prayer}時間到了",
+      "{prayer} in {n} min": "{n} 分鐘後{prayer}",
       "Keyboard": "鍵盤",
       "Enable keyboard control in widget settings": "請在小工具設定中開啟鍵盤控制",
       "Tap here and type": "點按此處輸入",

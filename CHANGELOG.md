@@ -9,6 +9,8 @@ Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.
   with the next one highlighted and counted down, and the Hijri date. The times are worked out on the phone (no new
   connection, the location stays on the phone) with a choice of Kemenag, JAKIM, Muslim World League, ISNA, Egyptian,
   Umm al-Qura, Karachi or Diyanet angles and the Standard or Hanafi Asr. Translated into all 23 languages.
+  It can remind you before each prayer (at its time or 5, 10, 15 or 30 minutes before) with a message on the panel, a
+  vibration and an optional chime; off by default.
 - New **Clock designs** widget (134 widgets): the time in ten shapes, flip cards, nixie tubes, binary, rings, a dot ring,
   stacked digits, seven-segment, bars, orbit and a day line, each in any clock theme. Redrawn once a second at most,
   only the parts that changed, with no CSS animation.

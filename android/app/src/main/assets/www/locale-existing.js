@@ -455,6 +455,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wird geladen…"
     },
     "catalog": {
+      "Reminder": "Erinnerung",
+      "Off": "Aus",
+      "At the prayer time": "Zur Gebetszeit",
+      "Chime with the reminder": "Mit Ton erinnern",
+      "5 minutes before": "5 Minuten vorher",
+      "10 minutes before": "10 Minuten vorher",
+      "15 minutes before": "15 Minuten vorher",
+      "30 minutes before": "30 Minuten vorher",
       "Black chrome": "Schwarzchrom",
       "Blue titanium chrome": "Blaues Titanchrom",
       "Mirror chrome": "Spiegelchrom",
@@ -1211,6 +1219,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex-Playlists (keine angekreuzt = alle)"
     },
     "panel": {
+      "Time for {prayer}": "Zeit für {prayer}",
+      "{prayer} in {n} min": "{prayer} in {n} Min.",
       "Keyboard": "Tastatur",
       "Enable keyboard control in widget settings": "Tastatursteuerung in den Widget-Einstellungen einschalten",
       "Tap here and type": "Hier tippen und schreiben",
@@ -1951,6 +1961,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Chargement…"
     },
     "catalog": {
+      "Reminder": "Rappel",
+      "Off": "Désactivé",
+      "At the prayer time": "À l’heure de la prière",
+      "Chime with the reminder": "Carillon avec le rappel",
+      "5 minutes before": "5 minutes avant",
+      "10 minutes before": "10 minutes avant",
+      "15 minutes before": "15 minutes avant",
+      "30 minutes before": "30 minutes avant",
       "Black chrome": "Chrome noir",
       "Blue titanium chrome": "Chrome titane bleu",
       "Mirror chrome": "Chrome miroir",
@@ -2707,6 +2725,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlists Plex (aucune cochée = toutes)"
     },
     "panel": {
+      "Time for {prayer}": "C’est l’heure de {prayer}",
+      "{prayer} in {n} min": "{prayer} dans {n} min",
       "Keyboard": "Clavier",
       "Enable keyboard control in widget settings": "Activez le contrôle du clavier dans les réglages du widget",
       "Tap here and type": "Touchez ici et tapez",
@@ -3447,6 +3467,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Cargando…"
     },
     "catalog": {
+      "Reminder": "Recordatorio",
+      "Off": "Desactivado",
+      "At the prayer time": "A la hora de la oración",
+      "Chime with the reminder": "Sonido con el recordatorio",
+      "5 minutes before": "5 minutos antes",
+      "10 minutes before": "10 minutos antes",
+      "15 minutes before": "15 minutos antes",
+      "30 minutes before": "30 minutos antes",
       "Black chrome": "Cromo negro",
       "Blue titanium chrome": "Cromo titanio azul",
       "Mirror chrome": "Cromo espejo",
@@ -4203,6 +4231,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Listas de Plex (ninguna marcada = todas)"
     },
     "panel": {
+      "Time for {prayer}": "Es la hora de {prayer}",
+      "{prayer} in {n} min": "{prayer} en {n} min",
       "Keyboard": "Teclado",
       "Enable keyboard control in widget settings": "Activa el control del teclado en los ajustes del widget",
       "Tap here and type": "Toca aquí y escribe",
@@ -4943,6 +4973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Caricamento…"
     },
     "catalog": {
+      "Reminder": "Promemoria",
+      "Off": "Disattivato",
+      "At the prayer time": "All’ora della preghiera",
+      "Chime with the reminder": "Suono con il promemoria",
+      "5 minutes before": "5 minuti prima",
+      "10 minutes before": "10 minuti prima",
+      "15 minutes before": "15 minuti prima",
+      "30 minutes before": "30 minuti prima",
       "Black chrome": "Cromo nero",
       "Blue titanium chrome": "Cromo titanio blu",
       "Mirror chrome": "Cromo specchio",
@@ -5699,6 +5737,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlist Plex (nessuna selezionata = tutte)"
     },
     "panel": {
+      "Time for {prayer}": "È l’ora di {prayer}",
+      "{prayer} in {n} min": "{prayer} tra {n} min",
       "Keyboard": "Tastiera",
       "Enable keyboard control in widget settings": "Attiva il controllo della tastiera nelle impostazioni del widget",
       "Tap here and type": "Tocca qui e scrivi",
@@ -6439,6 +6479,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "A carregar…"
     },
     "catalog": {
+      "Reminder": "Lembrete",
+      "Off": "Desligado",
+      "At the prayer time": "À hora da oração",
+      "Chime with the reminder": "Som com o lembrete",
+      "5 minutes before": "5 minutos antes",
+      "10 minutes before": "10 minutos antes",
+      "15 minutes before": "15 minutos antes",
+      "30 minutes before": "30 minutos antes",
       "Black chrome": "Cromado negro",
       "Blue titanium chrome": "Cromado titânio azul",
       "Mirror chrome": "Cromado espelhado",
@@ -7195,6 +7243,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Listas do Plex (nenhuma marcada = todas)"
     },
     "panel": {
+      "Time for {prayer}": "Hora de {prayer}",
+      "{prayer} in {n} min": "{prayer} dentro de {n} min",
       "Keyboard": "Teclado",
       "Enable keyboard control in widget settings": "Ative o controlo do teclado nas definições do widget",
       "Tap here and type": "Toque aqui e escreva",
@@ -7530,6 +7580,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Carregando…"
     },
     "catalog": {
+      "Reminder": "Lembrete",
+      "Off": "Desligado",
+      "At the prayer time": "No horário da oração",
+      "Chime with the reminder": "Som com o lembrete",
+      "5 minutes before": "5 minutos antes",
+      "10 minutes before": "10 minutos antes",
+      "15 minutes before": "15 minutos antes",
+      "30 minutes before": "30 minutos antes",
       "Black chrome": "Cromado preto",
       "Blue titanium chrome": "Cromado titânio azul",
       "Mirror chrome": "Cromado espelhado",
@@ -7599,6 +7657,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlists do Plex (nenhuma marcada = todas)"
     },
     "panel": {
+      "Time for {prayer}": "Hora do {prayer}",
+      "{prayer} in {n} min": "{prayer} em {n} min",
       "Keyboard": "Teclado",
       "Enable keyboard control in widget settings": "Ative o controle do teclado nas configurações do widget",
       "Tap here and type": "Toque aqui e digite",
@@ -8044,6 +8104,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Laden…"
     },
     "catalog": {
+      "Reminder": "Herinnering",
+      "Off": "Uit",
+      "At the prayer time": "Op de gebedstijd",
+      "Chime with the reminder": "Geluid bij de herinnering",
+      "5 minutes before": "5 minuten van tevoren",
+      "10 minutes before": "10 minuten van tevoren",
+      "15 minutes before": "15 minuten van tevoren",
+      "30 minutes before": "30 minuten van tevoren",
       "Black chrome": "Zwart chroom",
       "Blue titanium chrome": "Blauw titaanchroom",
       "Mirror chrome": "Spiegelchroom",
@@ -8800,6 +8868,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex-afspeellijsten (geen aangevinkt = alle)"
     },
     "panel": {
+      "Time for {prayer}": "Tijd voor {prayer}",
+      "{prayer} in {n} min": "{prayer} over {n} min",
       "Keyboard": "Toetsenbord",
       "Enable keyboard control in widget settings": "Zet toetsenbordbediening aan in de widgetinstellingen",
       "Tap here and type": "Tik hier en typ",
@@ -9540,6 +9610,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wczytywanie…"
     },
     "catalog": {
+      "Reminder": "Przypomnienie",
+      "Off": "Wyłączone",
+      "At the prayer time": "O porze modlitwy",
+      "Chime with the reminder": "Dźwięk z przypomnieniem",
+      "5 minutes before": "5 minut wcześniej",
+      "10 minutes before": "10 minut wcześniej",
+      "15 minutes before": "15 minut wcześniej",
+      "30 minutes before": "30 minut wcześniej",
       "Black chrome": "Czarny chrom",
       "Blue titanium chrome": "Niebieski chrom tytanowy",
       "Mirror chrome": "Lustrzany chrom",
@@ -10296,6 +10374,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlisty Plex (żadna zaznaczona = wszystkie)"
     },
     "panel": {
+      "Time for {prayer}": "Pora na {prayer}",
+      "{prayer} in {n} min": "{prayer} za {n} min",
       "Keyboard": "Klawiatura",
       "Enable keyboard control in widget settings": "Włącz sterowanie klawiaturą w ustawieniach widżetu",
       "Tap here and type": "Dotknij tutaj i pisz",
@@ -11036,6 +11116,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Загрузка…"
     },
     "catalog": {
+      "Reminder": "Напоминание",
+      "Off": "Выкл.",
+      "At the prayer time": "В момент намаза",
+      "Chime with the reminder": "Звук с напоминанием",
+      "5 minutes before": "За 5 минут",
+      "10 minutes before": "За 10 минут",
+      "15 minutes before": "За 15 минут",
+      "30 minutes before": "За 30 минут",
       "Black chrome": "Чёрный хром",
       "Blue titanium chrome": "Синий титановый хром",
       "Mirror chrome": "Зеркальный хром",
@@ -11792,6 +11880,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Плейлисты Plex (ничего не отмечено = все)"
     },
     "panel": {
+      "Time for {prayer}": "Время {prayer}",
+      "{prayer} in {n} min": "{prayer} через {n} мин",
       "Keyboard": "Клавиатура",
       "Enable keyboard control in widget settings": "Включите управление клавиатурой в настройках виджета",
       "Tap here and type": "Нажмите здесь и печатайте",
@@ -12127,6 +12217,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Φόρτωση…"
     },
     "catalog": {
+      "Reminder": "Υπενθύμιση",
+      "Off": "Ανενεργή",
+      "At the prayer time": "Την ώρα της προσευχής",
+      "Chime with the reminder": "Ήχος με την υπενθύμιση",
+      "5 minutes before": "5 λεπτά πριν",
+      "10 minutes before": "10 λεπτά πριν",
+      "15 minutes before": "15 λεπτά πριν",
+      "30 minutes before": "30 λεπτά πριν",
       "Black chrome": "Μαύρο χρώμιο",
       "Blue titanium chrome": "Μπλε τιτάνιο χρώμιο",
       "Mirror chrome": "Καθρέφτης χρώμιο",
@@ -12199,6 +12297,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Λίστες Plex (καμία επιλεγμένη = όλες)"
     },
     "panel": {
+      "Time for {prayer}": "Ώρα για {prayer}",
+      "{prayer} in {n} min": "{prayer} σε {n} λεπ.",
       "Keyboard": "Πληκτρολόγιο",
       "Enable keyboard control in widget settings": "Ενεργοποιήστε τον έλεγχο πληκτρολογίου στις ρυθμίσεις του widget",
       "Tap here and type": "Αγγίξτε εδώ και πληκτρολογήστε",
@@ -12534,6 +12634,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Đang tải…"
     },
     "catalog": {
+      "Reminder": "Nhắc nhở",
+      "Off": "Tắt",
+      "At the prayer time": "Đúng giờ cầu nguyện",
+      "Chime with the reminder": "Phát âm báo khi nhắc",
+      "5 minutes before": "Trước 5 phút",
+      "10 minutes before": "Trước 10 phút",
+      "15 minutes before": "Trước 15 phút",
+      "30 minutes before": "Trước 30 phút",
       "Black chrome": "Crôm đen",
       "Blue titanium chrome": "Crôm titan xanh",
       "Mirror chrome": "Crôm gương",
@@ -12606,6 +12714,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Danh sách phát Plex (không chọn = tất cả)"
     },
     "panel": {
+      "Time for {prayer}": "Đến giờ {prayer}",
+      "{prayer} in {n} min": "{prayer} sau {n} phút",
       "Keyboard": "Bàn phím",
       "Enable keyboard control in widget settings": "Bật điều khiển bàn phím trong cài đặt tiện ích",
       "Tap here and type": "Chạm vào đây và gõ",
@@ -13346,6 +13456,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在加载…"
     },
     "catalog": {
+      "Reminder": "提醒",
+      "Off": "关闭",
+      "At the prayer time": "礼拜时间到时",
+      "Chime with the reminder": "提醒时播放提示音",
+      "5 minutes before": "提前 5 分钟",
+      "10 minutes before": "提前 10 分钟",
+      "15 minutes before": "提前 15 分钟",
+      "30 minutes before": "提前 30 分钟",
       "Black chrome": "黑铬",
       "Blue titanium chrome": "蓝钛铬",
       "Mirror chrome": "镜面铬",
@@ -14102,6 +14220,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 播放列表（未勾选 = 全部）"
     },
     "panel": {
+      "Time for {prayer}": "{prayer}时间到了",
+      "{prayer} in {n} min": "{n} 分钟后{prayer}",
       "Keyboard": "键盘",
       "Enable keyboard control in widget settings": "请在小组件设置中开启键盘控制",
       "Tap here and type": "点按此处输入",

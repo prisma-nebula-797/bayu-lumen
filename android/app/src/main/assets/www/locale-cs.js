@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Načítá se…"
     },
     "catalog": {
+      "Reminder": "Připomenutí",
+      "Off": "Vypnuto",
+      "At the prayer time": "V čas modlitby",
+      "Chime with the reminder": "Zvuk s připomenutím",
+      "5 minutes before": "5 minut předem",
+      "10 minutes before": "10 minut předem",
+      "15 minutes before": "15 minut předem",
+      "30 minutes before": "30 minut předem",
       "Black chrome": "Černý chrom",
       "Blue titanium chrome": "Modrý titanový chrom",
       "Mirror chrome": "Zrcadlový chrom",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlisty Plex (nic nezaškrtnuto = všechny)"
     },
     "panel": {
+      "Time for {prayer}": "Čas na {prayer}",
+      "{prayer} in {n} min": "{prayer} za {n} min",
       "Keyboard": "Klávesnice",
       "Enable keyboard control in widget settings": "Zapněte ovládání klávesnice v nastavení widgetu",
       "Tap here and type": "Klepněte sem a pište",

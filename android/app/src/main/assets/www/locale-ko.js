@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "불러오는 중…"
     },
     "catalog": {
+      "Reminder": "알림",
+      "Off": "끄기",
+      "At the prayer time": "기도 시간에",
+      "Chime with the reminder": "알림과 함께 소리 재생",
+      "5 minutes before": "5분 전",
+      "10 minutes before": "10분 전",
+      "15 minutes before": "15분 전",
+      "30 minutes before": "30분 전",
       "Black chrome": "블랙 크롬",
       "Blue titanium chrome": "블루 티타늄 크롬",
       "Mirror chrome": "미러 크롬",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 재생목록 (선택 안 함 = 전체)"
     },
     "panel": {
+      "Time for {prayer}": "{prayer} 시간입니다",
+      "{prayer} in {n} min": "{n}분 후 {prayer}",
       "Keyboard": "키보드",
       "Enable keyboard control in widget settings": "위젯 설정에서 키보드 제어를 켜세요",
       "Tap here and type": "여기를 눌러 입력하세요",

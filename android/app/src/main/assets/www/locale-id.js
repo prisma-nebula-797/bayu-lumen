@@ -973,6 +973,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Memuat…"
     },
     "catalog": {
+      "Reminder": "Pengingat",
+      "Off": "Mati",
+      "At the prayer time": "Saat masuk waktu",
+      "Chime with the reminder": "Bunyikan nada pengingat",
+      "5 minutes before": "5 menit sebelumnya",
+      "10 minutes before": "10 menit sebelumnya",
+      "15 minutes before": "15 menit sebelumnya",
+      "30 minutes before": "30 menit sebelumnya",
       "Black chrome": "Krom hitam",
       "Blue titanium chrome": "Krom titanium biru",
       "Mirror chrome": "Krom cermin",
@@ -1741,6 +1749,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Daftar putar Plex (tidak ada yang dicentang = semua)"
     },
     "panel": {
+      "Time for {prayer}": "Waktunya {prayer}",
+      "{prayer} in {n} min": "{prayer} {n} menit lagi",
       "Keyboard": "Keyboard",
       "Enable keyboard control in widget settings": "Aktifkan kontrol keyboard di pengaturan widget",
       "Tap here and type": "Ketuk di sini lalu ketik",
