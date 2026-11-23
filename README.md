@@ -2,13 +2,6 @@
 
 <h1 align="center">PhoneBox</h1>
 
-> **About this fork.** This is a fork of [ersinkoc/phonebox](https://github.com/ersinkoc/phonebox) by Ersin KOÇ,
-> used under the [MIT license](LICENSE). It adds a **Prayer times** widget (the five daily prayers plus imsak and
-> sunrise, worked out on the phone with Kemenag, JAKIM, MWL, ISNA, Egyptian, Umm al-Qura, Karachi or Diyanet angles,
-> with the next prayer counted down and the Hijri date) and a **Prayer** page template, translated into all 23
-> languages. Everything else, including the install instructions below, is the upstream project's; its release
-> builds do not include these additions.
-
 <p align="center">
   <b>English</b> ·
   <a href="docs/README.tr.md">Türkçe</a> ·
@@ -34,6 +27,13 @@
   <a href="docs/README.ar.md">العربية</a> ·
   <a href="docs/README.zh-Hant.md">中文（繁體）</a>
 </p>
+
+> **About this fork.** This is a fork of [ersinkoc/phonebox](https://github.com/ersinkoc/phonebox) by Ersin KOÇ,
+> used under the [MIT license](LICENSE). It adds a **Prayer times** widget (the five daily prayers plus imsak and
+> sunrise, worked out on the phone with Kemenag, JAKIM, MWL, ISNA, Egyptian, Umm al-Qura, Karachi or Diyanet angles,
+> with the next prayer counted down and the Hijri date) and a **Prayer** page template, translated into all 23
+> languages. Everything else, including the install instructions below, is the upstream project's; its release
+> builds do not include these additions.
 
 <p align="center"><b>Turn an old Android phone into a desk panel for your computer.</b><br>
 PC stats, AI coding sessions, music and touch controls over USB or Wi-Fi.<br>
