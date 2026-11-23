@@ -5,6 +5,10 @@
 Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.
 
 **Widgets**
+- Clocks in a right-to-left language (Arabic): the digital clock (also upstream's), flip cards, nixie tubes, binary and
+  seven-segment read hours before minutes from the left again, and the day line's knob sits where its fill ends.
+- Small tiles: nixie tubes and stacked digits fit, and a short Keyboard tile keeps the field and one sideways-scrolling
+  row of keys.
 - New **Prayer times** widget (132 widgets): the five daily prayers plus imsak and sunrise for the weather location,
   with the next one highlighted and counted down, and the Hijri date. The times are worked out on the phone (no new
   connection, the location stays on the phone) with a choice of Kemenag, JAKIM, Muslim World League, ISNA, Egyptian,

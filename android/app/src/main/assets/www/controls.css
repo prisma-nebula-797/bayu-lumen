@@ -78,3 +78,7 @@ html.beat-3 .radio-eq i:nth-child(1),html.beat-2 .radio-eq i:nth-child(2),html.b
 .kb-shortcuts .kb-key{font-size:12px;opacity:.9}
 .kb-off{margin:auto;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:12px;color:var(--muted,#94a3b8)}
 @container (max-height: 130px){.kb-shortcuts{display:none}}
+/* a short tile keeps the field and one row of keys */
+@container (max-height: 190px){.kb-input{padding:6px 10px;font-size:14px}.kb-key{min-height:30px}.control-deck:has(.kb-input){gap:6px}}
+/* a short tile: no title, and each row of keys becomes one line that scrolls sideways */
+@container (max-height: 150px){.w-keyboard>.w-title{display:none}.kb-row{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(44px,1fr);overflow-x:auto;scrollbar-width:none}}

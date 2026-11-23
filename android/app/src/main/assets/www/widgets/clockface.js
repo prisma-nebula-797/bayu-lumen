@@ -153,7 +153,7 @@ const SHAPES = {
       date.textContent = now.toLocaleDateString(LOCALE, { weekday: 'long', day: 'numeric', month: 'long' });
       const f = ((t.H * 60 + t.M) * 60 + t.S) / 86400 * 100;
       fill.style.width = f.toFixed(2) + '%';
-      knob.style.insetInlineStart = f.toFixed(2) + '%';
+      knob.style.left = f.toFixed(2) + '%'; // the track is left to right in every language, like its fill
     };
   },
 };

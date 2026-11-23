@@ -94,3 +94,30 @@ test('an unknown shape falls back to flip cards', async ({ page }) => {
   await expect(tile).toHaveAttribute('data-shape', 'flip');
   await expect(tile).toHaveAttribute('data-clock-theme', 'default');
 });
+
+// In Arabic (right to left) the time still reads hours, then minutes, from the left, on every clock.
+test('clocks keep hours before minutes in a right-to-left language', async ({ page }) => {
+  await page.clock.install({ time: new Date(2026, 0, 1, 6, 49, 30) });
+  await page.addInitScript((json) => { localStorage.setItem('cfg', json); localStorage.setItem('pb-demo-config', json); }, JSON.stringify({
+    display: { language: 'ar' }, night: { enabled: false }, rules: [], shortcuts: [],
+    pages: [{ id: 'clocks', title: 'Clocks', widgets: [
+      { id: 'c', type: 'clock', x: 0, y: 0, w: 4, h: 3, options: { status: false, weather: false } },
+      { id: 'f', type: 'clockface', x: 4, y: 0, w: 4, h: 3, options: { shape: 'flip' } },
+      { id: 'n', type: 'clockface', x: 8, y: 0, w: 4, h: 3, options: { shape: 'nixie', seconds: false } },
+      { id: 'd', type: 'clockface', x: 0, y: 3, w: 6, h: 3, options: { shape: 'dayline' } },
+    ] }],
+  }));
+  await page.goto('/panel/');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  const leftOf = (a, b) => page.evaluate(([a, b]) => document.querySelector(a).getBoundingClientRect().left < document.querySelector(b).getBoundingClientRect().left, [a, b]);
+  await expect(page.locator('.w-clock .hh')).toHaveText('06');
+  expect(await leftOf('.w-clock .hh', '.w-clock .mm')).toBe(true);
+  expect(await leftOf('.w-clockface[data-shape="flip"] .cf-flip-card:nth-child(1)', '.w-clockface[data-shape="flip"] .cf-flip-card:nth-child(2)')).toBe(true);
+  const nixie = await page.locator('.w-clockface[data-shape="nixie"] .cf-nixie-d').evaluateAll((d) => d.map((x) => [x.textContent, x.getBoundingClientRect().left]).sort((a, b) => a[1] - b[1]).map((x) => x[0]).join(''));
+  expect(nixie).toBe('0649');
+  // the day line's knob sits where its fill ends (6:49 is about 28 % of the day, from the left)
+  const day = await page.evaluate(() => { const t = document.querySelector('.cf-day-track').getBoundingClientRect(), f = document.querySelector('.cf-day-fill').getBoundingClientRect(), k = document.querySelector('.cf-day-knob').getBoundingClientRect(); return { fillEnd: f.right - t.left, knob: k.left + k.width / 2 - t.left, width: t.width }; });
+  expect(Math.abs(day.fillEnd - day.knob)).toBeLessThan(3);
+  expect(day.knob / day.width).toBeGreaterThan(0.25);
+  expect(day.knob / day.width).toBeLessThan(0.31);
+});
