@@ -1295,6 +1295,24 @@ body.waking::after { opacity: 0; pointer-events: auto; transition: opacity .2s e
 .mo-ill { font-size: 13px; color: var(--muted); }
 .mo-next { font-size: 12px; color: var(--muted); opacity: .85; }
 
+/* ---------- prayer times ---------- */
+.w-prayer { padding: 9px 12px; display: flex; flex-direction: column; gap: 6px; }
+.pr-next { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; flex-shrink: 0; }
+.pr-next-name { font-size: clamp(16px, 9cqmin, 30px); font-weight: 700; line-height: 1.1; }
+.pr-next-time { font-size: clamp(14px, 7cqmin, 24px); font-variant-numeric: tabular-nums; color: rgb(var(--ambient)); }
+.pr-next-in { font-size: 12px; color: var(--muted); flex-basis: 100%; }
+.w-prayer.soon .pr-next-in { color: #f5b544; font-weight: 600; }
+.pr-list { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: space-evenly; }
+.pr-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 1px 6px; border-radius: 6px; font-size: clamp(11.5px, 5.4cqmin, 16px); }
+.pr-row .pr-t { font-variant-numeric: tabular-nums; color: var(--muted); }
+.pr-row.pr-imsak, .pr-row.pr-sunrise { opacity: .6; }
+.pr-row.now { background: rgba(255, 255, 255, .06); }
+.pr-row.next { background: color-mix(in srgb, rgb(var(--ambient)) 18%, transparent); font-weight: 600; }
+.pr-row.next .pr-t { color: var(--text, #fff); }
+.pr-date { font-size: 11px; color: var(--dim); text-align: center; flex-shrink: 0; }
+@container (max-height: 200px) { .w-prayer .w-title, .w-prayer .pr-date { display: none; } }
+@container (max-height: 130px) { .w-prayer .pr-list { display: none; } }
+
 /* ---------- word clock ---------- */
 .w-wordclock { display: flex; flex-direction: column; justify-content: center; padding: 6px 8px; }
 .wc-lead { font-size: clamp(12px, 6cqmin, 22px); color: var(--muted); letter-spacing: .02em; }

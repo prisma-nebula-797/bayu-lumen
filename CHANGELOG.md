@@ -3,6 +3,10 @@
 ## Unreleased
 
 **Widgets**
+- New **Prayer times** widget (132 widgets): the five daily prayers plus imsak and sunrise for the weather location,
+  with the next one highlighted and counted down, and the Hijri date. The times are worked out on the phone (no new
+  connection, the location stays on the phone) with a choice of Kemenag, JAKIM, Muslim World League, ISNA, Egyptian,
+  Umm al-Qura, Karachi or Diyanet angles and the Standard or Hanafi Asr. Translated into all 23 languages.
 - Discord: a large widget has larger mute, deafen and other buttons, member names and avatars, readable and easy to
   hit on a phone on a stand. Sizes follow the widget's size; at the usual sizes nothing changes (#420,
   [noswear922](https://github.com/noswear922)).
