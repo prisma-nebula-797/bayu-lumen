@@ -2,7 +2,7 @@
 import json,re,pathlib,xml.etree.ElementTree as ET
 root=pathlib.Path(__file__).resolve().parents[1]
 version=ET.parse(root/'agent/PhoneBox.Agent/PhoneBox.Agent.csproj').find('.//Version').text
-assert re.fullmatch(r'\d+\.\d+\.\d+',version),version
+assert re.fullmatch(r'\d+\.\d+\.\d+(\.\d+)?',version),version  # a fourth number marks a fork build (0.9.28.1)
 gradle=(root/'android/app/build.gradle.kts').read_text()
 assert re.search(r'versionName = "'+re.escape(version)+'"',gradle),'Android version differs'
 assert int(re.search(r'versionCode = (\d+)',gradle)[1])>0

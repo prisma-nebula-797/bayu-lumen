@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.9.28.1 — 2026-11-24
+
+Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.28.
 
 **Widgets**
 - New **Prayer times** widget (132 widgets): the five daily prayers plus imsak and sunrise for the weather location,
