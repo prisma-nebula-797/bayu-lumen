@@ -2,6 +2,13 @@
 
 <h1 align="center">PhoneBox</h1>
 
+> **About this fork.** This is a fork of [ersinkoc/phonebox](https://github.com/ersinkoc/phonebox) by Ersin KOÇ,
+> used under the [MIT license](LICENSE). It adds a **Prayer times** widget (the five daily prayers plus imsak and
+> sunrise, worked out on the phone with Kemenag, JAKIM, MWL, ISNA, Egyptian, Umm al-Qura, Karachi or Diyanet angles,
+> with the next prayer counted down and the Hijri date) and a **Prayer** page template, translated into all 23
+> languages. Everything else, including the install instructions below, is the upstream project's; its release
+> builds do not include these additions.
+
 <p align="center">
   <b>English</b> ·
   <a href="docs/README.tr.md">Türkçe</a> ·
