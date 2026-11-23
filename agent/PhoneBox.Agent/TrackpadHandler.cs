@@ -13,8 +13,23 @@ public static class TrackpadHandler
     /// <summary>The multi-finger gestures the phone sends: <c>swipe3up</c>, <c>swipe4left</c>, <c>spread</c>, <c>pinch</c>.</summary>
     internal static readonly Regex GestureName = new("^(?:swipe(?<n>[34])(?<dir>up|down|left|right)|(?<pinch>spread|pinch))$", RegexOptions.Compiled);
 
+    /// <summary>Text typed in one message at most; longer text from the phone is refused, not cut.</summary>
+    internal const int MaxTextLength = 256;
+
     public static bool IsAllowed(AgentConfig config) =>
         config.Widgets(enabledPagesOnly: true).Any(w => w.Type == "trackpad" && w.Bool("control") == true);
+
+    /// <summary>
+    /// Typing from the phone has its own switch: a Keyboard widget with "control" on, on an enabled page. Mouse
+    /// control alone does not allow typing, and typing alone does not allow moving the mouse.
+    /// </summary>
+    public static bool IsKeyboardAllowed(AgentConfig config) =>
+        config.Widgets(enabledPagesOnly: true).Any(w => w.Type == "keyboard" && w.Bool("control") == true);
+
+    internal static bool IsKeyboardAction(string? action) => action is "text" or "key";
+
+    /// <summary>Tests: receives ("text", typed text) or ("key", "ctrl+c") instead of real key presses.</summary>
+    internal static Action<string, string>? TestKeyboardSink;
 
     private static volatile bool _executionErrorLogged;
 
@@ -29,9 +44,11 @@ public static class TrackpadHandler
     public static void ProcessPayload(ReadOnlySpan<byte> utf8, ConfigStore config, ILogger? log = null)
     {
         var snapshot = config.Get();
-        if (!IsAllowed(snapshot))
+        var mouse = IsAllowed(snapshot);
+        var keyboard = IsKeyboardAllowed(snapshot);
+        if (!mouse && !keyboard)
         {
-            log?.LogDebug("Trackpad payload ignored: widget not enabled with control=true");
+            log?.LogDebug("Trackpad payload ignored: no trackpad or keyboard widget enabled with control=true");
             return;
         }
 
@@ -40,6 +57,13 @@ public static class TrackpadHandler
             var msg = JsonSerializer.Deserialize<TrackpadPayload>(utf8, JsonOpts);
             if (msg is not null)
             {
+                // each kind of input needs its own widget's permission
+                var isKey = IsKeyboardAction((msg.Type ?? msg.Action)?.ToLowerInvariant());
+                if (isKey ? !keyboard : !mouse)
+                {
+                    log?.LogDebug("Trackpad payload ignored: {Kind} control is off", isKey ? "keyboard" : "mouse");
+                    return;
+                }
                 try
                 {
                     Execute(msg, ex => ReportFailure(log, ex));
@@ -107,6 +131,31 @@ public static class TrackpadHandler
                 if (hDelta != 0) KeySender.MouseHorizontalScroll(hDelta);
                 break;
             }
+            case "text":
+            {
+                // typed as Unicode characters, so the keyboard layout of the PC does not matter; control characters
+                // other than a new line are dropped (they would act as key presses the user did not see)
+                var text = msg.Text;
+                if (string.IsNullOrEmpty(text) || text.Length > MaxTextLength) break;
+                var clean = new string(text.Replace("\r\n", "\n").Where(c => c == '\n' || c == '\t' || !char.IsControl(c)).ToArray());
+                if (clean.Length == 0) break;
+                if (TestKeyboardSink is not null) TestKeyboardSink("text", clean);
+                else KeySender.TypeText(clean);
+                break;
+            }
+            case "key":
+            {
+                // one combo of known key names ("ctrl+c", "alt+tab", "backspace"); a list or an unknown key is refused
+                var spec = msg.Keys;
+                if (string.IsNullOrWhiteSpace(spec) || spec.Length > 40 || spec.Contains(',')) break;
+                List<List<string>> combos;
+                try { combos = KeySender.Parse(spec); }
+                catch (ArgumentException) { break; }
+                if (combos.Count != 1) break;
+                if (TestKeyboardSink is not null) TestKeyboardSink("key", string.Join('+', combos[0]));
+                else KeySender.SendCombo(combos[0]);
+                break;
+            }
             default:
                 // swipe3up, swipe4left, spread, pinch...: macOS only; anything else is ignored
                 if (action is not null && GestureName.IsMatch(action)) KeySender.MouseGesture(action, onFailure);
@@ -167,8 +216,8 @@ public static class TrackpadHandler
         var config = ctx.RequestServices?.GetService<ConfigStore>();
         var log = ctx.RequestServices?.GetService<ILoggerFactory>()?.CreateLogger("PhoneBox.Agent.Trackpad");
 
-        // Fail closed: ConfigStore is required and must have the widget enabled with control=true
-        if (config is null || !IsAllowed(config.Get()))
+        // Fail closed: ConfigStore is required and a trackpad or keyboard widget must be enabled with control=true
+        if (config is null || (!IsAllowed(config.Get()) && !IsKeyboardAllowed(config.Get())))
         {
             ctx.Response.StatusCode = StatusCodes.Status403Forbidden;
             return;
@@ -210,4 +259,4 @@ public static class TrackpadHandler
     }
 }
 
-public record TrackpadPayload(string? Type, string? Action, double? Dx, double? Dy, double? Delta);
+public record TrackpadPayload(string? Type, string? Action, double? Dx, double? Dy, double? Delta, string? Text = null, string? Keys = null);

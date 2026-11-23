@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在載入…"
     },
     "catalog": {
+      "Keyboard": "鍵盤",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "用手機內建的鍵盤在電腦上打字，另有 Esc、Tab、Enter、方向鍵和常用快速鍵（Windows、Linux 和 macOS）。",
+      "Allow typing on the PC from the phone": "允許從手機在電腦上打字",
+      "Show shortcut keys": "顯示快速鍵",
       "Prayer": "禮拜",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "今日禮拜時間及下一次禮拜倒數、時鐘、月相和一句名言。",
       "Prayer times": "禮拜時間",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 播放清單（未勾選 = 全部）"
     },
     "panel": {
+      "Keyboard": "鍵盤",
+      "Enable keyboard control in widget settings": "請在小工具設定中開啟鍵盤控制",
+      "Tap here and type": "點按此處輸入",
       "Prayer times": "禮拜時間",
       "Imsak": "封齋",
       "Fajr": "晨禮",

@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Načítá se…"
     },
     "catalog": {
+      "Keyboard": "Klávesnice",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Pište na počítači klávesnicí telefonu, navíc Esc, Tab, Enter, šipky a běžné zkratky (Windows, Linux a macOS).",
+      "Allow typing on the PC from the phone": "Povolit psaní na počítači z telefonu",
+      "Show shortcut keys": "Zobrazit klávesové zkratky",
       "Prayer": "Modlitba",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Dnešní časy modliteb s odpočtem do další, hodiny, měsíc a citát.",
       "Prayer times": "Časy modliteb",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlisty Plex (nic nezaškrtnuto = všechny)"
     },
     "panel": {
+      "Keyboard": "Klávesnice",
+      "Enable keyboard control in widget settings": "Zapněte ovládání klávesnice v nastavení widgetu",
+      "Tap here and type": "Klepněte sem a pište",
       "Prayer times": "Časy modliteb",
       "Imsak": "Imsák",
       "Fajr": "Fadžr",

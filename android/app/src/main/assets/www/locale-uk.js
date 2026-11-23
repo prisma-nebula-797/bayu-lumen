@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Завантаження…"
     },
     "catalog": {
+      "Keyboard": "Клавіатура",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Друкуйте на ПК клавіатурою телефона, а також Esc, Tab, Enter, стрілки й поширені сполучення клавіш (Windows, Linux і macOS).",
+      "Allow typing on the PC from the phone": "Дозволити друкувати на ПК з телефона",
+      "Show shortcut keys": "Показувати сполучення клавіш",
       "Prayer": "Намаз",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Час намазів на сьогодні з відліком до наступного, годинник, місяць і цитата.",
       "Prayer times": "Час намазу",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Плейлисти Plex (нічого не позначено = усі)"
     },
     "panel": {
+      "Keyboard": "Клавіатура",
+      "Enable keyboard control in widget settings": "Увімкніть керування клавіатурою в налаштуваннях віджета",
+      "Tap here and type": "Торкніться тут і друкуйте",
       "Prayer times": "Час намазу",
       "Imsak": "Імсак",
       "Fajr": "Фаджр",

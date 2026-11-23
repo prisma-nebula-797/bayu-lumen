@@ -435,6 +435,13 @@ class MainActivity : Activity(), SensorEventListener {
             link.sendTrackpad(type, cleanDx, cleanDy, cleanDelta)
         }
 
+        /** Keyboard widget: "text" (up to 256 characters) or "key" (one combo such as "ctrl+c"); the agent validates both. */
+        @JavascriptInterface
+        fun keyboard(key: String, type: String, value: String) {
+            if (!ok(key) || (type != "text" && type != "key") || value.isEmpty() || value.length > 256) return
+            link.sendKeyboard(type, value)
+        }
+
         // The WebView receives the saved agent preference. Remember it for pairing dialogs before the next connection.
         @JavascriptInterface
         fun setLanguage(key: String, tag: String) {

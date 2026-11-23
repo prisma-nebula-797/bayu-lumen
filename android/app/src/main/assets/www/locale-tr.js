@@ -421,6 +421,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Yükleniyor…"
     },
     "catalog": {
+      "Keyboard": "Klavye",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Telefonun kendi klavyesiyle bilgisayara yazın; ayrıca Esc, Tab, Enter, oklar ve sık kullanılan kısayollar (Windows, Linux ve macOS).",
+      "Allow typing on the PC from the phone": "Telefondan bilgisayara yazmaya izin ver",
+      "Show shortcut keys": "Kısayol tuşlarını göster",
       "Prayer": "Namaz",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Bugünün namaz vakitleri ve sıradakine geri sayım, saat, ay ve bir alıntı.",
       "Prayer times": "Namaz vakitleri",
@@ -1140,6 +1144,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex çalma listeleri (hiçbiri işaretli değil = hepsi)"
     },
     "panel": {
+      "Keyboard": "Klavye",
+      "Enable keyboard control in widget settings": "Klavye denetimini widget ayarlarından açın",
+      "Tap here and type": "Buraya dokunun ve yazın",
       "Prayer times": "Namaz vakitleri",
       "Imsak": "İmsak",
       "Fajr": "Sabah",

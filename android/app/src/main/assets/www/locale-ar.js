@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "جارٍ التحميل…"
     },
     "catalog": {
+      "Keyboard": "لوحة المفاتيح",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "اكتب على الكمبيوتر بلوحة مفاتيح الهاتف، مع Esc وTab وEnter والأسهم والاختصارات الشائعة (Windows وLinux وmacOS).",
+      "Allow typing on the PC from the phone": "السماح بالكتابة على الكمبيوتر من الهاتف",
+      "Show shortcut keys": "إظهار مفاتيح الاختصار",
       "Prayer": "الصلاة",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "مواقيت صلاة اليوم مع عدّ تنازلي للصلاة التالية، والساعة، والقمر، واقتباس.",
       "Prayer times": "مواقيت الصلاة",
@@ -1738,6 +1742,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "قوائم تشغيل Plex (دون تحديد = الكل)"
     },
     "panel": {
+      "Keyboard": "لوحة المفاتيح",
+      "Enable keyboard control in widget settings": "فعّل التحكم بلوحة المفاتيح من إعدادات الأداة",
+      "Tap here and type": "المس هنا واكتب",
       "Prayer times": "مواقيت الصلاة",
       "Imsak": "الإمساك",
       "Fajr": "الفجر",

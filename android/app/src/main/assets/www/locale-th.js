@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "กำลังโหลด…"
     },
     "catalog": {
+      "Keyboard": "แป้นพิมพ์",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "พิมพ์บนพีซีด้วยแป้นพิมพ์ของโทรศัพท์ พร้อม Esc, Tab, Enter, ปุ่มลูกศร และปุ่มลัดที่ใช้บ่อย (Windows, Linux และ macOS)",
+      "Allow typing on the PC from the phone": "อนุญาตให้พิมพ์บนพีซีจากโทรศัพท์",
+      "Show shortcut keys": "แสดงปุ่มลัด",
       "Prayer": "ละหมาด",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "เวลาละหมาดวันนี้พร้อมนับถอยหลังถึงเวลาถัดไป นาฬิกา ดวงจันทร์ และคำคม",
       "Prayer times": "เวลาละหมาด",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "เพลย์ลิสต์ Plex (ไม่เลือกเลย = ทั้งหมด)"
     },
     "panel": {
+      "Keyboard": "แป้นพิมพ์",
+      "Enable keyboard control in widget settings": "เปิดการควบคุมแป้นพิมพ์ในการตั้งค่าวิดเจ็ต",
+      "Tap here and type": "แตะที่นี่แล้วพิมพ์",
       "Prayer times": "เวลาละหมาด",
       "Imsak": "อิมซาก",
       "Fajr": "ซุบฮิ",

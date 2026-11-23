@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Memuat…"
     },
     "catalog": {
+      "Keyboard": "Keyboard",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Ketik di PC dengan keyboard ponsel, plus Esc, Tab, Enter, panah, dan pintasan umum (Windows, Linux, dan macOS).",
+      "Allow typing on the PC from the phone": "Izinkan mengetik di PC dari ponsel",
+      "Show shortcut keys": "Tampilkan tombol pintasan",
       "Prayer": "Ibadah",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Jadwal sholat hari ini dengan hitung mundur ke waktu berikutnya, jam, bulan, dan kutipan.",
       "Prayer times": "Jadwal sholat",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Daftar putar Plex (tidak ada yang dicentang = semua)"
     },
     "panel": {
+      "Keyboard": "Keyboard",
+      "Enable keyboard control in widget settings": "Aktifkan kontrol keyboard di pengaturan widget",
+      "Tap here and type": "Ketuk di sini lalu ketik",
       "Prayer times": "Jadwal sholat",
       "Imsak": "Imsak",
       "Fajr": "Subuh",

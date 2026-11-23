@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "불러오는 중…"
     },
     "catalog": {
+      "Keyboard": "키보드",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "휴대폰 자체 키보드로 PC에 입력하고, Esc, Tab, Enter, 방향키와 자주 쓰는 단축키도 사용합니다(Windows, Linux, macOS).",
+      "Allow typing on the PC from the phone": "휴대폰에서 PC에 입력하도록 허용",
+      "Show shortcut keys": "단축키 표시",
       "Prayer": "기도",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "오늘의 기도 시간과 다음 기도까지의 카운트다운, 시계, 달, 명언.",
       "Prayer times": "기도 시간",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 재생목록 (선택 안 함 = 전체)"
     },
     "panel": {
+      "Keyboard": "키보드",
+      "Enable keyboard control in widget settings": "위젯 설정에서 키보드 제어를 켜세요",
+      "Tap here and type": "여기를 눌러 입력하세요",
       "Prayer times": "기도 시간",
       "Imsak": "임삭",
       "Fajr": "파즈르",

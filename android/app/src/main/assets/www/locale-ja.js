@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "読み込み中…"
     },
     "catalog": {
+      "Keyboard": "キーボード",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "スマホのキーボードで PC に入力。Esc、Tab、Enter、矢印キー、よく使うショートカットも使えます（Windows、Linux、macOS）。",
+      "Allow typing on the PC from the phone": "スマホから PC への入力を許可",
+      "Show shortcut keys": "ショートカットキーを表示",
       "Prayer": "礼拝",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "今日の礼拝時刻と次の礼拝までのカウントダウン、時計、月、名言。",
       "Prayer times": "礼拝時刻",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex プレイリスト（未選択 = すべて）"
     },
     "panel": {
+      "Keyboard": "キーボード",
+      "Enable keyboard control in widget settings": "ウィジェットの設定でキーボード操作をオンにしてください",
+      "Tap here and type": "ここをタップして入力",
       "Prayer times": "礼拝時刻",
       "Imsak": "イムサーク",
       "Fajr": "ファジュル",

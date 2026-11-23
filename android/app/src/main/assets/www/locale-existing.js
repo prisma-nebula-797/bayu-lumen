@@ -455,6 +455,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wird geladen…"
     },
     "catalog": {
+      "Keyboard": "Tastatur",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Mit der Tastatur des Telefons auf dem PC schreiben, dazu Esc, Tab, Enter, Pfeiltasten und gängige Tastenkürzel (Windows, Linux und macOS).",
+      "Allow typing on the PC from the phone": "Schreiben auf dem PC vom Telefon aus erlauben",
+      "Show shortcut keys": "Tastenkürzel anzeigen",
       "Prayer": "Gebet",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Die heutigen Gebetszeiten mit Countdown bis zum nächsten Gebet, Uhr, Mond und ein Zitat.",
       "Prayer times": "Gebetszeiten",
@@ -1174,6 +1178,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex-Playlists (keine angekreuzt = alle)"
     },
     "panel": {
+      "Keyboard": "Tastatur",
+      "Enable keyboard control in widget settings": "Tastatursteuerung in den Widget-Einstellungen einschalten",
+      "Tap here and type": "Hier tippen und schreiben",
       "Prayer times": "Gebetszeiten",
       "Imsak": "Imsak",
       "Fajr": "Fadschr",
@@ -1911,6 +1918,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Chargement…"
     },
     "catalog": {
+      "Keyboard": "Clavier",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Tapez sur le PC avec le clavier du téléphone, plus Échap, Tab, Entrée, les flèches et les raccourcis courants (Windows, Linux et macOS).",
+      "Allow typing on the PC from the phone": "Autoriser la saisie sur le PC depuis le téléphone",
+      "Show shortcut keys": "Afficher les touches de raccourci",
       "Prayer": "Prière",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Les horaires de prière du jour avec le compte à rebours jusqu’à la prochaine, l’horloge, la lune et une citation.",
       "Prayer times": "Horaires de prière",
@@ -2630,6 +2641,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlists Plex (aucune cochée = toutes)"
     },
     "panel": {
+      "Keyboard": "Clavier",
+      "Enable keyboard control in widget settings": "Activez le contrôle du clavier dans les réglages du widget",
+      "Tap here and type": "Touchez ici et tapez",
       "Prayer times": "Horaires de prière",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -3367,6 +3381,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Cargando…"
     },
     "catalog": {
+      "Keyboard": "Teclado",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Escribe en el PC con el teclado del teléfono, además de Esc, Tab, Intro, flechas y atajos habituales (Windows, Linux y macOS).",
+      "Allow typing on the PC from the phone": "Permitir escribir en el PC desde el teléfono",
+      "Show shortcut keys": "Mostrar teclas de atajo",
       "Prayer": "Oración",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Los horarios de oración de hoy con cuenta atrás hasta la siguiente, el reloj, la luna y una cita.",
       "Prayer times": "Horarios de oración",
@@ -4086,6 +4104,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Listas de Plex (ninguna marcada = todas)"
     },
     "panel": {
+      "Keyboard": "Teclado",
+      "Enable keyboard control in widget settings": "Activa el control del teclado en los ajustes del widget",
+      "Tap here and type": "Toca aquí y escribe",
       "Prayer times": "Horarios de oración",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -4823,6 +4844,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Caricamento…"
     },
     "catalog": {
+      "Keyboard": "Tastiera",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Scrivi sul PC con la tastiera del telefono, più Esc, Tab, Invio, frecce e scorciatoie comuni (Windows, Linux e macOS).",
+      "Allow typing on the PC from the phone": "Consenti di scrivere sul PC dal telefono",
+      "Show shortcut keys": "Mostra i tasti di scelta rapida",
       "Prayer": "Preghiera",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Gli orari di preghiera di oggi con il conto alla rovescia per la prossima, l’orologio, la luna e una citazione.",
       "Prayer times": "Orari di preghiera",
@@ -5542,6 +5567,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlist Plex (nessuna selezionata = tutte)"
     },
     "panel": {
+      "Keyboard": "Tastiera",
+      "Enable keyboard control in widget settings": "Attiva il controllo della tastiera nelle impostazioni del widget",
+      "Tap here and type": "Tocca qui e scrivi",
       "Prayer times": "Orari di preghiera",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -6279,6 +6307,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "A carregar…"
     },
     "catalog": {
+      "Keyboard": "Teclado",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Escreva no PC com o teclado do telefone, além de Esc, Tab, Enter, setas e atalhos comuns (Windows, Linux e macOS).",
+      "Allow typing on the PC from the phone": "Permitir escrever no PC a partir do telefone",
+      "Show shortcut keys": "Mostrar teclas de atalho",
       "Prayer": "Oração",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Os horários de oração de hoje com contagem decrescente para a próxima, o relógio, a lua e uma citação.",
       "Prayer times": "Horários de oração",
@@ -6998,6 +7030,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Listas do Plex (nenhuma marcada = todas)"
     },
     "panel": {
+      "Keyboard": "Teclado",
+      "Enable keyboard control in widget settings": "Ative o controlo do teclado nas definições do widget",
+      "Tap here and type": "Toque aqui e escreva",
       "Prayer times": "Horários de oração",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -7330,6 +7365,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Carregando…"
     },
     "catalog": {
+      "Keyboard": "Teclado",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Digite no PC com o teclado do celular, além de Esc, Tab, Enter, setas e atalhos comuns (Windows, Linux e macOS).",
+      "Allow typing on the PC from the phone": "Permitir digitar no PC pelo celular",
+      "Show shortcut keys": "Mostrar teclas de atalho",
       "Prayer": "Oração",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Os horários de oração de hoje com contagem regressiva para a próxima, o relógio, a lua e uma citação.",
       "Prayer times": "Horários de oração",
@@ -7361,6 +7400,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlists do Plex (nenhuma marcada = todas)"
     },
     "panel": {
+      "Keyboard": "Teclado",
+      "Enable keyboard control in widget settings": "Ative o controle do teclado nas configurações do widget",
+      "Tap here and type": "Toque aqui e digite",
       "Prayer times": "Horários de oração",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -7803,6 +7845,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Laden…"
     },
     "catalog": {
+      "Keyboard": "Toetsenbord",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Typ op de pc met het toetsenbord van de telefoon, plus Esc, Tab, Enter, pijltjes en veelgebruikte sneltoetsen (Windows, Linux en macOS).",
+      "Allow typing on the PC from the phone": "Typen op de pc vanaf de telefoon toestaan",
+      "Show shortcut keys": "Sneltoetsen tonen",
       "Prayer": "Gebed",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "De gebedstijden van vandaag met aftellen naar het volgende gebed, de klok, de maan en een citaat.",
       "Prayer times": "Gebedstijden",
@@ -8522,6 +8568,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex-afspeellijsten (geen aangevinkt = alle)"
     },
     "panel": {
+      "Keyboard": "Toetsenbord",
+      "Enable keyboard control in widget settings": "Zet toetsenbordbediening aan in de widgetinstellingen",
+      "Tap here and type": "Tik hier en typ",
       "Prayer times": "Gebedstijden",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -9259,6 +9308,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wczytywanie…"
     },
     "catalog": {
+      "Keyboard": "Klawiatura",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Pisz na komputerze klawiaturą telefonu, a także Esc, Tab, Enter, strzałki i popularne skróty (Windows, Linux i macOS).",
+      "Allow typing on the PC from the phone": "Zezwalaj na pisanie na komputerze z telefonu",
+      "Show shortcut keys": "Pokaż klawisze skrótów",
       "Prayer": "Modlitwa",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Dzisiejsze godziny modlitw z odliczaniem do następnej, zegar, księżyc i cytat.",
       "Prayer times": "Godziny modlitw",
@@ -9978,6 +10031,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlisty Plex (żadna zaznaczona = wszystkie)"
     },
     "panel": {
+      "Keyboard": "Klawiatura",
+      "Enable keyboard control in widget settings": "Włącz sterowanie klawiaturą w ustawieniach widżetu",
+      "Tap here and type": "Dotknij tutaj i pisz",
       "Prayer times": "Godziny modlitw",
       "Imsak": "Imsak",
       "Fajr": "Fadżr",
@@ -10715,6 +10771,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Загрузка…"
     },
     "catalog": {
+      "Keyboard": "Клавиатура",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Печатайте на ПК клавиатурой телефона, а также Esc, Tab, Enter, стрелки и частые сочетания клавиш (Windows, Linux и macOS).",
+      "Allow typing on the PC from the phone": "Разрешить печатать на ПК с телефона",
+      "Show shortcut keys": "Показывать сочетания клавиш",
       "Prayer": "Намаз",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Время намазов на сегодня с отсчётом до следующего, часы, луна и цитата.",
       "Prayer times": "Время намаза",
@@ -11434,6 +11494,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Плейлисты Plex (ничего не отмечено = все)"
     },
     "panel": {
+      "Keyboard": "Клавиатура",
+      "Enable keyboard control in widget settings": "Включите управление клавиатурой в настройках виджета",
+      "Tap here and type": "Нажмите здесь и печатайте",
       "Prayer times": "Время намаза",
       "Imsak": "Имсак",
       "Fajr": "Фаджр",
@@ -11766,6 +11829,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Φόρτωση…"
     },
     "catalog": {
+      "Keyboard": "Πληκτρολόγιο",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Πληκτρολογήστε στον υπολογιστή με το πληκτρολόγιο του τηλεφώνου, συν Esc, Tab, Enter, βέλη και συνηθισμένες συντομεύσεις (Windows, Linux και macOS).",
+      "Allow typing on the PC from the phone": "Να επιτρέπεται η πληκτρολόγηση στον υπολογιστή από το τηλέφωνο",
+      "Show shortcut keys": "Εμφάνιση πλήκτρων συντόμευσης",
       "Prayer": "Προσευχή",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Οι σημερινές ώρες προσευχής με αντίστροφη μέτρηση για την επόμενη, το ρολόι, η σελήνη και ένα απόφθεγμα.",
       "Prayer times": "Ώρες προσευχής",
@@ -11800,6 +11867,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Λίστες Plex (καμία επιλεγμένη = όλες)"
     },
     "panel": {
+      "Keyboard": "Πληκτρολόγιο",
+      "Enable keyboard control in widget settings": "Ενεργοποιήστε τον έλεγχο πληκτρολογίου στις ρυθμίσεις του widget",
+      "Tap here and type": "Αγγίξτε εδώ και πληκτρολογήστε",
       "Prayer times": "Ώρες προσευχής",
       "Imsak": "Ιμσάκ",
       "Fajr": "Φατζρ",
@@ -12132,6 +12202,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Đang tải…"
     },
     "catalog": {
+      "Keyboard": "Bàn phím",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "Gõ trên máy tính bằng bàn phím của điện thoại, kèm Esc, Tab, Enter, phím mũi tên và các phím tắt thông dụng (Windows, Linux và macOS).",
+      "Allow typing on the PC from the phone": "Cho phép gõ trên máy tính từ điện thoại",
+      "Show shortcut keys": "Hiện các phím tắt",
       "Prayer": "Cầu nguyện",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "Giờ cầu nguyện hôm nay kèm đếm ngược đến giờ tiếp theo, đồng hồ, mặt trăng và một câu trích dẫn.",
       "Prayer times": "Giờ cầu nguyện",
@@ -12166,6 +12240,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Danh sách phát Plex (không chọn = tất cả)"
     },
     "panel": {
+      "Keyboard": "Bàn phím",
+      "Enable keyboard control in widget settings": "Bật điều khiển bàn phím trong cài đặt tiện ích",
+      "Tap here and type": "Chạm vào đây và gõ",
       "Prayer times": "Giờ cầu nguyện",
       "Imsak": "Imsak",
       "Fajr": "Fajr",
@@ -12903,6 +12980,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在加载…"
     },
     "catalog": {
+      "Keyboard": "键盘",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "用手机自带的键盘在电脑上打字，另有 Esc、Tab、回车、方向键和常用快捷键（Windows、Linux 和 macOS）。",
+      "Allow typing on the PC from the phone": "允许从手机在电脑上打字",
+      "Show shortcut keys": "显示快捷键",
       "Prayer": "礼拜",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "今日礼拜时间及下一次礼拜倒计时、时钟、月相和一句名言。",
       "Prayer times": "礼拜时间",
@@ -13622,6 +13703,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 播放列表（未勾选 = 全部）"
     },
     "panel": {
+      "Keyboard": "键盘",
+      "Enable keyboard control in widget settings": "请在小组件设置中开启键盘控制",
+      "Tap here and type": "点按此处输入",
       "Prayer times": "礼拜时间",
       "Imsak": "封斋",
       "Fajr": "晨礼",

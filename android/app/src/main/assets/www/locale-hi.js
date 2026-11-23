@@ -972,6 +972,10 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "लोड हो रहा है…"
     },
     "catalog": {
+      "Keyboard": "कीबोर्ड",
+      "Type on the PC from the phone with its own keyboard, plus Esc, Tab, Enter, arrows and common shortcuts (Windows, Linux and macOS).": "फ़ोन के अपने कीबोर्ड से पीसी पर टाइप करें, साथ में Esc, Tab, Enter, तीर और आम शॉर्टकट (Windows, Linux और macOS)।",
+      "Allow typing on the PC from the phone": "फ़ोन से पीसी पर टाइप करने की अनुमति दें",
+      "Show shortcut keys": "शॉर्टकट कुंजियाँ दिखाएँ",
       "Prayer": "नमाज़",
       "Today's prayer times with the next one counted down, the clock, the moon and a quote.": "आज की नमाज़ के समय और अगली नमाज़ की उलटी गिनती, घड़ी, चाँद और एक उद्धरण।",
       "Prayer times": "नमाज़ का समय",
@@ -1703,6 +1707,9 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex प्लेलिस्ट (कोई चयनित नहीं = सभी)"
     },
     "panel": {
+      "Keyboard": "कीबोर्ड",
+      "Enable keyboard control in widget settings": "विजेट सेटिंग में कीबोर्ड नियंत्रण चालू करें",
+      "Tap here and type": "यहाँ टैप करके टाइप करें",
       "Prayer times": "नमाज़ का समय",
       "Imsak": "इम्साक",
       "Fajr": "फ़ज्र",

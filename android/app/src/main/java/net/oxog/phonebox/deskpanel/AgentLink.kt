@@ -165,6 +165,22 @@ class AgentLink(private val context: Context) {
     private val pendingEvents = java.util.ArrayDeque<TrackpadEvent>()
     private val httpTrackpadLock = Any()
 
+    /**
+     * Text or one key combo for the Keyboard widget, over the same /api/trackpad route (the agent checks that a
+     * Keyboard widget with typing allowed is on an enabled page). The single background thread keeps the order.
+     */
+    fun sendKeyboard(type: String, value: String) {
+        background.execute {
+            try {
+                val json = JSONObject().put("type", type).put(if (type == "text") "text" else "keys", value)
+                    .toString().toByteArray(Charsets.UTF_8)
+                val reply = request("POST", "/api/trackpad", body = json, contentType = "application/json")
+                try { reply.body.close() } catch (_: Exception) {}
+            } catch (_: Exception) {
+            }
+        }
+    }
+
     fun sendTrackpad(type: String, dx: Float, dy: Float, delta: Float) {
         if (route == Route.USB || !trackpadSocket.send(type, dx, dy, delta)) {
             coalesceHttpTrackpad(type, dx, dy, delta)

@@ -1200,3 +1200,79 @@ W.trackpad = {
     };
   }
 };
+
+// ---------------------------------------------------------------- keyboard
+// Typing on the PC from the phone's own keyboard. The agent types the text as Unicode characters, so the PC's keyboard
+// layout does not matter, and presses one combo of known key names for the buttons. Off until "Allow typing on the PC"
+// is ticked in the widget's settings (the agent checks the same switch).
+export const KEYBOARD_KEYS = [['⎋ Esc', 'esc'], ['⇥ Tab', 'tab'], ['←', 'left'], ['↑', 'up'], ['↓', 'down'], ['→', 'right'], ['⌫', 'backspace'], ['⏎', 'enter']];
+export const KEYBOARD_SHORTCUTS = [['Ctrl C', 'ctrl+c'], ['Ctrl V', 'ctrl+v'], ['Ctrl X', 'ctrl+x'], ['Ctrl Z', 'ctrl+z'], ['Ctrl A', 'ctrl+a'], ['Alt Tab', 'alt+tab'], ['⊞ Win', 'win']];
+const KEYBOARD_MAX_TEXT = 256;
+
+// What changed between two values of the input: how many characters to erase at the end and what to type after them.
+// A diff rather than the input events, because Android keyboards replace whole words (suggestions, autocorrect).
+export function keyboardDiff(before, after) {
+  let same = 0;
+  const max = Math.min(before.length, after.length);
+  while (same < max && before[same] === after[same]) same++;
+  return { erase: before.length - same, type: after.slice(same) };
+}
+
+W.keyboard = {
+  needs: [],
+  create(box, { o }) {
+    box.classList.add('control-deck');
+    const enabled = Boolean(o.control);
+    box.append(h('div', 'w-title', o.title || en('Keyboard')));
+    if (!enabled) {
+      box.classList.add('is-disabled');
+      box.append(h('div', 'kb-off', icon('lock'), h('span', null, tp('Enable keyboard control in widget settings'))));
+      return { update() {} };
+    }
+
+    function post(msg) {
+      if (bridge && typeof bridge.keyboard === 'function') { bridge.keyboard(msg.type, msg.type === 'text' ? msg.text : msg.keys); return; }
+      fetch('/api/trackpad', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(msg), cache: 'no-store' }).catch(() => {});
+    }
+    const key = (spec) => post({ type: 'key', keys: spec });
+    const type = (text) => { for (let i = 0; i < text.length; i += KEYBOARD_MAX_TEXT) post({ type: 'text', text: text.slice(i, i + KEYBOARD_MAX_TEXT) }); };
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'kb-input';
+    input.placeholder = tp('Tap here and type');
+    for (const [k, v] of [['autocomplete', 'off'], ['autocorrect', 'off'], ['autocapitalize', 'off'], ['spellcheck', 'false'], ['enterkeyhint', 'send']]) input.setAttribute(k, v);
+    input.setAttribute('aria-label', o.title || tp('Keyboard'));
+
+    let last = '', composing = false;
+    const flush = () => {
+      const { erase, type: text } = keyboardDiff(last, input.value);
+      for (let i = 0; i < erase; i++) key('backspace');
+      if (text) type(text);
+      last = input.value;
+      // keep the field short; never while a word is being composed, or the keyboard loses it
+      if (!composing && last.length > 48) { input.value = ''; last = ''; }
+    };
+    input.addEventListener('compositionstart', () => { composing = true; });
+    input.addEventListener('compositionend', () => { composing = false; flush(); });
+    input.addEventListener('input', flush);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); flush(); key('enter'); input.value = ''; last = ''; return; }
+      // with nothing left in the field there is no input event to diff, so a Backspace there erases on the PC directly
+      if (e.key === 'Backspace' && input.value === '') { e.preventDefault(); key('backspace'); }
+    });
+
+    const button = ([label, spec]) => {
+      const b = h('button', 'kb-key', label);
+      b.type = 'button';
+      b.setAttribute('aria-label', spec);
+      // pointerdown keeps the phone's keyboard open (a click would take the focus away from the field first)
+      b.addEventListener('pointerdown', (e) => { e.preventDefault(); haptic(); key(spec); });
+      return b;
+    };
+    const rows = h('div', 'kb-rows', h('div', 'kb-row', KEYBOARD_KEYS.map(button)));
+    if (o.shortcuts !== false) rows.append(h('div', 'kb-row kb-shortcuts', KEYBOARD_SHORTCUTS.map(button)));
+    box.append(input, rows);
+    return { update() {} };
+  },
+};

@@ -7,6 +7,8 @@ using Xunit;
 
 namespace PhoneBox.Agent.Tests;
 
+// shares KeySender.TestMouseSink with KeyboardWidgetTests, so the two never run at the same time
+[Collection("KeySenderSinks")]
 public class TrackpadTests : IDisposable
 {
     private readonly List<KeySender.MouseCall> _calls = [];

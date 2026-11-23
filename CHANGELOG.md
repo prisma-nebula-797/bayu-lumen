@@ -7,6 +7,12 @@
   with the next one highlighted and counted down, and the Hijri date. The times are worked out on the phone (no new
   connection, the location stays on the phone) with a choice of Kemenag, JAKIM, Muslim World League, ISNA, Egyptian,
   Umm al-Qura, Karachi or Diyanet angles and the Standard or Hanafi Asr. Translated into all 23 languages.
+- New **Keyboard** widget (133 widgets): type on the PC with the phone's own keyboard (text goes as Unicode, so the PC's
+  layout does not matter; autocorrect replacements are erased and retyped), plus Esc, Tab, Enter, arrows, Backspace and
+  common shortcuts (Ctrl+C/V/X/Z/A, Alt+Tab, Win). Off until "Allow typing on the PC from the phone" is ticked; the agent
+  checks that switch separately from the Trackpad's mouse control. It uses the existing `/api/trackpad` route (no new
+  Wi-Fi path) and a new `keyboard` bridge call in the Android app. One message types at most 256 characters, control
+  characters are dropped and a key message must be a single combo of known key names.
 - Discord: a large widget has larger mute, deafen and other buttons, member names and avatars, readable and easy to
   hit on a phone on a stand. Sizes follow the widget's size; at the usual sizes nothing changes (#420,
   [noswear922](https://github.com/noswear922)).
