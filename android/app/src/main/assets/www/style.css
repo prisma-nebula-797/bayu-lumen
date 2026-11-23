@@ -1572,3 +1572,96 @@ body.controls-top .ap-foot { order: -1; margin-bottom: 4px; }
 .ly-note[hidden] { display: none; }
 .w-lyrics:not(.timed):not(.plain) .ly-note { margin: auto; }
 .ly-credit { position: absolute; right: 10px; top: 9px; font-size: 9px; letter-spacing: .1em; color: var(--dim); }
+
+/* ---------- clock themes (option "theme" on the digital and analog clocks) ---------- */
+/* the bare clock gets a surface for the themes that need one */
+.w-clock[data-clock-theme="chrome"], .w-clock[data-clock-theme="gold"], .w-clock[data-clock-theme="rosegold"],
+.w-clock[data-clock-theme="lcd"], .w-clock[data-clock-theme="amber"], .w-clock[data-clock-theme="glass"] {
+  border-radius: clamp(12px, 7cqmin, 26px); padding: 3% 6%;
+}
+/* gradient digits, one gradient per piece so the colon can still blink */
+.w-clock[data-clock-theme="chrome"] .clock > span,
+.w-clock[data-clock-theme="gold"] .clock > span,
+.w-clock[data-clock-theme="rosegold"] .clock > span,
+.w-clock[data-clock-theme="sunset"] .clock > span,
+.w-clock[data-clock-theme="ocean"] .clock > span,
+.w-clock[data-clock-theme="pastel"] .clock > span {
+  background: var(--clk-fill); -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+/* chrome: polished steel digits on brushed dark steel, in a chrome bezel */
+.w-clock[data-clock-theme="chrome"] {
+  --clk-fill: linear-gradient(180deg, #ffffff 0%, #e3e7ec 20%, #9aa1ab 46%, #5f6670 50%, #f2f4f7 54%, #b5bcc5 78%, #eef1f4 100%);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, #2d3138 0%, #14171b 55%, #23272d 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), inset 0 -3px 8px rgba(0, 0, 0, .7),
+    0 0 0 1.5px #6b727c, 0 0 0 3px #eef1f5, 0 0 0 4.5px #8e959f, 0 0 0 6px #3e434a, 0 10px 26px rgba(0, 0, 0, .65);
+}
+.w-clock[data-clock-theme="chrome"] .clock { font-weight: 700; letter-spacing: -0.03em; filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, .75)) drop-shadow(0 0 10px rgba(200, 215, 235, .18)); }
+.w-clock[data-clock-theme="chrome"] .date, .w-clock[data-clock-theme="chrome"] .status { color: #c7ccd4; text-shadow: 0 1px 0 rgba(0, 0, 0, .8); }
+/* gold and rose gold: the same build, warmer metal */
+.w-clock[data-clock-theme="gold"] {
+  --clk-fill: linear-gradient(180deg, #fffbe6 0%, #f7dc8b 22%, #c99a2e 47%, #8a6312 50%, #fff0b3 55%, #d6a93a 80%, #fbe7a1 100%);
+  background: linear-gradient(165deg, #2e2410 0%, #120d04 60%, #241b0a 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 236, 170, .3), inset 0 -3px 8px rgba(0, 0, 0, .7),
+    0 0 0 1.5px #7a5a10, 0 0 0 3px #ffe9a6, 0 0 0 4.5px #b8860b, 0 0 0 6px #3d2d08, 0 10px 26px rgba(0, 0, 0, .65);
+}
+.w-clock[data-clock-theme="rosegold"] {
+  --clk-fill: linear-gradient(180deg, #fff3ef 0%, #f6c6b8 22%, #c47c84 47%, #8e4a54 50%, #ffdcd2 55%, #d6929a 80%, #fbd5ca 100%);
+  background: linear-gradient(165deg, #33191d 0%, #140809 60%, #2a1418 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 210, 200, .3), inset 0 -3px 8px rgba(0, 0, 0, .7),
+    0 0 0 1.5px #7d3f49, 0 0 0 3px #ffd6cc, 0 0 0 4.5px #b76e79, 0 0 0 6px #3f1d23, 0 10px 26px rgba(0, 0, 0, .65);
+}
+.w-clock[data-clock-theme="gold"] .clock, .w-clock[data-clock-theme="rosegold"] .clock { font-weight: 700; filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, .75)); }
+.w-clock[data-clock-theme="gold"] .date, .w-clock[data-clock-theme="gold"] .status { color: #e8cf8a; }
+.w-clock[data-clock-theme="rosegold"] .date, .w-clock[data-clock-theme="rosegold"] .status { color: #f0c1b6; }
+/* neon: a glowing tube */
+.w-clock[data-clock-theme="neon"] .clock { font-weight: 300; color: #d9fdff; text-shadow: 0 0 4px #7ff7ff, 0 0 12px #00e0ff, 0 0 28px #0091ff, 0 0 48px #0057ff; }
+.w-clock[data-clock-theme="neon"] .date { color: #ff7ce6; text-shadow: 0 0 6px #ff3fd1; }
+/* gradients */
+.w-clock[data-clock-theme="sunset"] { --clk-fill: linear-gradient(120deg, #ffd27f 0%, #ff8a6b 40%, #ff4f8b 75%, #c84fff 100%); }
+.w-clock[data-clock-theme="ocean"] { --clk-fill: linear-gradient(120deg, #a1ffce 0%, #4facfe 50%, #3a5bff 100%); }
+.w-clock[data-clock-theme="pastel"] { --clk-fill: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 50%, #c2f0d8 100%); }
+.w-clock[data-clock-theme="sunset"] .clock, .w-clock[data-clock-theme="ocean"] .clock, .w-clock[data-clock-theme="pastel"] .clock { font-weight: 600; }
+/* LCD: dark segments on backlit green glass */
+.w-clock[data-clock-theme="lcd"] { background: linear-gradient(180deg, #b7c79a, #93a777); box-shadow: inset 0 2px 10px rgba(0, 0, 0, .35), 0 0 0 3px #1f2618, 0 0 0 5px #4a5640; }
+.w-clock[data-clock-theme="lcd"] .clock { font-family: 'Courier New', ui-monospace, monospace; font-weight: 700; letter-spacing: -0.02em; color: #1d2614; text-shadow: 2px 2px 0 rgba(29, 38, 20, .18); }
+.w-clock[data-clock-theme="lcd"] .clock .sec, .w-clock[data-clock-theme="lcd"] .date, .w-clock[data-clock-theme="lcd"] .status { color: #2c3a20; }
+/* amber CRT: phosphor glow with scan lines */
+.w-clock[data-clock-theme="amber"] { background: repeating-linear-gradient(180deg, rgba(0, 0, 0, .28) 0 2px, transparent 2px 4px), radial-gradient(ellipse at center, #1c1206 0%, #070401 80%); box-shadow: inset 0 0 30px rgba(0, 0, 0, .8), 0 0 0 3px #2a1b08; }
+.w-clock[data-clock-theme="amber"] .clock { font-family: ui-monospace, 'Courier New', monospace; font-weight: 600; color: #ffb000; text-shadow: 0 0 6px rgba(255, 176, 0, .9), 0 0 20px rgba(255, 120, 0, .5); }
+.w-clock[data-clock-theme="amber"] .clock .sec, .w-clock[data-clock-theme="amber"] .date, .w-clock[data-clock-theme="amber"] .status { color: #d98d00; }
+/* glass: a frosted card */
+.w-clock[data-clock-theme="glass"] { background: linear-gradient(135deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04)); border: 1px solid rgba(255, 255, 255, .22); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 8px 30px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .25); }
+.w-clock[data-clock-theme="glass"] .clock { font-weight: 300; color: #fff; text-shadow: 0 2px 12px rgba(0, 0, 0, .35); }
+/* bold: heavy digits */
+.w-clock[data-clock-theme="bold"] .clock { font-weight: 800; letter-spacing: -0.07em; }
+.w-clock[data-clock-theme="bold"] .clock .colon { color: rgb(var(--ambient)); opacity: 1; }
+.w-clock[data-clock-theme="bold"] .clock .colon.dim { opacity: .35; }
+
+/* analog themes: face, ticks and hands through variables */
+.w-analog[data-clock-theme] .analog .face { fill: var(--an-face, rgba(255, 255, 255, .035)); stroke: var(--an-rim, var(--line)); stroke-width: var(--an-rim-w, .8); }
+.w-analog[data-clock-theme] .analog .tk { stroke: var(--an-tick, rgba(255, 255, 255, .25)); }
+.w-analog[data-clock-theme] .analog .tk.b { stroke: var(--an-tick-b, rgba(255, 255, 255, .7)); }
+.w-analog[data-clock-theme] .analog .hh, .w-analog[data-clock-theme] .analog .mh { stroke: var(--an-hand, var(--text)); }
+.w-analog[data-clock-theme] .analog .sh { stroke: var(--an-sec, rgb(var(--ambient))); }
+.w-analog[data-clock-theme] .analog .hub { fill: var(--an-sec, rgb(var(--ambient))); }
+.w-analog[data-clock-theme] .analog text { fill: var(--an-num, var(--muted)); }
+.w-analog[data-clock-theme="chrome"], .w-analog[data-clock-theme="gold"], .w-analog[data-clock-theme="rosegold"] { --an-rim-w: 3; --an-tick: rgba(20, 20, 20, .35); --an-tick-b: rgba(15, 15, 15, .85); --an-hand: #15181c; --an-num: #1b1e22; }
+.w-analog[data-clock-theme="chrome"] { --an-sec: #c62828; }
+.w-analog[data-clock-theme="gold"] { --an-sec: #3a2a08; --an-hand: #2a1d05; }
+.w-analog[data-clock-theme="rosegold"] { --an-sec: #5a1f2a; --an-hand: #2e1216; }
+.w-analog[data-clock-theme="chrome"] .analog, .w-analog[data-clock-theme="gold"] .analog, .w-analog[data-clock-theme="rosegold"] .analog { filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .55)); }
+.w-analog[data-clock-theme="neon"] { --an-face: #02060c; --an-rim: #00e0ff; --an-rim-w: 1.4; --an-tick: rgba(0, 224, 255, .35); --an-tick-b: #7ff7ff; --an-hand: #d9fdff; --an-sec: #ff3fd1; }
+.w-analog[data-clock-theme="neon"] .analog { filter: drop-shadow(0 0 3px #00e0ff) drop-shadow(0 0 10px rgba(0, 145, 255, .7)); }
+.w-analog[data-clock-theme="sunset"] { --an-face: #2a0f1f; --an-rim: #ff6a88; --an-rim-w: 2; --an-tick-b: #ffd27f; --an-hand: #ffe3c4; --an-sec: #ff4f8b; }
+.w-analog[data-clock-theme="ocean"] { --an-face: #061a2e; --an-rim: #4facfe; --an-rim-w: 2; --an-tick-b: #a1ffce; --an-hand: #e2f4ff; --an-sec: #00f2fe; }
+.w-analog[data-clock-theme="pastel"] { --an-face: #f6eefa; --an-rim: #a6c1ee; --an-rim-w: 2; --an-tick: rgba(80, 70, 110, .3); --an-tick-b: #7c6aa8; --an-hand: #4a3f6b; --an-sec: #f08fc0; --an-num: #6b5c95; }
+.w-analog[data-clock-theme="lcd"] { --an-face: #a8b98a; --an-rim: #1f2618; --an-rim-w: 2.5; --an-tick: rgba(29, 38, 20, .35); --an-tick-b: #1d2614; --an-hand: #1d2614; --an-sec: #3d4f2a; --an-num: #1d2614; }
+.w-analog[data-clock-theme="amber"] { --an-face: #0b0702; --an-rim: #ffb000; --an-rim-w: 1.2; --an-tick: rgba(255, 176, 0, .35); --an-tick-b: #ffb000; --an-hand: #ffc94d; --an-sec: #ff7a00; --an-num: #ffb000; }
+.w-analog[data-clock-theme="amber"] .analog { filter: drop-shadow(0 0 4px rgba(255, 176, 0, .6)); }
+.w-analog[data-clock-theme="glass"] { --an-face: rgba(255, 255, 255, .1); --an-rim: rgba(255, 255, 255, .35); --an-rim-w: 1.2; }
+.w-analog[data-clock-theme="bold"] .analog .hh { stroke-width: 5; }
+.w-analog[data-clock-theme="bold"] .analog .mh { stroke-width: 3.4; }
+.w-analog[data-clock-theme="bold"] .analog .tk.b { stroke-width: 2.6; }

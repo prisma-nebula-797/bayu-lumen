@@ -1,9 +1,17 @@
 import { $, LOCALE, buzz, fmtTime, h, en, haptic, icon, labelled, pad, r1, rich, store, t, tick, toast, tp } from '../main.js';
 import { W } from '../registry.js';
-import { dialEl, lines } from './helpers.js';
+import { clockTheme, dialEl, lines } from './helpers.js';
 const tr = (...args) => t(...args); // some widgets below name a local `t` (a timer element), which hides the translator
 
 // ---------------------------------------------------------------- clocks & time
+// Gradient stops for the analog clock's metal themes: a brushed face and a polished rim.
+const ANALOG_METALS = {
+  chrome: { face: ['#f5f7fa', '#c9ced6', '#7d848e', '#2b2f35'], rim: ['#ffffff', '#8a919b', '#eef1f5', '#5a6069', '#d7dbe1'] },
+  gold: { face: ['#fff6d5', '#e9c46a', '#a87b1c', '#3a2a08'], rim: ['#fff1b8', '#b8860b', '#ffe08a', '#7a5a10', '#f3d27a'] },
+  rosegold: { face: ['#ffeae4', '#f0b8a8', '#a8606a', '#3a1d22'], rim: ['#ffe4dc', '#b76e79', '#ffd0c4', '#7d3f49', '#f2b9ab'] },
+};
+let analogSeq = 0;
+
 W.analog = {
   bare: true, needs: ['tick'],
   create(box, { o }) {
@@ -15,7 +23,15 @@ W.analog = {
       return `<line class="tk${big ? ' b' : ''}" x1="${(50 + r1 * Math.sin(a)).toFixed(2)}" y1="${(50 - r1 * Math.cos(a)).toFixed(2)}" x2="${(50 + 46.5 * Math.sin(a)).toFixed(2)}" y2="${(50 - 46.5 * Math.cos(a)).toFixed(2)}"/>`;
     }).join('');
     const nums = o.numbers ? [12, 3, 6, 9].map((n, i) => `<text x="${50 + 33 * Math.sin((i * Math.PI) / 2)}" y="${50 - 33 * Math.cos((i * Math.PI) / 2) + 3.6}">${n}</text>`).join('') : '';
-    box.innerHTML = `<svg viewBox="0 0 100 100" class="analog"><circle class="face" cx="50" cy="50" r="48.5"/>${ticks}${nums}` +
+    // the metal themes paint the face and rim with a gradient; ids are per widget, as two clocks can share a page
+    const theme = clockTheme(o);
+    box.dataset.clockTheme = theme;
+    const metal = ANALOG_METALS[theme];
+    const gid = `an-g${++analogSeq}`;
+    const defs = metal ? `<defs><radialGradient id="${gid}-f" cx="35%" cy="30%" r="80%">${metal.face.map((c, i, a) => `<stop offset="${(i / (a.length - 1)).toFixed(2)}" stop-color="${c}"/>`).join('')}</radialGradient>` +
+      `<linearGradient id="${gid}-r" x1="0" y1="0" x2="1" y2="1">${metal.rim.map((c, i, a) => `<stop offset="${(i / (a.length - 1)).toFixed(2)}" stop-color="${c}"/>`).join('')}</linearGradient></defs>` : '';
+    if (metal) { box.style.setProperty('--an-face', `url(#${gid}-f)`); box.style.setProperty('--an-rim', `url(#${gid}-r)`); }
+    box.innerHTML = `<svg viewBox="0 0 100 100" class="analog">${defs}<circle class="face" cx="50" cy="50" r="48.5"/>${ticks}${nums}` +
       '<line class="hh" x1="50" y1="53" x2="50" y2="27"/><line class="mh" x1="50" y1="55" x2="50" y2="12"/>' +
       (showSec ? '<line class="sh" x1="50" y1="60" x2="50" y2="8"/>' : '') + '<circle class="hub" cx="50" cy="50" r="2.4"/></svg>';
     if (o.label) box.append(h('div', 'an-l', o.label));

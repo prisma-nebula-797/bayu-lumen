@@ -63,3 +63,7 @@ export function dialEl() {
 export function canKillAnywhere() {
   return (cfg.pages || []).some((p) => p.enabled !== false && (p.widgets || []).some((w) => w.type === 'processes' && w.options?.allowKill !== false));
 }
+
+// Looks for the digital and analog clocks (option "theme"); the styles live in style.css under [data-clock-theme].
+export const CLOCK_THEMES = ['default', 'chrome', 'gold', 'rosegold', 'neon', 'sunset', 'ocean', 'lcd', 'amber', 'glass', 'bold', 'pastel'];
+export const clockTheme = (o) => (CLOCK_THEMES.includes(o?.theme) ? o.theme : 'default');

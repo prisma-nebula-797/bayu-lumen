@@ -32,7 +32,8 @@
 > used under the [MIT license](LICENSE). It adds a **Prayer times** widget (the five daily prayers plus imsak and
 > sunrise, worked out on the phone with Kemenag, JAKIM, MWL, ISNA, Egyptian, Umm al-Qura, Karachi or Diyanet angles,
 > with the next prayer counted down and the Hijri date), a **Prayer** page template and a **Keyboard** widget (type on
-> the PC from the phone, with Esc, Tab, arrows and common shortcuts; off until allowed in the widget), translated into
+> the PC from the phone, with Esc, Tab, arrows and common shortcuts; off until allowed in the widget) and 12 clock
+> themes (Chrome, Gold, Rose gold, Neon, LCD, Amber CRT and more) for the digital and analog clocks, translated into
 > all 23 languages. Everything else, including the install instructions below, is the upstream project's; its release
 > builds do not include these additions.
 

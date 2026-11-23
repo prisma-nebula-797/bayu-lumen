@@ -7,6 +7,10 @@
   with the next one highlighted and counted down, and the Hijri date. The times are worked out on the phone (no new
   connection, the location stays on the phone) with a choice of Kemenag, JAKIM, Muslim World League, ISNA, Egyptian,
   Umm al-Qura, Karachi or Diyanet angles and the Standard or Hanafi Asr. Translated into all 23 languages.
+- Clock and Analog clock: a new **Theme** option with 12 looks: Default, **Chrome** (polished steel digits on brushed
+  steel in a chrome bezel; on the analog clock a metal face and rim), Gold, Rose gold, Neon, Sunset, Ocean, LCD, Amber
+  CRT, Frosted glass, Bold and Pastel. CSS only, no animation, so the panel draws no extra frames. Existing clocks keep
+  the default look.
 - New **Keyboard** widget (133 widgets): type on the PC with the phone's own keyboard (text goes as Unicode, so the PC's
   layout does not matter; autocorrect replacements are erased and retyped), plus Esc, Tab, Enter, arrows, Backspace and
   common shortcuts (Ctrl+C/V/X/Z/A, Alt+Tab, Win). Off until "Allow typing on the PC from the phone" is ticked; the agent

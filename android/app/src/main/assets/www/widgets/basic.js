@@ -1,6 +1,7 @@
 import { $, API, D, LEVEL_COLOR, LOCALE, mediaHtml, METRICS, PANEL_HEADERS, PREVIEW, Q_STYLE, S_ORDER, ago, api, averageColor, buildLayout, buzz, cfg, chime, cfgVersion, chart, color, cssVar, currentProcessesSort, emit, fillIcon, fmtClock, fmtDur, fmtHM, fmtMem, fmtReset, fmtTime, fmtValue, gotoProcesses, gpuMem, gpusOf, h, en, haptic, hasProcessesPage, hist, hour12, icon, keyButton, setKeyFace, labelled, levelOf, media, metricText, online, openSheet, paceInfo, pad, prRow, pushView, quotaProviders, r1, registerProcessesSorter, renderStatus, ringSvg, setArtColor, configMark, configReadSince, localWriteStored, setMediaState, setVolDragging, shortDur, shortGpu, store, t, tick, toast, volDragging, wxBlock, wxDeg, wxIcon, emo, rich, tp, tpv, quotaText, pages, curPage, gotoPageRef } from '../main.js';
 import { W } from '../registry.js';
 import { invalidateDeckState } from './controls.js';
+import { clockTheme } from './helpers.js';
 
 function bindProcessLink(box, sortTarget) {
   if (!hasProcessesPage()) return;
@@ -19,6 +20,7 @@ function bindProcessLink(box, sortTarget) {
 W.clock = {
   bare: true, needs: ['tick', 'state', 'weather', 'quotas', 'work'],
   create(box, { o }) {
+    box.dataset.clockTheme = clockTheme(o);
     const status = o.status !== false ? h('div', 'status') : null;
     const hh = h('span', 'hh', '--'), colon = h('span', 'colon', ':'), mm = h('span', 'mm', '--'), ss = h('span', 'sec'), ap = h('span', 'ap');
     const date = o.date !== false ? h('div', 'date') : null;
