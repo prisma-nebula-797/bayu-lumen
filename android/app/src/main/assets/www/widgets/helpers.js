@@ -65,5 +65,8 @@ export function canKillAnywhere() {
 }
 
 // Looks for the digital and analog clocks (option "theme"); the styles live in style.css under [data-clock-theme].
-export const CLOCK_THEMES = ['default', 'chrome', 'gold', 'rosegold', 'neon', 'sunset', 'ocean', 'lcd', 'amber', 'glass', 'bold', 'pastel'];
+export const CLOCK_THEMES = ['default', 'chrome', 'chrome-black', 'chrome-blue', 'chrome-mirror', 'chrome-gunmetal', 'chrome-copper', 'chrome-holo', 'chrome-liquid',
+  'gold', 'rosegold', 'neon', 'sunset', 'ocean', 'lcd', 'amber', 'glass', 'bold', 'pastel'];
+// Themes that paint text with a gradient (metal or colour) instead of a flat colour.
+export const GRADIENT_THEMES = new Set(['chrome', 'chrome-black', 'chrome-blue', 'chrome-mirror', 'chrome-gunmetal', 'chrome-copper', 'chrome-holo', 'chrome-liquid', 'gold', 'rosegold', 'sunset', 'ocean', 'pastel']);
 export const clockTheme = (o) => (CLOCK_THEMES.includes(o?.theme) ? o.theme : 'default');

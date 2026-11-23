@@ -1665,3 +1665,169 @@ body.controls-top .ap-foot { order: -1; margin-bottom: 4px; }
 .w-analog[data-clock-theme="bold"] .analog .hh { stroke-width: 5; }
 .w-analog[data-clock-theme="bold"] .analog .mh { stroke-width: 3.4; }
 .w-analog[data-clock-theme="bold"] .analog .tk.b { stroke-width: 2.6; }
+
+/* ---------- clock theme variables (shared by Clock designs and the new chrome variants) ---------- */
+/* --cf-fill: gradient for big text; --cf-fg: flat text colour; --cf-accent: lit parts; --cf-track: unlit parts;
+   --cf-panel / --cf-bezel: the surface and its frame for themes that have one */
+[data-clock-theme] { --cf-fg: var(--text); --cf-accent: rgb(var(--ambient)); --cf-track: rgba(255, 255, 255, .1); --cf-dim: var(--muted); }
+[data-clock-theme="chrome"] {
+  --cf-fill: linear-gradient(180deg, #ffffff 0%, #e3e7ec 20%, #9aa1ab 46%, #5f6670 50%, #f2f4f7 54%, #b5bcc5 78%, #eef1f4 100%);
+  --cf-fg: #eef1f5; --cf-accent: #e3e8ee; --cf-track: rgba(255, 255, 255, .12); --cf-dim: #aeb4bd;
+  --cf-panel: repeating-linear-gradient(90deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 3px), linear-gradient(165deg, #2d3138 0%, #14171b 55%, #23272d 100%);
+  --cf-bezel: inset 0 1px 0 rgba(255, 255, 255, .28), inset 0 -3px 8px rgba(0, 0, 0, .7), 0 0 0 1.5px #6b727c, 0 0 0 3px #eef1f5, 0 0 0 4.5px #8e959f, 0 0 0 6px #3e434a, 0 10px 26px rgba(0, 0, 0, .65);
+}
+[data-clock-theme="chrome-black"] {
+  --cf-fill: linear-gradient(180deg, #d9dde2 0%, #8c929a 22%, #2a2d32 47%, #0b0c0e 50%, #6d737b 56%, #1c1e22 80%, #a6acb4 100%);
+  --cf-fg: #c9ced6; --cf-accent: #d9dde2; --cf-track: rgba(255, 255, 255, .07); --cf-dim: #7d838b;
+  --cf-panel: radial-gradient(ellipse at 30% 0%, rgba(255, 255, 255, .08), transparent 60%), linear-gradient(170deg, #121316 0%, #040405 70%, #0d0e10 100%);
+  --cf-bezel: inset 0 1px 0 rgba(255, 255, 255, .18), inset 0 -3px 10px rgba(0, 0, 0, .9), 0 0 0 1.5px #000, 0 0 0 3px #6d737b, 0 0 0 4.5px #1a1c20, 0 0 0 6px #9aa0a8, 0 0 0 7px #000, 0 12px 28px rgba(0, 0, 0, .8);
+}
+[data-clock-theme="chrome-blue"] {
+  --cf-fill: linear-gradient(180deg, #f4f9ff 0%, #bcd3ef 22%, #5f82ad 47%, #2d4a70 50%, #dbe8f8 55%, #7f9fc6 80%, #e8f1ff 100%);
+  --cf-fg: #dbe8f8; --cf-accent: #9fc4f0; --cf-track: rgba(159, 196, 240, .14); --cf-dim: #8aa6c8;
+  --cf-panel: repeating-linear-gradient(90deg, rgba(180, 210, 255, .03) 0 1px, transparent 1px 3px), linear-gradient(165deg, #1d2c42 0%, #0a1220 55%, #172338 100%);
+  --cf-bezel: inset 0 1px 0 rgba(220, 235, 255, .3), inset 0 -3px 8px rgba(0, 0, 0, .7), 0 0 0 1.5px #3e5f8a, 0 0 0 3px #e8f1ff, 0 0 0 4.5px #6f8fb8, 0 0 0 6px #1d2f48, 0 10px 26px rgba(0, 10, 30, .7);
+}
+[data-clock-theme="chrome-mirror"] {
+  --cf-fill: linear-gradient(180deg, #ffffff 0%, #cfe3f5 30%, #6c7a89 49%, #2a3138 51%, #c8d2dc 70%, #ffffff 100%);
+  --cf-fg: #ffffff; --cf-accent: #ffffff; --cf-track: rgba(255, 255, 255, .16); --cf-dim: #c8d2dc;
+  --cf-panel: linear-gradient(180deg, #5b6b7b 0%, #2a3138 48%, #10141a 52%, #3c4753 100%);
+  --cf-bezel: inset 0 2px 0 rgba(255, 255, 255, .55), inset 0 -2px 6px rgba(0, 0, 0, .6), 0 0 0 2px #ffffff, 0 0 0 3.5px #6c7a89, 0 0 0 5px #ffffff, 0 0 0 6.5px #2a3138, 0 10px 28px rgba(0, 0, 0, .6);
+}
+[data-clock-theme="chrome-gunmetal"] {
+  --cf-fill: linear-gradient(180deg, #d7dbe0 0%, #9aa0a8 22%, #4a4f57 47%, #2b2f35 50%, #8d939b 56%, #5a5f67 80%, #c3c8cf 100%);
+  --cf-fg: #c3c8cf; --cf-accent: #b8bec6; --cf-track: rgba(255, 255, 255, .08); --cf-dim: #868c94;
+  --cf-panel: repeating-linear-gradient(0deg, rgba(255, 255, 255, .02) 0 1px, transparent 1px 2px), linear-gradient(165deg, #3a3f46 0%, #1e2125 60%, #2c3036 100%);
+  --cf-bezel: inset 0 1px 0 rgba(255, 255, 255, .2), inset 0 -3px 8px rgba(0, 0, 0, .7), 0 0 0 1.5px #1d2024, 0 0 0 3px #8d939b, 0 0 0 4.5px #4a4f57, 0 0 0 6px #1d2024, 0 10px 26px rgba(0, 0, 0, .65);
+}
+[data-clock-theme="chrome-copper"] {
+  --cf-fill: linear-gradient(180deg, #fff0e2 0%, #f2b98a 22%, #b8693a 47%, #6e3415 50%, #ffd2ad 55%, #c97a46 80%, #ffe1c7 100%);
+  --cf-fg: #ffd2ad; --cf-accent: #f2a56c; --cf-track: rgba(242, 165, 108, .14); --cf-dim: #c98d66;
+  --cf-panel: repeating-linear-gradient(90deg, rgba(255, 200, 160, .03) 0 1px, transparent 1px 3px), linear-gradient(165deg, #3a1f12 0%, #170b05 60%, #2b170d 100%);
+  --cf-bezel: inset 0 1px 0 rgba(255, 210, 170, .3), inset 0 -3px 8px rgba(0, 0, 0, .7), 0 0 0 1.5px #5e2f14, 0 0 0 3px #ffd2ad, 0 0 0 4.5px #b8693a, 0 0 0 6px #3a1c0b, 0 10px 26px rgba(0, 0, 0, .65);
+}
+[data-clock-theme="chrome-holo"] {
+  --cf-fill: linear-gradient(115deg, #ffd1ec 0%, #9ad0ff 22%, #ffffff 36%, #b5ffcb 50%, #fff59a 66%, #d7a6ff 82%, #ff9ad5 100%);
+  --cf-fg: #f3e8ff; --cf-accent: #b8d8ff; --cf-track: rgba(215, 166, 255, .16); --cf-dim: #c5b5e6;
+  --cf-panel: linear-gradient(160deg, #1a1630 0%, #0b0a16 60%, #171329 100%) padding-box, linear-gradient(115deg, #ff9ad5, #9ad0ff, #b5ffcb, #fff59a, #d7a6ff, #ff9ad5) border-box;
+  --cf-bezel: inset 0 1px 0 rgba(255, 255, 255, .3), 0 0 18px rgba(184, 160, 255, .35), 0 10px 26px rgba(0, 0, 0, .6);
+  --cf-border: 3px solid transparent;
+}
+[data-clock-theme="chrome-liquid"] {
+  --cf-fill: linear-gradient(165deg, #fdfdfd 0%, #a7adb5 22%, #f4f6f8 38%, #5e646c 55%, #e6e9ed 70%, #8b9199 88%, #ffffff 100%);
+  --cf-fg: #eef1f4; --cf-accent: #f4f6f8; --cf-track: rgba(255, 255, 255, .12); --cf-dim: #b7bdc5;
+  --cf-panel: radial-gradient(ellipse 120% 60% at 50% -10%, rgba(255, 255, 255, .22), transparent 55%), linear-gradient(175deg, #2a2e34 0%, #0e1013 70%, #1a1d21 100%);
+  --cf-bezel: inset 0 2px 1px rgba(255, 255, 255, .35), inset 0 -4px 12px rgba(0, 0, 0, .8), 0 0 0 2px #e6e9ed, 0 0 0 4px #5e646c, 0 0 0 5px #f4f6f8, 0 12px 30px rgba(0, 0, 0, .7);
+}
+[data-clock-theme="gold"] {
+  --cf-fill: linear-gradient(180deg, #fffbe6 0%, #f7dc8b 22%, #c99a2e 47%, #8a6312 50%, #fff0b3 55%, #d6a93a 80%, #fbe7a1 100%);
+  --cf-fg: #f7dc8b; --cf-accent: #f3d27a; --cf-track: rgba(243, 210, 122, .14); --cf-dim: #c9ab62;
+  --cf-panel: linear-gradient(165deg, #2e2410 0%, #120d04 60%, #241b0a 100%);
+  --cf-bezel: inset 0 1px 0 rgba(255, 236, 170, .3), inset 0 -3px 8px rgba(0, 0, 0, .7), 0 0 0 1.5px #7a5a10, 0 0 0 3px #ffe9a6, 0 0 0 4.5px #b8860b, 0 0 0 6px #3d2d08, 0 10px 26px rgba(0, 0, 0, .65);
+}
+[data-clock-theme="rosegold"] {
+  --cf-fill: linear-gradient(180deg, #fff3ef 0%, #f6c6b8 22%, #c47c84 47%, #8e4a54 50%, #ffdcd2 55%, #d6929a 80%, #fbd5ca 100%);
+  --cf-fg: #f6c6b8; --cf-accent: #f2b9ab; --cf-track: rgba(242, 185, 171, .14); --cf-dim: #c99088;
+  --cf-panel: linear-gradient(165deg, #33191d 0%, #140809 60%, #2a1418 100%);
+  --cf-bezel: inset 0 1px 0 rgba(255, 210, 200, .3), inset 0 -3px 8px rgba(0, 0, 0, .7), 0 0 0 1.5px #7d3f49, 0 0 0 3px #ffd6cc, 0 0 0 4.5px #b76e79, 0 0 0 6px #3f1d23, 0 10px 26px rgba(0, 0, 0, .65);
+}
+[data-clock-theme="neon"] { --cf-fg: #d9fdff; --cf-accent: #00e0ff; --cf-track: rgba(0, 224, 255, .12); --cf-dim: #ff7ce6; --cf-glow: 0 0 4px #7ff7ff, 0 0 12px #00e0ff, 0 0 28px #0091ff; }
+[data-clock-theme="sunset"] { --cf-fill: linear-gradient(120deg, #ffd27f 0%, #ff8a6b 40%, #ff4f8b 75%, #c84fff 100%); --cf-fg: #ffb08a; --cf-accent: #ff6a88; --cf-track: rgba(255, 106, 136, .14); }
+[data-clock-theme="ocean"] { --cf-fill: linear-gradient(120deg, #a1ffce 0%, #4facfe 50%, #3a5bff 100%); --cf-fg: #9fd6ff; --cf-accent: #4facfe; --cf-track: rgba(79, 172, 254, .14); }
+[data-clock-theme="pastel"] { --cf-fill: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 50%, #c2f0d8 100%); --cf-fg: #d9c9f3; --cf-accent: #f08fc0; --cf-track: rgba(166, 193, 238, .2); }
+[data-clock-theme="lcd"] { --cf-fg: #1d2614; --cf-accent: #1d2614; --cf-track: rgba(29, 38, 20, .13); --cf-dim: #3a4a2a; --cf-panel: linear-gradient(180deg, #b7c79a, #93a777); --cf-bezel: inset 0 2px 10px rgba(0, 0, 0, .35), 0 0 0 3px #1f2618, 0 0 0 5px #4a5640; --cf-font: 'Courier New', ui-monospace, monospace; }
+[data-clock-theme="amber"] { --cf-fg: #ffb000; --cf-accent: #ffb000; --cf-track: rgba(255, 176, 0, .13); --cf-dim: #c98400; --cf-glow: 0 0 6px rgba(255, 176, 0, .9), 0 0 20px rgba(255, 120, 0, .5); --cf-panel: repeating-linear-gradient(180deg, rgba(0, 0, 0, .28) 0 2px, transparent 2px 4px), radial-gradient(ellipse at center, #1c1206 0%, #070401 80%); --cf-bezel: inset 0 0 30px rgba(0, 0, 0, .8), 0 0 0 3px #2a1b08; --cf-font: ui-monospace, 'Courier New', monospace; }
+[data-clock-theme="glass"] { --cf-fg: #ffffff; --cf-accent: #ffffff; --cf-track: rgba(255, 255, 255, .15); --cf-panel: linear-gradient(135deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04)); --cf-bezel: 0 8px 30px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .25); --cf-border: 1px solid rgba(255, 255, 255, .22); }
+[data-clock-theme="bold"] { --cf-weight: 800; }
+
+/* the digital clock in the chrome variants: the same build as Chrome, from the variables */
+.w-clock[data-clock-theme^="chrome-"] { border-radius: clamp(12px, 7cqmin, 26px); padding: 3% 6%; background: var(--cf-panel); box-shadow: var(--cf-bezel); border: var(--cf-border, 0); }
+.w-clock[data-clock-theme^="chrome-"] .clock > span { background: var(--cf-fill); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.w-clock[data-clock-theme^="chrome-"] .clock { font-weight: 700; letter-spacing: -0.03em; filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, .75)); }
+.w-clock[data-clock-theme^="chrome-"] .date, .w-clock[data-clock-theme^="chrome-"] .status { color: var(--cf-dim); text-shadow: 0 1px 0 rgba(0, 0, 0, .8); }
+.w-clock[data-clock-theme="chrome-holo"] .clock { filter: drop-shadow(0 0 8px rgba(184, 160, 255, .45)); }
+/* the analog clock in the chrome variants */
+.w-analog[data-clock-theme^="chrome-"] { --an-rim-w: 3; --an-tick: rgba(20, 20, 20, .35); --an-tick-b: rgba(15, 15, 15, .85); --an-hand: #15181c; --an-sec: #c62828; --an-num: #1b1e22; }
+.w-analog[data-clock-theme="chrome-black"], .w-analog[data-clock-theme="chrome-gunmetal"] { --an-tick: rgba(255, 255, 255, .3); --an-tick-b: rgba(230, 233, 238, .9); --an-hand: #e6e9ed; --an-num: #c9ced6; --an-sec: #ff5252; }
+.w-analog[data-clock-theme="chrome-blue"] { --an-hand: #0f1d30; --an-sec: #ff6b3d; }
+.w-analog[data-clock-theme="chrome-copper"] { --an-hand: #2e140a; --an-sec: #1d4f63; }
+.w-analog[data-clock-theme="chrome-holo"] { --an-hand: #2a2440; --an-sec: #ff4fb8; }
+.w-analog[data-clock-theme^="chrome-"] .analog { filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .55)); }
+
+/* ---------- Clock designs ---------- */
+.w-clockface { display: flex; padding: 0; }
+.w-clockface .cf-inner { flex: 1; min-width: 0; min-height: 0; margin: 8px; /* room for the bezel rings: the tile clips what spills out */ display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4%; padding: 6% 7%;
+  border-radius: clamp(12px, 7cqmin, 26px); background: var(--cf-panel, none); box-shadow: var(--cf-bezel, none); border: var(--cf-border, 0);
+  color: var(--cf-fg); font-family: var(--cf-font, inherit); font-variant-numeric: tabular-nums; }
+.w-clockface .cf-txt { color: var(--cf-fg); text-shadow: var(--cf-glow, none); font-weight: var(--cf-weight, 600); }
+.w-clockface[data-gradient] .cf-txt { background: var(--cf-fill); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; text-shadow: none; filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, .6)); }
+.w-clockface .cf-small { font-size: clamp(10px, 9cqmin, 22px); color: var(--cf-dim); letter-spacing: .06em; }
+.w-clockface .cf-track { fill: none; stroke: var(--cf-track); }
+.w-clockface .cf-dial { position: relative; flex: 0 1 auto; width: min(100%, calc(100cqh - 28px)); aspect-ratio: 1; display: grid; place-items: center; }
+.w-clockface[data-shape="orbit"] .cf-dial { width: min(100%, calc(100cqh - 28px - 2.6em)); }
+.w-clockface .cf-dial > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.w-clockface .cf-center, .w-clockface .cf-center-wrap { position: relative; text-align: center; }
+.w-clockface .cf-center { font-size: clamp(14px, 15cqmin, 64px); line-height: 1; }
+.w-clockface .cf-center-sub { font-size: clamp(9px, 6cqmin, 18px); color: var(--cf-dim); }
+/* flip */
+.cf-flip { display: flex; align-items: center; gap: 5cqmin; width: 100%; justify-content: center; }
+.cf-flip-card { position: relative; flex: 0 1 auto; padding: 4cqmin 6cqmin; border-radius: 4cqmin; background: linear-gradient(180deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .03) 50%, rgba(0, 0, 0, .25) 50%, rgba(255, 255, 255, .04)); box-shadow: 0 4px 14px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .12); }
+.cf-flip-v { font-size: clamp(18px, min(34cqmin, 21cqw), 160px); line-height: 1; display: block; }
+.cf-flip-line { position: absolute; left: 0; right: 0; top: 50%; height: 2px; background: rgba(0, 0, 0, .55); box-shadow: 0 1px 0 rgba(255, 255, 255, .08); }
+.cf-flip-s { font-size: clamp(11px, 11cqmin, 44px); align-self: flex-end; margin-bottom: 4cqmin; }
+/* nixie */
+.cf-nixie { display: flex; align-items: center; gap: 2.5cqmin; }
+.cf-nixie-tube { position: relative; padding: 4cqmin 3cqmin 5cqmin; border-radius: 40% 40% 12% 12% / 22% 22% 8% 8%; background: radial-gradient(ellipse at 50% 30%, rgba(255, 140, 60, .12), rgba(20, 12, 8, .55) 70%); border: 1px solid rgba(255, 220, 190, .18); box-shadow: inset 0 0 10px rgba(255, 120, 40, .15), inset 3px 0 6px rgba(255, 255, 255, .06); }
+.cf-nixie-d { font-family: 'Courier New', ui-monospace, monospace; font-size: clamp(14px, min(26cqmin, 9.5cqw), 120px); line-height: 1; color: #ffb27a; text-shadow: 0 0 4px #ff8a3d, 0 0 12px #ff5e1a, 0 0 22px rgba(255, 70, 0, .6); }
+[data-clock-theme="neon"] .cf-nixie-d, [data-clock-theme="ocean"] .cf-nixie-d { color: #c8fbff; text-shadow: 0 0 4px #7ff7ff, 0 0 12px #00e0ff, 0 0 22px #0091ff; }
+.cf-nixie-sep { color: #ff8a3d; text-shadow: 0 0 8px #ff5e1a; font-size: clamp(14px, 14cqmin, 60px); }
+/* binary */
+.cf-bin { display: flex; gap: 3cqmin; align-items: flex-end; }
+.cf-bin-col { display: flex; flex-direction: column; gap: 3cqmin; }
+.cf-bin-gap { width: 3cqmin; }
+.cf-bit { width: clamp(8px, 11cqmin, 44px); aspect-ratio: 1; border-radius: 50%; background: var(--cf-track); }
+.cf-bit.on { background: var(--cf-accent); box-shadow: 0 0 10px var(--cf-accent); }
+.cf-bit-none { visibility: hidden; }
+[data-gradient] .cf-bit.on { background: var(--cf-fill); box-shadow: 0 1px 3px rgba(0, 0, 0, .5); }
+/* rings */
+.cf-arc { fill: none; stroke-linecap: round; stroke: var(--cf-accent); }
+.cf-arc-m { opacity: .8; }
+.cf-arc-s { opacity: .55; }
+/* dots */
+.cf-dot { fill: var(--cf-track); }
+.cf-dot.on { fill: var(--cf-accent); }
+.cf-dot.hour { fill: var(--cf-fg); r: 3.4; }
+/* stacked */
+.cf-stack { display: flex; flex-direction: column; align-items: center; line-height: .9; }
+.cf-stack-v { font-size: clamp(18px, min(38cqh, 40cqw), 180px); letter-spacing: -0.04em; }
+.cf-stack-rule { display: block; width: 60%; height: 2px; margin: 2cqmin 0; background: var(--cf-accent); opacity: .7; border-radius: 2px; }
+/* seven-segment */
+/* as tall as fits: a digit is 18 × 33, plus the gaps and colons between them */
+.cf-segrow { display: flex; align-items: center; gap: 3cqmin; height: min(60cqh, calc((100cqw - 26px) / (var(--n, 4) * .62 + .5))); }
+.cf-seg-digit { height: 100%; width: auto; }
+.cf-seg { fill: var(--cf-track); }
+.cf-seg.on { fill: var(--cf-accent); filter: drop-shadow(0 0 2px var(--cf-accent)); }
+.cf-seg-colon { display: flex; flex-direction: column; gap: 8cqmin; }
+.cf-seg-colon i { width: clamp(4px, 4cqmin, 14px); aspect-ratio: 1; border-radius: 50%; background: var(--cf-accent); }
+/* bars */
+.cf-bars { width: 100%; display: flex; flex-direction: column; gap: 7cqmin; }
+.cf-bar { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4cqmin; }
+.cf-bar-l { font-size: clamp(10px, 8cqmin, 22px); color: var(--cf-dim); font-weight: 700; width: 1.4em; }
+.cf-bar-track { height: clamp(6px, 7cqmin, 22px); border-radius: 99px; background: var(--cf-track); overflow: hidden; }
+.cf-bar-fill { display: block; height: 100%; border-radius: inherit; background: var(--cf-fill, var(--cf-accent)); }
+.cf-bar-v { font-size: clamp(12px, 12cqmin, 40px); min-width: 1.6em; text-align: end; }
+/* orbit */
+.cf-lane { stroke-dasharray: 2 2.5; opacity: .9; }
+.w-clockface[data-shape="orbit"] .cf-track { stroke: var(--cf-dim); opacity: .35; }
+.cf-sun { fill: var(--cf-accent); filter: drop-shadow(0 0 4px var(--cf-accent)); }
+.cf-body { fill: var(--cf-fg); }
+.cf-body-s { fill: var(--cf-accent); }
+.cf-orbit-t { font-size: clamp(11px, 10cqmin, 36px); }
+/* day line */
+.w-clockface[data-shape="dayline"] .cf-inner { align-items: stretch; }
+.cf-day-t { font-size: clamp(18px, min(30cqmin, 18cqw), 130px); line-height: 1; }
+.cf-day-d { font-size: clamp(10px, 8cqmin, 24px); color: var(--cf-dim); }
+.cf-day-track { position: relative; height: clamp(6px, 6cqmin, 18px); border-radius: 99px; background: var(--cf-track); margin-top: 3cqmin; }
+.cf-day-fill { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--cf-fill, var(--cf-accent)); }
+.cf-day-knob { position: absolute; top: 50%; width: clamp(10px, 10cqmin, 28px); aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); background: var(--cf-fg); box-shadow: 0 0 10px var(--cf-accent); }
+.cf-day-ticks { display: flex; justify-content: space-between; font-size: clamp(8px, 5.5cqmin, 15px); color: var(--cf-dim); }

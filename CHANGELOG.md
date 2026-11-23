@@ -7,6 +7,12 @@
   with the next one highlighted and counted down, and the Hijri date. The times are worked out on the phone (no new
   connection, the location stays on the phone) with a choice of Kemenag, JAKIM, Muslim World League, ISNA, Egyptian,
   Umm al-Qura, Karachi or Diyanet angles and the Standard or Hanafi Asr. Translated into all 23 languages.
+- New **Clock designs** widget (134 widgets): the time in ten shapes, flip cards, nixie tubes, binary, rings, a dot ring,
+  stacked digits, seven-segment, bars, orbit and a day line, each in any clock theme. Redrawn once a second at most,
+  only the parts that changed, with no CSS animation.
+- Seven more chrome looks for every clock (19 themes): Black chrome, Blue titanium chrome, Mirror chrome, Gunmetal,
+  Copper chrome, Holographic chrome (an iridescent rim) and Liquid chrome, on the digital clock, the analog clock (metal
+  face and rim) and Clock designs.
 - Clock and Analog clock: a new **Theme** option with 12 looks: Default, **Chrome** (polished steel digits on brushed
   steel in a chrome bezel; on the analog clock a metal face and rim), Gold, Rose gold, Neon, Sunset, Ocean, LCD, Amber
   CRT, Frosted glass, Bold and Pastel. CSS only, no animation, so the panel draws no extra frames. Existing clocks keep

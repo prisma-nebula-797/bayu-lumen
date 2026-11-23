@@ -57,3 +57,40 @@ test('analog metal themes get their own gradients per widget', async ({ page }) 
   expect(info[2].gradients).toEqual([]); // neon is flat colour
   expect(info[3].gradients).toEqual([]);
 });
+
+// Clock designs: ten shapes, each in any theme. Every shape draws the current time without errors.
+const SHAPES = { flip: '.cf-flip-card', nixie: '.cf-nixie-tube', binary: '.cf-bit', rings: '.cf-arc', dots: '.cf-dot', stacked: '.cf-stack-v', segment: '.cf-seg-digit', bars: '.cf-bar', orbit: '.cf-body', dayline: '.cf-day-track' };
+
+test('every Clock designs shape draws the time, in the chrome variants too', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.clock.install({ time: new Date(2026, 0, 1, 13, 37, 42) });
+  const names = Object.keys(SHAPES);
+  const variants = ['chrome', 'chrome-black', 'chrome-blue', 'chrome-mirror', 'chrome-gunmetal', 'chrome-copper', 'chrome-holo', 'chrome-liquid', 'neon', 'lcd'];
+  await open(page, names.map((shape, i) => ({ id: 'f' + i, type: 'clockface', x: (i % 4) * 3, y: Math.floor(i / 4) * 2, w: 3, h: 2, options: { shape, theme: variants[i] } })));
+  const tiles = page.locator('[data-id="clocks"] .w-clockface');
+  await expect(tiles).toHaveCount(names.length);
+  for (const [i, shape] of names.entries()) {
+    const tile = tiles.nth(i);
+    await expect(tile).toHaveAttribute('data-shape', shape);
+    await expect(tile).toHaveAttribute('data-clock-theme', variants[i]);
+    await expect(tile.locator(SHAPES[shape]).first()).toBeAttached();
+  }
+  // the time itself: 13:37:42 on a 24-hour panel
+  await expect(tiles.nth(0).locator('.cf-flip-v').first()).toHaveText('13');
+  await expect(tiles.nth(1).locator('.cf-nixie-d')).toHaveText(['1', '3', '3', '7', '4', '2']);
+  // binary: 3 (0011) in the hour units column lights the two lowest dots
+  const unitsLit = await tiles.nth(2).locator('.cf-bin-col').nth(1).locator('.cf-bit').evaluateAll((d) => d.map((x) => x.classList.contains('on')));
+  expect(unitsLit).toEqual([false, false, true, true]);
+  // the metal variants paint their text with a gradient
+  expect(await tiles.nth(0).getAttribute('data-gradient')).toBe('');
+  expect(await tiles.nth(8).getAttribute('data-gradient')).toBeNull(); // neon glows instead
+  expect(errors).toEqual([]);
+});
+
+test('an unknown shape falls back to flip cards', async ({ page }) => {
+  await open(page, [{ id: 'f', type: 'clockface', x: 0, y: 0, w: 4, h: 3, options: { shape: 'nope', theme: 'nope' } }]);
+  const tile = page.locator('[data-id="clocks"] .w-clockface');
+  await expect(tile).toHaveAttribute('data-shape', 'flip');
+  await expect(tile).toHaveAttribute('data-clock-theme', 'default');
+});

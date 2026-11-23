@@ -32,8 +32,9 @@
 > used under the [MIT license](LICENSE). It adds a **Prayer times** widget (the five daily prayers plus imsak and
 > sunrise, worked out on the phone with Kemenag, JAKIM, MWL, ISNA, Egyptian, Umm al-Qura, Karachi or Diyanet angles,
 > with the next prayer counted down and the Hijri date), a **Prayer** page template and a **Keyboard** widget (type on
-> the PC from the phone, with Esc, Tab, arrows and common shortcuts; off until allowed in the widget) and 12 clock
-> themes (Chrome, Gold, Rose gold, Neon, LCD, Amber CRT and more) for the digital and analog clocks, translated into
+> the PC from the phone, with Esc, Tab, arrows and common shortcuts; off until allowed in the widget) a **Clock designs**
+> widget (ten shapes: flip cards, nixie tubes, binary, rings, seven-segment, orbit and more) and 19 clock themes
+> (eight chrome finishes, Gold, Rose gold, Neon, LCD, Amber CRT and more) for every clock, translated into
 > all 23 languages. Everything else, including the install instructions below, is the upstream project's; its release
 > builds do not include these additions.
 
@@ -59,7 +60,7 @@ Windows, Linux and macOS. No root, PhoneBox account or cloud service required.</
 <sub>Example layouts with demo data.</sub></p>
 
 PhoneBox pairs a full-screen **Android app** with a small **desktop agent**. Build your panel in a browser-based
-visual editor: **133 widgets**, **31 templates**, multiple pages and a live preview. Connect several phones with
+visual editor: **134 widgets**, **31 templates**, multiple pages and a live preview. Connect several phones with
 their own layouts, or switch one phone between paired computers.
 
 ## What you can do

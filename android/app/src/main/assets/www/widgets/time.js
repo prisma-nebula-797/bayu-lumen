@@ -9,6 +9,13 @@ const ANALOG_METALS = {
   chrome: { face: ['#f5f7fa', '#c9ced6', '#7d848e', '#2b2f35'], rim: ['#ffffff', '#8a919b', '#eef1f5', '#5a6069', '#d7dbe1'] },
   gold: { face: ['#fff6d5', '#e9c46a', '#a87b1c', '#3a2a08'], rim: ['#fff1b8', '#b8860b', '#ffe08a', '#7a5a10', '#f3d27a'] },
   rosegold: { face: ['#ffeae4', '#f0b8a8', '#a8606a', '#3a1d22'], rim: ['#ffe4dc', '#b76e79', '#ffd0c4', '#7d3f49', '#f2b9ab'] },
+  'chrome-black': { face: ['#5d636b', '#2a2d32', '#121316', '#050506'], rim: ['#c9ced6', '#1a1c20', '#9aa0a8', '#0b0c0e', '#6d737b'] },
+  'chrome-blue': { face: ['#e8f1ff', '#9ab6d9', '#3e5f8a', '#0f1d30'], rim: ['#f1f7ff', '#5f82ad', '#dbe8f8', '#2d4a70', '#a9c3e3'] },
+  'chrome-mirror': { face: ['#ffffff', '#e4eef7', '#9fb0c0', '#3a4550'], rim: ['#ffffff', '#6c7a89', '#ffffff', '#2a3138', '#e6edf3'] },
+  'chrome-gunmetal': { face: ['#9aa0a8', '#5f656e', '#33373d', '#16181b'], rim: ['#c3c8cf', '#2b2f35', '#8d939b', '#1d2024', '#6a7079'] },
+  'chrome-copper': { face: ['#ffe6d1', '#e3a26e', '#94512a', '#2e140a'], rim: ['#ffe1c7', '#8a4a22', '#ffd2ad', '#5e2f14', '#e09a63'] },
+  'chrome-holo': { face: ['#ffe3f4', '#cfe6ff', '#d9ffe6', '#2a2440'], rim: ['#ff9ad5', '#9ad0ff', '#b5ffcb', '#fff59a', '#d7a6ff'] },
+  'chrome-liquid': { face: ['#fdfdfd', '#c3c8cf', '#eef1f4', '#5e646c'], rim: ['#ffffff', '#5e646c', '#f4f6f8', '#8b9199', '#e6e9ed'] },
 };
 let analogSeq = 0;
 
