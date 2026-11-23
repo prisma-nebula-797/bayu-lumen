@@ -132,7 +132,13 @@ The settings are at <http://127.0.0.1:8765>, on Windows also from the tray icon.
 
 - **Manual download**: the [release](https://github.com/ersinkoc/phonebox/releases/latest) has the signed Android
   APK and agents for Windows x64, Linux x64/ARM64 and macOS Apple silicon/Intel, with SHA-256 checksums and build
-  provenance. Unzip the agent and run it. It can update itself only from the install folder in the table above.
+  provenance. Unzip the agent and run it. It can update itself only from the install folder in the table above. On a Mac,
+  the `.dmg` holds `PhoneBox.app`: drag it to Applications (or `~/Applications`) and open it. It has no window; the settings
+  are at http://127.0.0.1:8765. If you installed with `setup.sh`, that agent is already running and holds the port, so first quit it
+  and run `launchctl unload ~/Library/LaunchAgents/net.oxog.phonebox.agent.plist` (otherwise opening the app only reopens its settings,
+  and the login job starts the old agent again). It is not notarized, so macOS blocks it the first time: open it once, then allow it in *System Settings › Privacy &
+  Security › Open Anyway* (right-click › Open works only up to macOS 14). The Accessibility permission is recorded per
+  app, so allow PhoneBox there once more when you move between this app and an agent started from the zip or `setup.sh`.
 - **Scoop** (Windows), which can then put the app on the phone from *Settings › General › Install the phone app*:
 
   ```powershell
@@ -273,6 +279,9 @@ phone; over Wi-Fi the panel shows "plug in USB to update") and replaces its own 
 accepts an update signed with the same key as the installed app; the agent never uninstalls to force one.
 When GitHub turns away anonymous requests (it answers 503 / 504 now and then), the agent asks again with the
 [GitHub CLI](https://cli.github.com)'s token if `gh` is signed in; the token only goes to `api.github.com`.
+A Mac agent running from `PhoneBox.app` (the `.dmg` of a release) updates the same way, by replacing the whole app: it
+downloads the release's `PhoneBox-<version>-<rid>.dmg`, checks it against the release checksums and the new app's signature, swaps it
+in and restarts. The app must sit in a folder you can write to, such as `~/Applications`.
 See the [changelog](../CHANGELOG.md).
 
 ## FAQ & troubleshooting

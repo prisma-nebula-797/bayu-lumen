@@ -13,8 +13,20 @@ provenance attestations and SHA-256 checksums, and publishes the release notes f
 The reusable artifact contract also checks the real upload/download boundary with transfer fixtures: exact release
 filenames and hashes, exclusion of debug intermediates, and the actual demo's Pages tar format. It never publishes
 a release or deploys Pages. Changes to Pages deployment still need a successful Pages workflow on `main`.
+Each macOS leg also builds `PhoneBox-<version>-<rid>.dmg`: the same signed agent in `PhoneBox.app` (`tools/make-macos-dmg.sh`), signed
+with the same certificate and identifier, so its designated requirement equals the zip's. `tools/check-macos-dmg.sh` mounts the image,
+verifies the signature, compares the two requirements and smoke-runs the agent from the app; `build.yml` runs the same steps with its
+throwaway certificate on every change. The DMG is not notarized (that needs an Apple Developer ID), so a copy downloaded to another Mac
+is blocked the first time and needs System Settings > Privacy & Security > Open Anyway (right-click > Open only works up to macOS 14).
+
 Published releases update the Scoop bucket and generate winget manifests in a follow-up commit.
 Winget manifests are prepared for submission; generation alone does not mean the package is accepted into winget-pkgs.
+
+An agent running from `PhoneBox.app` updates itself from the release's DMG (`UpdateService.UpdateBundleAsync`): it downloads
+`PhoneBox-<version>-<rid>.dmg`, checks it against `SHA256SUMS-<version>.txt`, copies the new app out of the image, verifies its signature,
+swaps it for the running app (two renames in the same folder) and restarts. So a release must carry a DMG for every macOS `rid`, named
+`PhoneBox-<version>-<rid>.dmg`, or apps on that `rid` see no update; a folder the user cannot write to (an admin-only /Applications)
+makes the update fail with a message instead.
 
 The agent zips are self-contained single files: each one carries its own .NET runtime, so .NET security fixes
 reach users only through a PhoneBox release. When .NET ships a fix for Kestrel, TLS or the runtime, publish a patch

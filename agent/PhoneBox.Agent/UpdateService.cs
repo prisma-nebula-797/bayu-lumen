@@ -16,7 +16,8 @@ public sealed record UpdateStatus(string AgentVersion, string? AppVersion, strin
 ///  - phone: installed with "adb install -r" while the phone is on USB (no prompt on the phone). Android refuses
 ///    an APK signed with a different key, and the agent never uninstalls to force it.
 ///  - agent: files are swapped in place (running files are renamed to *.old, which Windows allows) and the agent
-///    restarts itself. Only when running from the installed location, never from a build folder.
+///    restarts itself. Only when running from the installed location, never from a build folder. An agent running
+///    from PhoneBox.app (the macOS disk image, PhoneBox-&lt;v&gt;-&lt;rid&gt;.dmg) replaces the whole app from the new image.
 /// </summary>
 public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicationLifetime life, ILogger<UpdateService> log) : BackgroundService
 {
@@ -39,6 +40,20 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
     public static volatile string? AppVersion;
 
     public static bool RunningInstalled => SameFolder(AppContext.BaseDirectory, InstallDir);
+
+    /// <summary>The PhoneBox.app this agent runs from (macOS disk image installs), else null.</summary>
+    internal static string? BundleDir(string baseDirectory)
+    {
+        var exeDir = Resolved(baseDirectory);
+        if (!exeDir.EndsWith("/Contents/MacOS", StringComparison.Ordinal)) return null;
+        var app = Path.GetDirectoryName(Path.GetDirectoryName(exeDir));
+        return app is not null && app.EndsWith(".app", StringComparison.OrdinalIgnoreCase) ? app : null;
+    }
+
+    public static bool RunningInBundle => OperatingSystem.IsMacOS() && BundleDir(AppContext.BaseDirectory) is not null;
+
+    /// <summary>The agent can replace itself: from the install folder (setup, zip) or as PhoneBox.app (disk image).</summary>
+    public static bool CanUpdateAgent => RunningInstalled || RunningInBundle;
 
     /// <summary>
     /// On macOS/Linux the .NET host reports the agent's folder with symbolic links resolved, while the install folder
@@ -71,7 +86,7 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
         var latest = _latest?.Version;
         var retry = PhoneRetryPending;
         return new UpdateStatus(AppPaths.Version, AppVersion, latest, _latest?.Url,
-            latest is not null && Newer(latest, AppPaths.Version) && _latest!.AgentZip is not null,
+            latest is not null && Newer(latest, AppPaths.Version) && (RunningInBundle ? _latest!.AgentDmg : _latest!.AgentZip) is not null,
             latest is not null && _latest!.Apk is not null && (AppVersion is not null && Newer(latest, AppVersion) || retry),
             _lastCheck, _state, _error);
     }
@@ -81,6 +96,7 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
         _http.DefaultRequestHeaders.UserAgent.ParseAdd("PhoneBox/" + AppPaths.Version);
         _http.DefaultRequestHeaders.Accept.ParseAdd("application/vnd.github+json");
         CleanupOldFiles();
+        if (RunningInBundle) CleanupBundleLeftovers(BundleDir(AppContext.BaseDirectory)!);
         if (RunningInstalled) RemoveFrameworkDependentLeftovers(InstallDir, SingleFile);
         await Task.Delay(TimeSpan.FromSeconds(20), ct);
         var nextCheck = DateTime.MinValue;
@@ -92,7 +108,7 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
                 // a failed check (GitHub answering 504 now and then) is retried soon instead of in 6 hours
                 nextCheck = DateTime.UtcNow + (_error?.StartsWith("Update check failed") == true ? TimeSpan.FromMinutes(15) : TimeSpan.FromHours(6));
             }
-            if (cfg.Get().Updates.Auto) await ApplyAsync(ct);
+            if (cfg.Get().Updates.Auto) await ApplyAsync(ct, automatic: true);
             await Task.Delay(TimeSpan.FromMinutes(1), ct);
         }
     }
@@ -130,7 +146,8 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
     }
 
     /// <summary>Installs whatever is newer: the phone app first (needs USB), then the agent (restarts it).</summary>
-    public async Task ApplyAsync(CancellationToken ct = default)
+    /// <param name="automatic">Called by the once-a-minute loop: an app update that already failed for this release is not tried again by itself.</param>
+    public async Task ApplyAsync(CancellationToken ct = default, bool automatic = false)
     {
         var s = Status();
         if (!s.AppUpdate && !s.AgentUpdate) return;
@@ -154,10 +171,11 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
                     log.LogWarning("phone update failed: {Msg}", ex.Message);
                 }
             }
-            if (s.AgentUpdate && RunningInstalled)
+            if (s.AgentUpdate && CanUpdateAgent && !(automatic && RunningInBundle && _bundleFailedVersion is { } failed1 && failed1 == _latest?.Version))
             {
                 attempted = true;
-                await UpdateAgentAsync(ct);
+                if (RunningInBundle) await UpdateBundleAsync(ct);
+                else await UpdateAgentAsync(ct);
             }
             // A phone still waiting for its retry (unplugged during this round, so nothing was installed on it) keeps the
             // reason its update failed: the update stays pending in Status and needs that explanation next to it.
@@ -263,6 +281,164 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
         // a phone that failed keeps the update pending (Status), whatever version the other phones report
         if (failed.Count > 0) throw new InvalidOperationException("phone update failed on " + string.Join("; ", failed.Select(f => $"{f.Serial}: {f.Why}")));
         if (targets.Length > 0) AppVersion = _latest.Version;
+    }
+
+    // Next to PhoneBox.app, so the swap is a rename on one volume.
+    private const string BundleStaging = ".PhoneBox-update.app", BundleOld = ".PhoneBox-old.app";
+
+    /// <summary>
+    /// PhoneBox.app (macOS disk image): download the release's .dmg (checked against SHA256SUMS like every asset), copy
+    /// the new PhoneBox.app out of it, check its signature, swap it for the running one and restart. The app is replaced
+    /// as a whole, because a bundle's signature seals its files: swapping only the executable would break it.
+    /// </summary>
+    private async Task UpdateBundleAsync(CancellationToken ct)
+    {
+        try { await UpdateBundleCoreAsync(ct); }
+        // A failure that trying again will not change (a folder that is not writable, a signature that does not match) is
+        // remembered for this release: the loop that runs every minute must not download and check the image again each time.
+        catch (Exception ex) when (ex is not OperationCanceledException && !Transient(ex, ct))
+        {
+            _bundleFailedVersion = _latest?.Version;
+            throw;
+        }
+    }
+
+    // the release whose app update failed for a reason that a retry does not fix; a newer release, or Install update by hand, tries again
+    private volatile string? _bundleFailedVersion;
+
+    private async Task UpdateBundleCoreAsync(CancellationToken ct)
+    {
+        _state = "updating agent";
+        var app = BundleDir(AppContext.BaseDirectory)!;
+        var parent = Path.GetDirectoryName(app)!;
+        var staging = Path.Combine(parent, BundleStaging);
+        // before the download: an app in a folder the user cannot write to fails at once, not after 50 MB
+        if (Directory.Exists(staging)) Directory.Delete(staging, true);
+        try { Directory.CreateDirectory(staging); Directory.Delete(staging); }
+        catch (Exception ex) when (ex is UnauthorizedAccessException or IOException)
+        {
+            throw new InvalidOperationException($"{parent} is not writable, so PhoneBox.app cannot update itself there; move it to ~/Applications or install the new version by hand");
+        }
+        var dmg = await VerifiedDownloadAsync(_latest!.AgentDmg!, $"PhoneBox-{_latest.Version}-{AppPaths.Rid}.dmg", ct, requireSums: true);
+        try
+        {
+            await ExtractAppAsync(dmg, staging, ct);
+            var verify = new ProcessStartInfo("/usr/bin/codesign");
+            foreach (var arg in new[] { "--verify", "--deep", "--strict", staging }) verify.ArgumentList.Add(arg);
+            var signed = await ToolProcess.RunAsync(verify, TimeSpan.FromMinutes(1), ct);
+            if (signed.ExitCode != 0) throw new InvalidOperationException("the new PhoneBox.app's signature does not verify; the update was not installed: " + (signed.Output + signed.Error).Trim());
+            // The new app must be signed by the identity of the one that runs. A valid signature alone would accept any
+            // certificate (SHA256SUMS comes from the same release as the image). A copy signed ad hoc (a build from source) has
+            // only a hash as its requirement, which cannot be pinned.
+            var running = await DesignatedRequirementAsync(app, ct);
+            if (!CodeHashOnly(running))
+            {
+                var pin = new ProcessStartInfo("/usr/bin/codesign");
+                foreach (var arg in new[] { "--verify", "-R=" + running, staging }) pin.ArgumentList.Add(arg);
+                var pinned = await ToolProcess.RunAsync(pin, TimeSpan.FromMinutes(1), ct);
+                if (pinned.ExitCode != 0) throw new InvalidOperationException("the new PhoneBox.app is not signed by the same identity as the running one; the update was not installed: " + (pinned.Output + pinned.Error).Trim());
+            }
+            else log.LogWarning("the running PhoneBox.app is signed ad hoc (its requirement is only a code hash), so the update's signing identity cannot be checked against it");
+            // The path is read now: once the running app is renamed, the OS no longer says where it lives.
+            AppRestart.Executable = Environment.ProcessPath;
+            SwapBundle(app, staging);
+        }
+        catch
+        {
+            try { if (Directory.Exists(staging)) Directory.Delete(staging, true); } catch { }
+            throw;
+        }
+        log.LogInformation("agent updated to {Version}, restarting", _latest.Version);
+        _state = "restarting";
+        AppRestart.Requested = true;
+        life.StopApplication();
+    }
+
+    /// <summary>The designated requirement codesign reports for a signed app or binary; throws when it cannot be read.</summary>
+    internal static async Task<string> DesignatedRequirementAsync(string path, CancellationToken ct)
+    {
+        var start = new ProcessStartInfo("/usr/bin/codesign");
+        foreach (var arg in new[] { "-d", "-r-", path }) start.ArgumentList.Add(arg);
+        var result = await ToolProcess.RunAsync(start, TimeSpan.FromMinutes(1), ct);
+        // A lookup that failed is not "ad hoc": it must not turn the identity check off
+        if (result.ExitCode != 0 || ParseDesignatedRequirement(result.Output + "\n" + result.Error) is not { } requirement)
+            throw new InvalidOperationException("could not read the running PhoneBox.app's signing requirement, so the update's signer cannot be checked and it was not installed: " + (result.Output + result.Error).Trim());
+        return requirement;
+    }
+
+    internal static string? ParseDesignatedRequirement(string codesignOutput)
+    {
+        const string prefix = "designated => ";
+        foreach (var line in codesignOutput.Split('\n'))
+            if (line.StartsWith(prefix, StringComparison.Ordinal)) return line[prefix.Length..].Trim();
+        return null;
+    }
+
+    /// <summary>
+    /// True only for an ad hoc signature, whose whole requirement is the hash of that one build (cdhash H"..."): there is no
+    /// identity to pin. Any other requirement is enforced on the update, and an empty one is refused.
+    /// </summary>
+    internal static bool CodeHashOnly(string? requirement)
+    {
+        if (string.IsNullOrWhiteSpace(requirement)) throw new InvalidOperationException("the running PhoneBox.app has an empty signing requirement, so the update's signer cannot be checked and it was not installed");
+        // the whole expression, nothing before or after: "cdhash H"..." or anchor apple generic" is not a plain hash
+        return System.Text.RegularExpressions.Regex.IsMatch(requirement.Trim(), "^cdhash H\"[0-9a-fA-F]+\"$");
+    }
+
+    /// <summary>Copies PhoneBox.app out of a disk image into <paramref name="destination"/> (the image is mounted read-only and detached again).</summary>
+    internal static async Task ExtractAppAsync(string dmg, string destination, CancellationToken ct)
+    {
+        var mount = Path.Combine(Path.GetTempPath(), "phonebox-dmg-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(mount);
+        try
+        {
+            var attach = new ProcessStartInfo("/usr/bin/hdiutil");
+            foreach (var arg in new[] { "attach", dmg, "-nobrowse", "-readonly", "-noverify", "-mountpoint", mount }) attach.ArgumentList.Add(arg);
+            var attached = await ToolProcess.RunAsync(attach, TimeSpan.FromMinutes(2), ct);
+            if (attached.ExitCode != 0) throw new InvalidOperationException("could not open the disk image: " + (attached.Output + attached.Error).Trim());
+            try
+            {
+                var source = Path.Combine(mount, "PhoneBox.app");
+                if (!Directory.Exists(source)) throw new InvalidOperationException("the disk image has no PhoneBox.app");
+                var copy = new ProcessStartInfo("/usr/bin/ditto"); // keeps the signature, permissions and extended attributes
+                copy.ArgumentList.Add(source);
+                copy.ArgumentList.Add(destination);
+                var copied = await ToolProcess.RunAsync(copy, TimeSpan.FromMinutes(2), ct);
+                if (copied.ExitCode != 0) throw new InvalidOperationException("could not copy PhoneBox.app out of the disk image: " + (copied.Output + copied.Error).Trim());
+            }
+            finally
+            {
+                var detach = new ProcessStartInfo("/usr/bin/hdiutil");
+                foreach (var arg in new[] { "detach", mount, "-force" }) detach.ArgumentList.Add(arg);
+                try { await ToolProcess.RunAsync(detach, TimeSpan.FromMinutes(1), CancellationToken.None); } catch { }
+            }
+        }
+        finally
+        {
+            try { Directory.Delete(mount); } catch { } // an empty folder once detached
+        }
+    }
+
+    /// <summary>Puts <paramref name="staging"/> where <paramref name="app"/> is, in two renames; the old app is kept aside until the new one is in place.</summary>
+    internal static void SwapBundle(string app, string staging)
+    {
+        var old = Path.Combine(Path.GetDirectoryName(app)!, BundleOld);
+        if (Directory.Exists(old)) Directory.Delete(old, true);
+        Directory.Move(app, old); // a running app can be renamed: its open files stay valid
+        try { Directory.Move(staging, app); }
+        catch
+        {
+            Directory.Move(old, app);
+            throw;
+        }
+        try { Directory.Delete(old, true); } catch { } // the next start removes what is left
+    }
+
+    private static void CleanupBundleLeftovers(string app)
+    {
+        var parent = Path.GetDirectoryName(app)!;
+        foreach (var name in new[] { BundleStaging, BundleOld })
+            try { var path = Path.Combine(parent, name); if (Directory.Exists(path)) Directory.Delete(path, true); } catch { }
     }
 
     private async Task UpdateAgentAsync(CancellationToken ct)
@@ -434,25 +610,26 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
         return result.Output + result.Error;
     }
 
-    internal sealed record Release(string Version, string? Url, string? Apk, string? AgentZip, string? Sums);
+    internal sealed record Release(string Version, string? Url, string? Apk, string? AgentZip, string? Sums, string? AgentDmg = null);
 
     /// <summary>
-    /// The phone app, this machine's agent zip and the checksum file of a GitHub release
-    /// (PhoneBox-&lt;v&gt;.apk, PhoneBoxAgent-&lt;v&gt;-&lt;rid&gt;.zip, SHA256SUMS-&lt;v&gt;.txt, as release.yml names them).
+    /// The phone app, this machine's agent zip and disk image and the checksum file of a GitHub release
+    /// (PhoneBox-&lt;v&gt;.apk, PhoneBoxAgent-&lt;v&gt;-&lt;rid&gt;.zip, PhoneBox-&lt;v&gt;-&lt;rid&gt;.dmg, SHA256SUMS-&lt;v&gt;.txt, as release.yml names them).
     /// </summary>
     internal static Release SelectAssets(JsonElement release, string rid)
     {
-        string? apk = null, zip = null, sums = null;
+        string? apk = null, zip = null, sums = null, dmg = null;
         foreach (var a in release.GetProperty("assets").EnumerateArray())
         {
             var name = a.GetProperty("name").GetString() ?? "";
             var url = a.GetProperty("browser_download_url").GetString();
             if (name.StartsWith("PhoneBox-", StringComparison.OrdinalIgnoreCase) && name.EndsWith(".apk", StringComparison.OrdinalIgnoreCase)) apk = url;
             if (name.StartsWith("PhoneBoxAgent-", StringComparison.OrdinalIgnoreCase) && name.EndsWith($"-{rid}.zip", StringComparison.OrdinalIgnoreCase)) zip = url;
+            if (name.StartsWith("PhoneBox-", StringComparison.OrdinalIgnoreCase) && name.EndsWith($"-{rid}.dmg", StringComparison.OrdinalIgnoreCase)) dmg = url;
             if (name.StartsWith("SHA256SUMS-", StringComparison.OrdinalIgnoreCase) && name.EndsWith(".txt", StringComparison.OrdinalIgnoreCase)) sums = url;
         }
         var tag = release.GetProperty("tag_name").GetString() ?? "";
-        return new Release(tag.TrimStart('v', 'V'), release.GetProperty("html_url").GetString(), apk, zip, sums);
+        return new Release(tag.TrimStart('v', 'V'), release.GetProperty("html_url").GetString(), apk, zip, sums, dmg);
     }
 
     /// <summary>
@@ -533,9 +710,12 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
     /// download, or an old partial file kept in the updates folder) is deleted and fetched once more, then refused. A
     /// release without a checksum file (none so far) is installed as before, with a warning.
     /// </summary>
-    private async Task<string> VerifiedDownloadAsync(string url, string localName, CancellationToken ct)
+    /// <param name="requireSums">Refuse an asset of a release without a checksum file instead of installing it unchecked (an app update replaces a signed app, so it never goes unchecked).</param>
+    private async Task<string> VerifiedDownloadAsync(string url, string localName, CancellationToken ct, bool requireSums = false)
     {
         var release = _latest!;
+        if (release.Sums is null && requireSums)
+            throw new InvalidOperationException($"release {release.Version} has no SHA256SUMS file, so {localName} cannot be checked and the update was not installed");
         if (release.Sums is null)
         {
             log.LogWarning("release {Version} has no SHA256SUMS file; {Name} is installed without a checksum check", release.Version, localName);
@@ -566,6 +746,12 @@ public sealed class UpdateService(ConfigStore cfg, AdbReverse adb, IHostApplicat
 public static class AppRestart
 {
     public static volatile bool Requested;
+
+    /// <summary>
+    /// Where to start the new instance, when it has to be read before the running one moves (an app update renames its
+    /// bundle); null means <see cref="Environment.ProcessPath"/> as usual.
+    /// </summary>
+    public static volatile string? Executable;
 
     /// <summary>Exit code for a restart under a service manager: not 0, so launchd and systemd start the agent again.</summary>
     public const int ServiceRestartCode = 75;

@@ -86,6 +86,10 @@ dotnet run --project agent/PhoneBox.Agent -f net10.0-windows10.0.19041.0
 ```
 
 
+On macOS or Linux, `./scripts/build.sh` turns a checkout into ready-to-run files in `dist/`: a `.dmg` (PhoneBox.app) on a Mac,
+a `.tar.gz` holding one executable on Linux. Pass a target (`osx-arm64`, `osx-x64`, `linux-x64`, `linux-arm64`) or `all`.
+The Windows `.exe` is built with `build.ps1` on Windows.
+
 On Linux or macOS, run the agent with `dotnet run --project agent/PhoneBox.Agent -f net10.0` and build the APK
 with `cd android && ./gradlew assembleDebug`. On Windows, the explicit `-f` selects one of the project's two
 target frameworks. Set `ANDROID_HOME` or `android/local.properties` (`sdk.dir`) to the Android SDK location.

@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.9.28.1 — 2026-11-24
+## 0.9.29.1 — 2026-11-24
 
-Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.28.
+Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.
 
 **Widgets**
 - New **Prayer times** widget (132 widgets): the five daily prayers plus imsak and sunrise for the weather location,
@@ -25,6 +25,35 @@ Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.28.
   checks that switch separately from the Trackpad's mouse control. It uses the existing `/api/trackpad` route (no new
   Wi-Fi path) and a new `keyboard` bridge call in the Android app. One message types at most 256 characters, control
   characters are dropped and a key message must be a single combo of known key names.
+
+## Unreleased
+
+**Widgets**
+- AI sessions: the open conversation of a Claude Code session follows new messages while it is read to the end; one
+  scrolled back to an earlier message stays there (#460, [MisteryLiuCode](https://github.com/MisteryLiuCode)).
+
+**Agent**
+- AI quotas: Antigravity shows when `agy` is in `%USERPROFILE%\.gemini\bin` (`~/.gemini/bin` on macOS and Linux)
+  and that folder is not on PATH; the provider silently went missing (#462, [Lyntter](https://github.com/Lyntter)).
+
+**Panel**
+- Settings › Display › Page navigation › Hidden takes the page dots off the screen. Swipe or press the volume keys
+  to turn pages, and hold an empty spot for the overview of all pages (#475, [bwh](https://github.com/bwh)).
+
+**Setup**
+- macOS: each release also has a disk image, `PhoneBox-<version>-<rid>.dmg`, with PhoneBox.app (no window; the settings
+  are at http://127.0.0.1:8765). It is signed like the zip's agent but not notarized, so macOS asks once in System
+  Settings › Privacy & Security › Open Anyway. The app updates itself from the next release's disk image: the image
+  is checked against the release's checksums and must be signed by the same identity, and the old app is kept until
+  the new one is in place. `scripts/build.sh` builds a .dmg on a Mac or a .tar.gz on Linux from a checkout (#436,
+  #437, [Vasilispapg](https://github.com/Vasilispapg)).
+
+## 0.9.29 — 2026-11-23
+
+A shared mouse (Input Leaf, Deskflow) works in the panel, a sideways swipe on a list turns the page, a large Discord
+widget gets larger buttons and names, and the Windows CPU temperature no longer drops out.
+
+**Widgets**
 - Discord: a large widget has larger mute, deafen and other buttons, member names and avatars, readable and easy to
   hit on a phone on a stand. Sizes follow the widget's size; at the usual sizes nothing changes (#420,
   [noswear922](https://github.com/noswear922)).

@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
         with:
           distribution: temurin
           java-version: 17
@@ -149,6 +149,25 @@ jobs:
           cp "$RUNNER_TEMP/other-build" "$RUNNER_TEMP/adhoc-build"
           codesign --force --sign - --identifier net.oxog.phonebox.agent "$RUNNER_TEMP/adhoc-build"
           if codesign --verify -R="$requirement" "$RUNNER_TEMP/adhoc-build" 2>/dev/null; then echo "::error::an ad hoc build satisfies the requirement"; exit 1; fi
+      # the disk image the release ships (release.yml), built and checked with the same throwaway certificate
+      - name: Build the macOS app
+        if: startsWith(matrix.rid, 'osx-')
+        run: |
+          version="$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' agent/PhoneBox.Agent/PhoneBox.Agent.csproj | head -n1)"
+          echo "PHONEBOX_VERSION=$version" >> "$GITHUB_ENV"
+          tools/make-macos-dmg.sh app out "$version" "$RUNNER_TEMP/dmg/PhoneBox.app"
+      - name: Sign the macOS app (throwaway certificate)
+        if: startsWith(matrix.rid, 'osx-')
+        uses: ./.github/actions/sign-macos-agent
+        with:
+          binary: ${{ runner.temp }}/dmg/PhoneBox.app
+          p12-base64: ${{ steps.cert.outputs.p12 }}
+          p12-password: ${{ steps.cert.outputs.password }}
+      - name: Build and check the disk image
+        if: startsWith(matrix.rid, 'osx-')
+        run: |
+          tools/make-macos-dmg.sh dmg "$RUNNER_TEMP/dmg/PhoneBox.app" "$PHONEBOX_VERSION" "$RUNNER_TEMP/PhoneBox.dmg"
+          tools/check-macos-dmg.sh "$RUNNER_TEMP/PhoneBox.dmg" out/PhoneBoxAgent "$PHONEBOX_VERSION"
       - name: Smoke test the single-file agent (Windows)
         if: matrix.rid == 'win-x64'
         shell: pwsh

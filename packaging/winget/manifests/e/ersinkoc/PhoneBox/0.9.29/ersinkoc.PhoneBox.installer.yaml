@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+PackageIdentifier: ersinkoc.PhoneBox
+PackageVersion: 0.9.29
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: PhoneBoxAgent.exe
+  PortableCommandAlias: phonebox
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Google.PlatformTools
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/ersinkoc/phonebox/releases/download/v0.9.29/PhoneBoxAgent-0.9.29-win-x64.zip
+  InstallerSha256: 70175042696E6724D75E596D5295AE00A4DC859734CE5898CA0AA1D545CCDA9E
+ManifestType: installer
+ManifestVersion: 1.6.0

@@ -63,9 +63,10 @@ More templates: **Clock**, **Focus** (pomodoro + note), **Calm** (breathing), **
 
 **Getting around.** Swipe; press the phone's **volume keys** to flip pages; tap the page dots (or long-press an empty
 spot) for an overview of all pages and jump straight to one. Webhooks and rules can switch pages too; they count down
-first (*"switching to AI in 3…"*, with Stay and Go now) and never pull a page away while you are using the panel. The
-panel returns to the home page when idle (each page can stay longer, or for good), can dim to a clock at night and
-keeps the screen on.
+first (*"switching to AI in 3…"*, with Stay and Go now) and never pull a page away while you are using the panel.
+Settings › Display › Page navigation can also show a page bar with each page's name, or hide the dots. The panel
+returns to the home page when idle (each page can stay longer, or for good), can dim to a clock at night and keeps the
+screen on.
 
 <p align="center"><img src="screenshots/overview.png" width="600" alt="Page overview"></p>
 
@@ -158,14 +159,16 @@ account-wide limits through `codex app-server` even when no Codex session is act
 while an enabled page shows Codex quotas and fresh CodexBar data is not already winning, and backs off on failures.
 Because it starts the Codex CLI, Codex may refresh its own sign-in in `~/.codex/auth.json`.
 
-**Native Antigravity quotas** use a running app/hub's advertised HTTP port and CSRF token, the HTTPS port of newer
-IDE servers (2.32 picks it at start-up, so the agent tries the loopback ports that server process listens
-on and accepts its self-signed certificate only for loopback addresses), or a signed-in
-`agy` CLI (1.1.11 or later). The CLI fallback runs `agy -p /usage --output-format json`, without a model prompt,
-and also finds the standard Windows installation in `%LOCALAPPDATA%\agy\bin`. Run `agy` in your terminal to sign
-in if needed. The agent reads measured session and weekly buckets, plus the plan when the local server provides it;
-CLI reports without plan metadata keep the neutral Antigravity title. Older IDE servers can supply model quotas
-through `GetUserStatus`; unavailable measurements are skipped, and weekly limits are never invented. Refresh
+**Native Antigravity quotas** use a running app/hub's advertised HTTP port and CSRF token, the HTTPS port of newer IDE
+servers (2.32 picks it at start-up, so the agent tries the loopback ports that server process listens on and accepts
+its self-signed certificate only for loopback addresses), or a signed-in `agy` CLI (1.1.11 or later). The CLI fallback
+runs `agy -p /usage --output-format json`, without a model prompt, and also finds `agy` when its folder is not on
+PATH: in `%USERPROFILE%\.gemini\bin`, where the current Windows installer and its self-update put it, in
+`%LOCALAPPDATA%\agy\bin` from older Windows installers, and in `~/.gemini/bin` on macOS and Linux. To sign in, run
+`agy` in a terminal, by its full path when its folder is not on PATH (for example `%USERPROFILE%\.gemini\bin\agy.exe`
+or `~/.gemini/bin/agy`). The agent reads measured session and weekly buckets, plus the plan when the local server
+provides it; CLI reports without plan metadata keep the neutral Antigravity title. Older IDE servers can supply model
+quotas through `GetUserStatus`; unavailable measurements are skipped, and weekly limits are never invented. Refresh
 failures retain the last measurements with an error.
 
 Tap an AI session to see its model, timing and token details. Token counters describe the local session rather than
