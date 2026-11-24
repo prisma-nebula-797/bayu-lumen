@@ -48,6 +48,36 @@ test('after the idle minutes they fool around, and a touch brings them back', as
   await expect(eyes).toHaveAttribute('data-mood', 'neutral');
 });
 
+test('by default an antic plays every 10 seconds, sleepy and watching TV among them', async ({ page }) => {
+  await page.clock.install({ time: new Date(2026, 0, 1, 12, 0, 0) });
+  const eyes = await open(page, {});
+  await page.clock.runFor(5_000);
+  expect(await eyes.getAttribute('data-antic')).toBeFalsy();
+  await page.clock.runFor(6_000);
+  await expect.poll(() => eyes.getAttribute('data-antic')).toBeTruthy();
+  const first = await eyes.getAttribute('data-antic');
+  // the next one starts about 10 seconds after the first began, not 10 seconds after it ended
+  await page.clock.runFor(10_500);
+  const started = await page.evaluate(() => document.querySelector('[data-id="eyes"] .w-roboeyes').dataset.antic);
+  expect(started).toBeTruthy();
+  const { ANTICS, SENSITIVITY } = await page.evaluate(async () => {
+    const m = await import('/panel/widgets/roboeyes.js');
+    return { ANTICS: m.ANTICS, SENSITIVITY: m.SENSITIVITY };
+  });
+  expect(ANTICS).toEqual(expect.arrayContaining(['sleepy', 'tv', first]));
+  expect(ANTICS.length).toBeGreaterThanOrEqual(20);
+  expect(SENSITIVITY.high.threshold).toBeLessThan(SENSITIVITY.normal.threshold);
+  expect(SENSITIVITY.high.every).toBeLessThan(SENSITIVITY.normal.every);
+});
+
+test('the eyes are drawn in OLED pixels, sharp, unless that is turned off', async ({ page }) => {
+  const eyes = await open(page, {});
+  const px = await eyes.locator('canvas').evaluate((c) => ({ w: c.width, rendering: getComputedStyle(c).imageRendering }));
+  expect(px.w).toBe(128);
+  expect(px.rendering).toMatch(/pixelated|crisp-edges/);
+  await expect(eyes).toHaveClass(/re-pixels/);
+});
+
 test('with the camera option on, a refused camera says so instead of tracking', async ({ page }) => {
   const eyes = await open(page, { camera: true }, { camera: 'deny' });
   await expect(eyes.locator('.re-status')).toHaveText('Camera not allowed');

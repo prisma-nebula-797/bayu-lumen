@@ -455,6 +455,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wird geladen…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Roboteraugen im Arduino-OLED-Stil (RoboEyes-Look) mit Mund: blinzeln, sehen sich um, folgen dir mit der Frontkamera und machen alle paar Sekunden Faxen: müde, fernsehen, lachen, wütend, singen und mehr.",
+      "Camera sensitivity": "Kameraempfindlichkeit",
+      "High": "Hoch",
+      "Low": "Niedrig",
+      "An antic every (seconds)": "Faxen alle (Sekunden)",
+      "Only after (minutes without a touch, 0 = straight away)": "Erst nach (Minuten ohne Berührung, 0 = sofort)",
+      "OLED pixels": "OLED-Pixel",
       "Robot eyes": "Roboteraugen",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Roboteraugen im Arduino-Stil mit Mund, die blinzeln, sich umsehen und dir mit der Frontkamera folgen; nach einer Weile ohne Berührung machen sie Faxen.",
       "Follow me with the front camera (the picture stays on the phone)": "Mir mit der Frontkamera folgen (das Bild bleibt auf dem Telefon)",
@@ -1973,6 +1980,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Chargement…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Des yeux de robot façon OLED Arduino (look RoboEyes) avec une bouche : ils clignent, regardent autour, vous suivent avec la caméra frontale et font une pitrerie toutes les quelques secondes : somnolents, devant la télé, en train de rire, fâchés, qui chantent et plus.",
+      "Camera sensitivity": "Sensibilité de la caméra",
+      "High": "Élevée",
+      "Low": "Faible",
+      "An antic every (seconds)": "Une pitrerie toutes les (secondes)",
+      "Only after (minutes without a touch, 0 = straight away)": "Seulement après (minutes sans contact, 0 = tout de suite)",
+      "OLED pixels": "Pixels OLED",
       "Robot eyes": "Yeux de robot",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Des yeux de robot façon Arduino avec une bouche, qui clignent, regardent autour et vous suivent avec la caméra frontale ; sans contact pendant un moment, ils font les pitres.",
       "Follow me with the front camera (the picture stays on the phone)": "Me suivre avec la caméra frontale (l’image reste sur le téléphone)",
@@ -3491,6 +3505,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Cargando…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Ojos de robot estilo OLED de Arduino (aspecto RoboEyes) con boca: parpadean, miran alrededor, te siguen con la cámara frontal y hacen una travesura cada pocos segundos: con sueño, viendo la tele, riendo, enfadados, cantando y más.",
+      "Camera sensitivity": "Sensibilidad de la cámara",
+      "High": "Alta",
+      "Low": "Baja",
+      "An antic every (seconds)": "Una travesura cada (segundos)",
+      "Only after (minutes without a touch, 0 = straight away)": "Solo después de (minutos sin tocar, 0 = enseguida)",
+      "OLED pixels": "Píxeles OLED",
       "Robot eyes": "Ojos de robot",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Ojos de robot estilo Arduino con boca que parpadean, miran alrededor y te siguen con la cámara frontal; tras un rato sin tocar, empiezan a hacer payasadas.",
       "Follow me with the front camera (the picture stays on the phone)": "Seguirme con la cámara frontal (la imagen se queda en el teléfono)",
@@ -5009,6 +5030,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Caricamento…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Occhi da robot in stile OLED Arduino (look RoboEyes) con bocca: sbattono le palpebre, si guardano intorno, ti seguono con la fotocamera frontale e ogni pochi secondi fanno una buffonata: assonnati, davanti alla TV, che ridono, arrabbiati, che cantano e altro.",
+      "Camera sensitivity": "Sensibilità della fotocamera",
+      "High": "Alta",
+      "Low": "Bassa",
+      "An antic every (seconds)": "Una buffonata ogni (secondi)",
+      "Only after (minutes without a touch, 0 = straight away)": "Solo dopo (minuti senza tocchi, 0 = subito)",
+      "OLED pixels": "Pixel OLED",
       "Robot eyes": "Occhi da robot",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Occhi da robot stile Arduino con bocca che sbattono le palpebre, si guardano intorno e ti seguono con la fotocamera frontale; dopo un po’ senza tocchi iniziano a fare i buffoni.",
       "Follow me with the front camera (the picture stays on the phone)": "Seguimi con la fotocamera frontale (l’immagine resta sul telefono)",
@@ -6527,6 +6555,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "A carregar…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Olhos de robô ao estilo OLED do Arduino (visual RoboEyes) com boca: pestanejam, olham em volta, seguem-no com a câmara frontal e fazem uma travessura a cada poucos segundos: com sono, a ver televisão, a rir, zangados, a cantar e mais.",
+      "Camera sensitivity": "Sensibilidade da câmara",
+      "High": "Alta",
+      "Low": "Baixa",
+      "An antic every (seconds)": "Uma travessura a cada (segundos)",
+      "Only after (minutes without a touch, 0 = straight away)": "Só depois de (minutos sem toques, 0 = de imediato)",
+      "OLED pixels": "Píxeis OLED",
       "Robot eyes": "Olhos de robô",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Olhos de robô ao estilo Arduino com boca, que pestanejam, olham em volta e seguem-no com a câmara frontal; após algum tempo sem toques, começam a fazer palhaçadas.",
       "Follow me with the front camera (the picture stays on the phone)": "Seguir-me com a câmara frontal (a imagem fica no telefone)",
@@ -7640,6 +7675,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Carregando…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Olhos de robô estilo OLED do Arduino (visual RoboEyes) com boca: piscam, olham em volta, seguem você com a câmera frontal e fazem uma travessura a cada poucos segundos: com sono, vendo TV, rindo, bravos, cantando e mais.",
+      "Camera sensitivity": "Sensibilidade da câmera",
+      "High": "Alta",
+      "Normal": "Normal",
+      "Low": "Baixa",
+      "An antic every (seconds)": "Uma travessura a cada (segundos)",
+      "Only after (minutes without a touch, 0 = straight away)": "Só depois de (minutos sem toque, 0 = na hora)",
+      "OLED pixels": "Pixels OLED",
       "Robot eyes": "Olhos de robô",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Olhos de robô estilo Arduino com boca, que piscam, olham em volta e seguem você com a câmera frontal; depois de um tempo sem toques, começam a fazer palhaçadas.",
       "Follow me with the front camera (the picture stays on the phone)": "Me seguir com a câmera frontal (a imagem fica no celular)",
@@ -8177,6 +8220,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Laden…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Robotogen in Arduino-OLED-stijl (RoboEyes-look) met een mond: ze knipperen, kijken rond, volgen je met de selfiecamera en halen om de paar seconden een streek uit: slaperig, tv kijken, lachen, boos, zingen en meer.",
+      "Camera sensitivity": "Cameragevoeligheid",
+      "High": "Hoog",
+      "Low": "Laag",
+      "An antic every (seconds)": "Een streek elke (seconden)",
+      "Only after (minutes without a touch, 0 = straight away)": "Pas na (minuten zonder aanraking, 0 = meteen)",
+      "OLED pixels": "OLED-pixels",
       "Robot eyes": "Robotogen",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Robotogen in Arduino-stijl met een mond, die knipperen, rondkijken en je volgen met de selfiecamera; na een tijdje zonder aanraking gaan ze gek doen.",
       "Follow me with the front camera (the picture stays on the phone)": "Volg mij met de selfiecamera (het beeld blijft op de telefoon)",
@@ -9695,6 +9745,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wczytywanie…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Oczy robota w stylu OLED z Arduino (wygląd RoboEyes) z ustami: mrugają, rozglądają się, śledzą cię przednim aparatem i co kilka sekund robią psikusa: śpiące, oglądające telewizję, śmiejące się, złe, śpiewające i inne.",
+      "Camera sensitivity": "Czułość aparatu",
+      "High": "Wysoka",
+      "Low": "Niska",
+      "An antic every (seconds)": "Psikus co (sekund)",
+      "Only after (minutes without a touch, 0 = straight away)": "Dopiero po (minutach bez dotyku, 0 = od razu)",
+      "OLED pixels": "Piksele OLED",
       "Robot eyes": "Oczy robota",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Oczy robota w stylu Arduino z ustami, które mrugają, rozglądają się i śledzą cię przednim aparatem; po chwili bez dotyku zaczynają się wygłupiać.",
       "Follow me with the front camera (the picture stays on the phone)": "Śledź mnie przednim aparatem (obraz zostaje w telefonie)",
@@ -11213,6 +11270,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Загрузка…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Глаза робота в стиле OLED-дисплея Arduino (как RoboEyes) со ртом: моргают, оглядываются, следят за вами фронтальной камерой и каждые несколько секунд дурачатся: сонные, смотрят телевизор, смеются, злятся, поют и не только.",
+      "Camera sensitivity": "Чувствительность камеры",
+      "High": "Высокая",
+      "Low": "Низкая",
+      "An antic every (seconds)": "Шалость каждые (секунд)",
+      "Only after (minutes without a touch, 0 = straight away)": "Только после (минут без касания, 0 = сразу)",
+      "OLED pixels": "Пиксели OLED",
       "Robot eyes": "Глаза робота",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Глаза робота в стиле Arduino со ртом: моргают, оглядываются и следят за вами через фронтальную камеру; если долго не трогать, начинают дурачиться.",
       "Follow me with the front camera (the picture stays on the phone)": "Следить за мной фронтальной камерой (изображение остаётся на телефоне)",
@@ -12326,6 +12390,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Φόρτωση…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Μάτια ρομπότ σε στιλ οθόνης OLED Arduino (εμφάνιση RoboEyes) με στόμα: ανοιγοκλείνουν, κοιτάζουν γύρω, σας ακολουθούν με την μπροστινή κάμερα και κάθε λίγα δευτερόλεπτα κάνουν μια σκανταλιά: νυσταγμένα, βλέπουν τηλεόραση, γελούν, θυμώνουν, τραγουδούν και άλλα.",
+      "Camera sensitivity": "Ευαισθησία κάμερας",
+      "High": "Υψηλή",
+      "Normal": "Κανονική",
+      "Low": "Χαμηλή",
+      "An antic every (seconds)": "Μια σκανταλιά κάθε (δευτερόλεπτα)",
+      "Only after (minutes without a touch, 0 = straight away)": "Μόνο μετά από (λεπτά χωρίς άγγιγμα, 0 = αμέσως)",
+      "OLED pixels": "Pixel OLED",
       "Robot eyes": "Μάτια ρομπότ",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Μάτια ρομπότ σε στιλ Arduino με στόμα, που ανοιγοκλείνουν, κοιτάζουν γύρω και σας ακολουθούν με την μπροστινή κάμερα· μετά από λίγη ώρα χωρίς άγγιγμα αρχίζουν να χαζεύουν.",
       "Follow me with the front camera (the picture stays on the phone)": "Ακολούθησέ με με την μπροστινή κάμερα (η εικόνα μένει στο τηλέφωνο)",
@@ -12756,6 +12828,14 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Đang tải…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Mắt robot kiểu màn hình OLED Arduino (phong cách RoboEyes) có miệng: biết chớp mắt, nhìn quanh, dõi theo bạn bằng camera trước và vài giây lại làm một trò: buồn ngủ, xem TV, cười, tức giận, hát và nhiều hơn nữa.",
+      "Camera sensitivity": "Độ nhạy camera",
+      "High": "Cao",
+      "Normal": "Bình thường",
+      "Low": "Thấp",
+      "An antic every (seconds)": "Một trò mỗi (giây)",
+      "Only after (minutes without a touch, 0 = straight away)": "Chỉ sau (số phút không chạm, 0 = ngay lập tức)",
+      "OLED pixels": "Điểm ảnh OLED",
       "Robot eyes": "Mắt robot",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Mắt robot kiểu Arduino có miệng, biết chớp mắt, nhìn quanh và dõi theo bạn bằng camera trước; một lúc không chạm vào, chúng sẽ bắt đầu làm trò.",
       "Follow me with the front camera (the picture stays on the phone)": "Dõi theo tôi bằng camera trước (hình ảnh chỉ ở trên điện thoại)",
@@ -13591,6 +13671,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在加载…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Arduino OLED 风格的机器人眼睛（RoboEyes 样式）和嘴巴：会眨眼、四处张望、用前置摄像头跟随你，每隔几秒做个小动作：犯困、看电视、大笑、生气、唱歌等。",
+      "Camera sensitivity": "摄像头灵敏度",
+      "High": "高",
+      "Low": "低",
+      "An antic every (seconds)": "每隔多少秒做个小动作",
+      "Only after (minutes without a touch, 0 = straight away)": "仅在多久不触摸后（分钟，0 = 立即）",
+      "OLED pixels": "OLED 像素",
       "Robot eyes": "机器人眼睛",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "带嘴巴的 Arduino 风格机器人眼睛，会眨眼、四处张望，并用前置摄像头跟随你；一段时间没有触摸后会开始调皮。",
       "Follow me with the front camera (the picture stays on the phone)": "用前置摄像头跟随我（画面只留在手机上）",

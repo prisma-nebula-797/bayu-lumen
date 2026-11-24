@@ -973,6 +973,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "กำลังโหลด…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "ตาหุ่นยนต์สไตล์จอ OLED ของ Arduino (แบบ RoboEyes) พร้อมปาก กะพริบตา มองรอบๆ มองตามคุณด้วยกล้องหน้า และทำท่าแกล้งทุกไม่กี่วินาที: ง่วง ดูทีวี หัวเราะ โกรธ ร้องเพลง และอื่นๆ",
+      "Camera sensitivity": "ความไวของกล้อง",
+      "High": "สูง",
+      "Low": "ต่ำ",
+      "An antic every (seconds)": "ทำท่าแกล้งทุก (วินาที)",
+      "Only after (minutes without a touch, 0 = straight away)": "หลังจาก (นาทีที่ไม่มีการแตะ, 0 = ทันที) เท่านั้น",
+      "OLED pixels": "พิกเซล OLED",
       "Robot eyes": "ตาหุ่นยนต์",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "ตาหุ่นยนต์สไตล์ Arduino พร้อมปาก กะพริบตา มองไปรอบๆ และมองตามคุณด้วยกล้องหน้า เมื่อไม่มีใครแตะสักพักจะเริ่มทำท่าตลก",
       "Follow me with the front camera (the picture stays on the phone)": "มองตามฉันด้วยกล้องหน้า (ภาพอยู่ในโทรศัพท์เท่านั้น)",

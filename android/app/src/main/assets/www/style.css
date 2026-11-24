@@ -1836,7 +1836,11 @@ body.controls-top .ap-foot { order: -1; margin-bottom: 4px; }
 .cf-day-ticks { display: flex; justify-content: space-between; font-size: clamp(8px, 5.5cqmin, 15px); color: var(--cf-dim); }
 
 /* ---------- robot eyes ---------- */
-.w-roboeyes { position: relative; background: radial-gradient(ellipse at 50% 40%, #0b1014 0%, #020304 75%); border-radius: clamp(10px, 7cqmin, 22px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), inset 0 0 30px rgba(0, 0, 0, .8); overflow: hidden; }
-.w-roboeyes .re-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.w-roboeyes .re-status { position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-size: clamp(9px, 5cqmin, 13px); color: var(--muted); }
+/* a small OLED: the eyes are drawn 128 pixels across and scaled up sharp, with a soft glow and the gaps between pixels */
+.w-roboeyes { position: relative; background: radial-gradient(ellipse at 50% 40%, #070a0c 0%, #010203 75%); border-radius: clamp(10px, 7cqmin, 22px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), inset 0 0 30px rgba(0, 0, 0, .8); overflow: hidden; }
+.w-roboeyes .re-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; filter: drop-shadow(0 0 3px var(--re-colour)) drop-shadow(0 0 10px color-mix(in srgb, var(--re-colour) 45%, transparent)); }
+.w-roboeyes.re-pixels .re-canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
+.w-roboeyes.re-pixels::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .38;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .9) 1px, transparent 1px) 0 0 / var(--re-px, 1%) 100%, linear-gradient(0deg, rgba(0, 0, 0, .9) 1px, transparent 1px) 0 0 / 100% var(--re-py, 1.5%); }
+.w-roboeyes .re-status { position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-size: clamp(9px, 5cqmin, 13px); color: var(--muted); z-index: 1; }
 .w-roboeyes .re-status:empty { display: none; }

@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.9.29.3 — 2026-11-24
+
+Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.
+
+**Widgets**
+- Robot eyes, reworked to look like a real Arduino OLED (RoboEyes style): drawn 128 pixels across and scaled up sharp
+  with the gaps between the pixels and a soft glow (**OLED pixels**, on by default); eyelids for the moods (tired, angry,
+  happy lower lid) and curious eyes that grow when they look aside.
+- Robot eyes: **Camera sensitivity** (High by default): looks about 11 times a second, notices smaller movements and
+  turns faster; Normal and Low as before.
+- Robot eyes: 21 antics, new ones **sleepy** (lids droop, nodding off, then a jolt awake), **watching TV** (a little
+  flickering set in the corner, laughing or startled at the programme), angry, confused, nervous (sweat drop), thinking,
+  scan, peek, sneeze, sing and shy. **An antic every (seconds)**, 10 by default, and **Only after (minutes without a
+  touch)**, 0 by default, replace the 10-minute wait.
+
 ## 0.9.29.2 — 2026-11-24
 
 Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.

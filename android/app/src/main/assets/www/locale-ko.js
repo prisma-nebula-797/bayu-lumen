@@ -973,6 +973,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "불러오는 중…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "아두이노 OLED 스타일 로봇 눈(RoboEyes 느낌)과 입. 깜빡이고 주위를 둘러보며 전면 카메라로 당신을 따라보고, 몇 초마다 장난을 칩니다: 졸기, TV 보기, 웃기, 화내기, 노래하기 등.",
+      "Camera sensitivity": "카메라 감도",
+      "High": "높음",
+      "Low": "낮음",
+      "An antic every (seconds)": "장난 간격(초)",
+      "Only after (minutes without a touch, 0 = straight away)": "터치 없는 시간 이후에만(분, 0 = 바로)",
+      "OLED pixels": "OLED 픽셀",
       "Robot eyes": "로봇 눈",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "깜빡이고 주위를 둘러보며 전면 카메라로 당신을 따라보는 입 달린 아두이노 스타일 로봇 눈. 한동안 터치하지 않으면 장난을 치기 시작합니다.",
       "Follow me with the front camera (the picture stays on the phone)": "전면 카메라로 나를 따라보기(영상은 휴대폰에만 남음)",

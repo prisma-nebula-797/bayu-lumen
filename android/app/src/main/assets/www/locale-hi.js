@@ -973,6 +973,13 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "लोड हो रहा है…"
     },
     "catalog": {
+      "Arduino OLED-style robot eyes (RoboEyes look) and a mouth that blink, glance around and follow you with the front camera, and play an antic every few seconds: sleepy, watching TV, laughing, angry, singing and more.": "Arduino OLED शैली की रोबोट आँखें (RoboEyes जैसी) और मुँह: पलक झपकाती हैं, इधर-उधर देखती हैं, सामने के कैमरे से आपका पीछा करती हैं और हर कुछ सेकंड में शरारत करती हैं: नींद में, टीवी देखते, हँसते, गुस्से में, गाते और भी।",
+      "Camera sensitivity": "कैमरा संवेदनशीलता",
+      "High": "उच्च",
+      "Low": "कम",
+      "An antic every (seconds)": "हर (सेकंड) में एक शरारत",
+      "Only after (minutes without a touch, 0 = straight away)": "केवल इसके बाद (बिना छुए मिनट, 0 = तुरंत)",
+      "OLED pixels": "OLED पिक्सेल",
       "Robot eyes": "रोबोट की आँखें",
       "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "मुँह वाली Arduino-शैली की रोबोट आँखें जो पलक झपकाती हैं, इधर-उधर देखती हैं और सामने के कैमरे से आपका पीछा करती हैं; कुछ देर न छूने पर मस्ती करने लगती हैं।",
       "Follow me with the front camera (the picture stays on the phone)": "सामने के कैमरे से मेरा पीछा करें (तस्वीर फ़ोन पर ही रहती है)",
