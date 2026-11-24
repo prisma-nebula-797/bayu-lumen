@@ -421,6 +421,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Yükleniyor…"
     },
     "catalog": {
+      "Robot eyes": "Robot gözler",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Göz kırpan, etrafa bakan ve ön kamerayla sizi izleyen Arduino tarzı robot gözler ve ağız; bir süre dokunulmazsa maskaralık yapmaya başlar.",
+      "Follow me with the front camera (the picture stays on the phone)": "Ön kamerayla beni takip et (görüntü telefonda kalır)",
+      "Show the mouth": "Ağzı göster",
+      "Fool around after (minutes without a touch)": "Şu kadar dokunulmayınca oynasın (dakika)",
+      "Cyan": "Camgöbeği",
+      "White": "Beyaz",
+      "Amber": "Kehribar",
+      "Green": "Yeşil",
+      "Pink": "Pembe",
       "Reminder": "Hatırlatıcı",
       "Off": "Kapalı",
       "At the prayer time": "Vakit girince",
@@ -1185,6 +1195,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex çalma listeleri (hiçbiri işaretli değil = hepsi)"
     },
     "panel": {
+      "Camera not allowed": "Kameraya izin verilmedi",
+      "No camera": "Kamera yok",
       "Time for {prayer}": "{prayer} vakti",
       "{prayer} in {n} min": "{prayer} vaktine {n} dk",
       "Keyboard": "Klavye",

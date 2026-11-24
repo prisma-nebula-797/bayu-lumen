@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "불러오는 중…"
     },
     "catalog": {
+      "Robot eyes": "로봇 눈",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "깜빡이고 주위를 둘러보며 전면 카메라로 당신을 따라보는 입 달린 아두이노 스타일 로봇 눈. 한동안 터치하지 않으면 장난을 치기 시작합니다.",
+      "Follow me with the front camera (the picture stays on the phone)": "전면 카메라로 나를 따라보기(영상은 휴대폰에만 남음)",
+      "Show the mouth": "입 표시",
+      "Fool around after (minutes without a touch)": "장난 시작까지(터치 없는 시간, 분)",
+      "Cyan": "시안",
+      "White": "흰색",
+      "Amber": "앰버",
+      "Green": "초록",
+      "Pink": "분홍",
       "Reminder": "알림",
       "Off": "끄기",
       "At the prayer time": "기도 시간에",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 재생목록 (선택 안 함 = 전체)"
     },
     "panel": {
+      "Camera not allowed": "카메라가 허용되지 않음",
+      "No camera": "카메라 없음",
       "Time for {prayer}": "{prayer} 시간입니다",
       "{prayer} in {n} min": "{n}분 후 {prayer}",
       "Keyboard": "키보드",

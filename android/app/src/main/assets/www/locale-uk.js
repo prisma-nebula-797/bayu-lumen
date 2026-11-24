@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Завантаження…"
     },
     "catalog": {
+      "Robot eyes": "Очі робота",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Очі робота в стилі Arduino з ротом: кліпають, озираються й стежать за вами фронтальною камерою; якщо довго не торкатися, починають пустувати.",
+      "Follow me with the front camera (the picture stays on the phone)": "Стежити за мною фронтальною камерою (зображення лишається на телефоні)",
+      "Show the mouth": "Показувати рот",
+      "Fool around after (minutes without a touch)": "Пустувати через (хвилин без дотику)",
+      "Cyan": "Блакитний",
+      "White": "Білий",
+      "Amber": "Бурштиновий",
+      "Green": "Зелений",
+      "Pink": "Рожевий",
       "Reminder": "Нагадування",
       "Off": "Вимк.",
       "At the prayer time": "У час намазу",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Плейлисти Plex (нічого не позначено = усі)"
     },
     "panel": {
+      "Camera not allowed": "Камеру не дозволено",
+      "No camera": "Немає камери",
       "Time for {prayer}": "Час {prayer}",
       "{prayer} in {n} min": "{prayer} через {n} хв",
       "Keyboard": "Клавіатура",

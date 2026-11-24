@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "กำลังโหลด…"
     },
     "catalog": {
+      "Robot eyes": "ตาหุ่นยนต์",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "ตาหุ่นยนต์สไตล์ Arduino พร้อมปาก กะพริบตา มองไปรอบๆ และมองตามคุณด้วยกล้องหน้า เมื่อไม่มีใครแตะสักพักจะเริ่มทำท่าตลก",
+      "Follow me with the front camera (the picture stays on the phone)": "มองตามฉันด้วยกล้องหน้า (ภาพอยู่ในโทรศัพท์เท่านั้น)",
+      "Show the mouth": "แสดงปาก",
+      "Fool around after (minutes without a touch)": "เริ่มทำท่าตลกหลัง (นาทีที่ไม่มีการแตะ)",
+      "Cyan": "ฟ้าเขียว",
+      "White": "ขาว",
+      "Amber": "อำพัน",
+      "Green": "เขียว",
+      "Pink": "ชมพู",
       "Reminder": "การแจ้งเตือน",
       "Off": "ปิด",
       "At the prayer time": "เมื่อถึงเวลาละหมาด",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "เพลย์ลิสต์ Plex (ไม่เลือกเลย = ทั้งหมด)"
     },
     "panel": {
+      "Camera not allowed": "ไม่ได้อนุญาตกล้อง",
+      "No camera": "ไม่มีกล้อง",
       "Time for {prayer}": "ถึงเวลา{prayer}แล้ว",
       "{prayer} in {n} min": "อีก {n} นาทีถึง{prayer}",
       "Keyboard": "แป้นพิมพ์",

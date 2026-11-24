@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Načítá se…"
     },
     "catalog": {
+      "Robot eyes": "Oči robota",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Oči robota ve stylu Arduina s pusou, které mrkají, rozhlížejí se a sledují vás předním fotoaparátem; po chvíli bez doteku začnou dovádět.",
+      "Follow me with the front camera (the picture stays on the phone)": "Sledovat mě předním fotoaparátem (obraz zůstává v telefonu)",
+      "Show the mouth": "Zobrazit pusu",
+      "Fool around after (minutes without a touch)": "Dovádět po (minutách bez doteku)",
+      "Cyan": "Azurová",
+      "White": "Bílá",
+      "Amber": "Jantarová",
+      "Green": "Zelená",
+      "Pink": "Růžová",
       "Reminder": "Připomenutí",
       "Off": "Vypnuto",
       "At the prayer time": "V čas modlitby",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlisty Plex (nic nezaškrtnuto = všechny)"
     },
     "panel": {
+      "Camera not allowed": "Fotoaparát není povolen",
+      "No camera": "Žádný fotoaparát",
       "Time for {prayer}": "Čas na {prayer}",
       "{prayer} in {n} min": "{prayer} za {n} min",
       "Keyboard": "Klávesnice",

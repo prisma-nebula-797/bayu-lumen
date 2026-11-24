@@ -455,6 +455,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wird geladen…"
     },
     "catalog": {
+      "Robot eyes": "Roboteraugen",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Roboteraugen im Arduino-Stil mit Mund, die blinzeln, sich umsehen und dir mit der Frontkamera folgen; nach einer Weile ohne Berührung machen sie Faxen.",
+      "Follow me with the front camera (the picture stays on the phone)": "Mir mit der Frontkamera folgen (das Bild bleibt auf dem Telefon)",
+      "Show the mouth": "Mund anzeigen",
+      "Fool around after (minutes without a touch)": "Faxen machen nach (Minuten ohne Berührung)",
+      "Cyan": "Cyan",
+      "White": "Weiß",
+      "Amber": "Bernstein",
+      "Green": "Grün",
+      "Pink": "Pink",
       "Reminder": "Erinnerung",
       "Off": "Aus",
       "At the prayer time": "Zur Gebetszeit",
@@ -1219,6 +1229,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex-Playlists (keine angekreuzt = alle)"
     },
     "panel": {
+      "Camera not allowed": "Kamera nicht erlaubt",
+      "No camera": "Keine Kamera",
       "Time for {prayer}": "Zeit für {prayer}",
       "{prayer} in {n} min": "{prayer} in {n} Min.",
       "Keyboard": "Tastatur",
@@ -1961,6 +1973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Chargement…"
     },
     "catalog": {
+      "Robot eyes": "Yeux de robot",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Des yeux de robot façon Arduino avec une bouche, qui clignent, regardent autour et vous suivent avec la caméra frontale ; sans contact pendant un moment, ils font les pitres.",
+      "Follow me with the front camera (the picture stays on the phone)": "Me suivre avec la caméra frontale (l’image reste sur le téléphone)",
+      "Show the mouth": "Afficher la bouche",
+      "Fool around after (minutes without a touch)": "Faire les pitres après (minutes sans contact)",
+      "Cyan": "Cyan",
+      "White": "Blanc",
+      "Amber": "Ambre",
+      "Green": "Vert",
+      "Pink": "Rose",
       "Reminder": "Rappel",
       "Off": "Désactivé",
       "At the prayer time": "À l’heure de la prière",
@@ -2725,6 +2747,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlists Plex (aucune cochée = toutes)"
     },
     "panel": {
+      "Camera not allowed": "Caméra non autorisée",
+      "No camera": "Pas de caméra",
       "Time for {prayer}": "C’est l’heure de {prayer}",
       "{prayer} in {n} min": "{prayer} dans {n} min",
       "Keyboard": "Clavier",
@@ -3467,6 +3491,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Cargando…"
     },
     "catalog": {
+      "Robot eyes": "Ojos de robot",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Ojos de robot estilo Arduino con boca que parpadean, miran alrededor y te siguen con la cámara frontal; tras un rato sin tocar, empiezan a hacer payasadas.",
+      "Follow me with the front camera (the picture stays on the phone)": "Seguirme con la cámara frontal (la imagen se queda en el teléfono)",
+      "Show the mouth": "Mostrar la boca",
+      "Fool around after (minutes without a touch)": "Hacer payasadas tras (minutos sin tocar)",
+      "Cyan": "Cian",
+      "White": "Blanco",
+      "Amber": "Ámbar",
+      "Green": "Verde",
+      "Pink": "Rosa",
       "Reminder": "Recordatorio",
       "Off": "Desactivado",
       "At the prayer time": "A la hora de la oración",
@@ -4231,6 +4265,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Listas de Plex (ninguna marcada = todas)"
     },
     "panel": {
+      "Camera not allowed": "Cámara no permitida",
+      "No camera": "Sin cámara",
       "Time for {prayer}": "Es la hora de {prayer}",
       "{prayer} in {n} min": "{prayer} en {n} min",
       "Keyboard": "Teclado",
@@ -4973,6 +5009,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Caricamento…"
     },
     "catalog": {
+      "Robot eyes": "Occhi da robot",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Occhi da robot stile Arduino con bocca che sbattono le palpebre, si guardano intorno e ti seguono con la fotocamera frontale; dopo un po’ senza tocchi iniziano a fare i buffoni.",
+      "Follow me with the front camera (the picture stays on the phone)": "Seguimi con la fotocamera frontale (l’immagine resta sul telefono)",
+      "Show the mouth": "Mostra la bocca",
+      "Fool around after (minutes without a touch)": "Fai il buffone dopo (minuti senza tocchi)",
+      "Cyan": "Ciano",
+      "White": "Bianco",
+      "Amber": "Ambra",
+      "Green": "Verde",
+      "Pink": "Rosa",
       "Reminder": "Promemoria",
       "Off": "Disattivato",
       "At the prayer time": "All’ora della preghiera",
@@ -5737,6 +5783,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlist Plex (nessuna selezionata = tutte)"
     },
     "panel": {
+      "Camera not allowed": "Fotocamera non consentita",
+      "No camera": "Nessuna fotocamera",
       "Time for {prayer}": "È l’ora di {prayer}",
       "{prayer} in {n} min": "{prayer} tra {n} min",
       "Keyboard": "Tastiera",
@@ -6479,6 +6527,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "A carregar…"
     },
     "catalog": {
+      "Robot eyes": "Olhos de robô",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Olhos de robô ao estilo Arduino com boca, que pestanejam, olham em volta e seguem-no com a câmara frontal; após algum tempo sem toques, começam a fazer palhaçadas.",
+      "Follow me with the front camera (the picture stays on the phone)": "Seguir-me com a câmara frontal (a imagem fica no telefone)",
+      "Show the mouth": "Mostrar a boca",
+      "Fool around after (minutes without a touch)": "Fazer palhaçadas após (minutos sem toques)",
+      "Cyan": "Ciano",
+      "White": "Branco",
+      "Amber": "Âmbar",
+      "Green": "Verde",
+      "Pink": "Rosa",
       "Reminder": "Lembrete",
       "Off": "Desligado",
       "At the prayer time": "À hora da oração",
@@ -7243,6 +7301,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Listas do Plex (nenhuma marcada = todas)"
     },
     "panel": {
+      "Camera not allowed": "Câmara não permitida",
+      "No camera": "Sem câmara",
       "Time for {prayer}": "Hora de {prayer}",
       "{prayer} in {n} min": "{prayer} dentro de {n} min",
       "Keyboard": "Teclado",
@@ -7580,6 +7640,17 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Carregando…"
     },
     "catalog": {
+      "Robot eyes": "Olhos de robô",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Olhos de robô estilo Arduino com boca, que piscam, olham em volta e seguem você com a câmera frontal; depois de um tempo sem toques, começam a fazer palhaçadas.",
+      "Follow me with the front camera (the picture stays on the phone)": "Me seguir com a câmera frontal (a imagem fica no celular)",
+      "Show the mouth": "Mostrar a boca",
+      "Fool around after (minutes without a touch)": "Fazer palhaçadas após (minutos sem toque)",
+      "Colour": "Cor",
+      "Cyan": "Ciano",
+      "White": "Branco",
+      "Amber": "Âmbar",
+      "Green": "Verde",
+      "Pink": "Rosa",
       "Reminder": "Lembrete",
       "Off": "Desligado",
       "At the prayer time": "No horário da oração",
@@ -7657,6 +7728,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlists do Plex (nenhuma marcada = todas)"
     },
     "panel": {
+      "Camera not allowed": "Câmera não permitida",
+      "No camera": "Sem câmera",
       "Time for {prayer}": "Hora do {prayer}",
       "{prayer} in {n} min": "{prayer} em {n} min",
       "Keyboard": "Teclado",
@@ -8104,6 +8177,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Laden…"
     },
     "catalog": {
+      "Robot eyes": "Robotogen",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Robotogen in Arduino-stijl met een mond, die knipperen, rondkijken en je volgen met de selfiecamera; na een tijdje zonder aanraking gaan ze gek doen.",
+      "Follow me with the front camera (the picture stays on the phone)": "Volg mij met de selfiecamera (het beeld blijft op de telefoon)",
+      "Show the mouth": "Mond tonen",
+      "Fool around after (minutes without a touch)": "Gek doen na (minuten zonder aanraking)",
+      "Cyan": "Cyaan",
+      "White": "Wit",
+      "Amber": "Amber",
+      "Green": "Groen",
+      "Pink": "Roze",
       "Reminder": "Herinnering",
       "Off": "Uit",
       "At the prayer time": "Op de gebedstijd",
@@ -8868,6 +8951,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex-afspeellijsten (geen aangevinkt = alle)"
     },
     "panel": {
+      "Camera not allowed": "Camera niet toegestaan",
+      "No camera": "Geen camera",
       "Time for {prayer}": "Tijd voor {prayer}",
       "{prayer} in {n} min": "{prayer} over {n} min",
       "Keyboard": "Toetsenbord",
@@ -9610,6 +9695,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Wczytywanie…"
     },
     "catalog": {
+      "Robot eyes": "Oczy robota",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Oczy robota w stylu Arduino z ustami, które mrugają, rozglądają się i śledzą cię przednim aparatem; po chwili bez dotyku zaczynają się wygłupiać.",
+      "Follow me with the front camera (the picture stays on the phone)": "Śledź mnie przednim aparatem (obraz zostaje w telefonie)",
+      "Show the mouth": "Pokaż usta",
+      "Fool around after (minutes without a touch)": "Wygłupy po (minutach bez dotyku)",
+      "Cyan": "Cyjan",
+      "White": "Biały",
+      "Amber": "Bursztynowy",
+      "Green": "Zielony",
+      "Pink": "Różowy",
       "Reminder": "Przypomnienie",
       "Off": "Wyłączone",
       "At the prayer time": "O porze modlitwy",
@@ -10374,6 +10469,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Playlisty Plex (żadna zaznaczona = wszystkie)"
     },
     "panel": {
+      "Camera not allowed": "Brak zgody na aparat",
+      "No camera": "Brak aparatu",
       "Time for {prayer}": "Pora na {prayer}",
       "{prayer} in {n} min": "{prayer} za {n} min",
       "Keyboard": "Klawiatura",
@@ -11116,6 +11213,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Загрузка…"
     },
     "catalog": {
+      "Robot eyes": "Глаза робота",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Глаза робота в стиле Arduino со ртом: моргают, оглядываются и следят за вами через фронтальную камеру; если долго не трогать, начинают дурачиться.",
+      "Follow me with the front camera (the picture stays on the phone)": "Следить за мной фронтальной камерой (изображение остаётся на телефоне)",
+      "Show the mouth": "Показывать рот",
+      "Fool around after (minutes without a touch)": "Дурачиться через (минут без касания)",
+      "Cyan": "Голубой",
+      "White": "Белый",
+      "Amber": "Янтарный",
+      "Green": "Зелёный",
+      "Pink": "Розовый",
       "Reminder": "Напоминание",
       "Off": "Выкл.",
       "At the prayer time": "В момент намаза",
@@ -11880,6 +11987,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Плейлисты Plex (ничего не отмечено = все)"
     },
     "panel": {
+      "Camera not allowed": "Камера не разрешена",
+      "No camera": "Нет камеры",
       "Time for {prayer}": "Время {prayer}",
       "{prayer} in {n} min": "{prayer} через {n} мин",
       "Keyboard": "Клавиатура",
@@ -12217,6 +12326,17 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Φόρτωση…"
     },
     "catalog": {
+      "Robot eyes": "Μάτια ρομπότ",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Μάτια ρομπότ σε στιλ Arduino με στόμα, που ανοιγοκλείνουν, κοιτάζουν γύρω και σας ακολουθούν με την μπροστινή κάμερα· μετά από λίγη ώρα χωρίς άγγιγμα αρχίζουν να χαζεύουν.",
+      "Follow me with the front camera (the picture stays on the phone)": "Ακολούθησέ με με την μπροστινή κάμερα (η εικόνα μένει στο τηλέφωνο)",
+      "Show the mouth": "Εμφάνιση στόματος",
+      "Fool around after (minutes without a touch)": "Χάζεμα μετά από (λεπτά χωρίς άγγιγμα)",
+      "Colour": "Χρώμα",
+      "Cyan": "Κυανό",
+      "White": "Λευκό",
+      "Amber": "Κεχριμπαρένιο",
+      "Green": "Πράσινο",
+      "Pink": "Ροζ",
       "Reminder": "Υπενθύμιση",
       "Off": "Ανενεργή",
       "At the prayer time": "Την ώρα της προσευχής",
@@ -12297,6 +12417,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Λίστες Plex (καμία επιλεγμένη = όλες)"
     },
     "panel": {
+      "Camera not allowed": "Η κάμερα δεν επιτρέπεται",
+      "No camera": "Χωρίς κάμερα",
       "Time for {prayer}": "Ώρα για {prayer}",
       "{prayer} in {n} min": "{prayer} σε {n} λεπ.",
       "Keyboard": "Πληκτρολόγιο",
@@ -12634,6 +12756,17 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Đang tải…"
     },
     "catalog": {
+      "Robot eyes": "Mắt robot",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Mắt robot kiểu Arduino có miệng, biết chớp mắt, nhìn quanh và dõi theo bạn bằng camera trước; một lúc không chạm vào, chúng sẽ bắt đầu làm trò.",
+      "Follow me with the front camera (the picture stays on the phone)": "Dõi theo tôi bằng camera trước (hình ảnh chỉ ở trên điện thoại)",
+      "Show the mouth": "Hiện miệng",
+      "Fool around after (minutes without a touch)": "Làm trò sau (số phút không chạm)",
+      "Colour": "Màu",
+      "Cyan": "Xanh lơ",
+      "White": "Trắng",
+      "Amber": "Hổ phách",
+      "Green": "Xanh lá",
+      "Pink": "Hồng",
       "Reminder": "Nhắc nhở",
       "Off": "Tắt",
       "At the prayer time": "Đúng giờ cầu nguyện",
@@ -12714,6 +12847,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Danh sách phát Plex (không chọn = tất cả)"
     },
     "panel": {
+      "Camera not allowed": "Không được phép dùng camera",
+      "No camera": "Không có camera",
       "Time for {prayer}": "Đến giờ {prayer}",
       "{prayer} in {n} min": "{prayer} sau {n} phút",
       "Keyboard": "Bàn phím",
@@ -13456,6 +13591,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在加载…"
     },
     "catalog": {
+      "Robot eyes": "机器人眼睛",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "带嘴巴的 Arduino 风格机器人眼睛，会眨眼、四处张望，并用前置摄像头跟随你；一段时间没有触摸后会开始调皮。",
+      "Follow me with the front camera (the picture stays on the phone)": "用前置摄像头跟随我（画面只留在手机上）",
+      "Show the mouth": "显示嘴巴",
+      "Fool around after (minutes without a touch)": "多久不触摸后开始调皮（分钟）",
+      "Cyan": "青色",
+      "White": "白色",
+      "Amber": "琥珀色",
+      "Green": "绿色",
+      "Pink": "粉色",
       "Reminder": "提醒",
       "Off": "关闭",
       "At the prayer time": "礼拜时间到时",
@@ -14220,6 +14365,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 播放列表（未勾选 = 全部）"
     },
     "panel": {
+      "Camera not allowed": "未允许使用相机",
+      "No camera": "没有相机",
       "Time for {prayer}": "{prayer}时间到了",
       "{prayer} in {n} min": "{n} 分钟后{prayer}",
       "Keyboard": "键盘",

@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "Memuat…"
     },
     "catalog": {
+      "Robot eyes": "Mata robot",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "Mata robot ala Arduino lengkap dengan mulut, bisa berkedip, melirik, dan mengikuti kamu lewat kamera depan; kalau lama tidak disentuh, mulai berulah lucu.",
+      "Follow me with the front camera (the picture stays on the phone)": "Ikuti saya dengan kamera depan (gambar tetap di ponsel)",
+      "Show the mouth": "Tampilkan mulut",
+      "Fool around after (minutes without a touch)": "Mulai berulah setelah (menit tanpa sentuhan)",
+      "Cyan": "Sian",
+      "White": "Putih",
+      "Amber": "Amber",
+      "Green": "Hijau",
+      "Pink": "Merah muda",
       "Reminder": "Pengingat",
       "Off": "Mati",
       "At the prayer time": "Saat masuk waktu",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Daftar putar Plex (tidak ada yang dicentang = semua)"
     },
     "panel": {
+      "Camera not allowed": "Kamera tidak diizinkan",
+      "No camera": "Tidak ada kamera",
       "Time for {prayer}": "Waktunya {prayer}",
       "{prayer} in {n} min": "{prayer} {n} menit lagi",
       "Keyboard": "Keyboard",

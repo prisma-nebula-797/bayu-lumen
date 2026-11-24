@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "正在載入…"
     },
     "catalog": {
+      "Robot eyes": "機器人眼睛",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "帶嘴巴的 Arduino 風格機器人眼睛，會眨眼、四處張望，並用前鏡頭跟著你；一段時間沒觸碰後會開始調皮。",
+      "Follow me with the front camera (the picture stays on the phone)": "用前鏡頭跟著我（畫面只留在手機上）",
+      "Show the mouth": "顯示嘴巴",
+      "Fool around after (minutes without a touch)": "多久沒觸碰後開始調皮（分鐘）",
+      "Cyan": "青色",
+      "White": "白色",
+      "Amber": "琥珀色",
+      "Green": "綠色",
+      "Pink": "粉紅色",
       "Reminder": "提醒",
       "Off": "關閉",
       "At the prayer time": "禮拜時間到時",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex 播放清單（未勾選 = 全部）"
     },
     "panel": {
+      "Camera not allowed": "未允許使用相機",
+      "No camera": "沒有相機",
       "Time for {prayer}": "{prayer}時間到了",
       "{prayer} in {n} min": "{n} 分鐘後{prayer}",
       "Keyboard": "鍵盤",

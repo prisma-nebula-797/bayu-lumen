@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "جارٍ التحميل…"
     },
     "catalog": {
+      "Robot eyes": "عيون روبوت",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "عيون روبوت على طراز Arduino مع فم، ترمش وتتلفت وتتبعك بالكاميرا الأمامية؛ وبعد فترة دون لمس تبدأ بالمرح.",
+      "Follow me with the front camera (the picture stays on the phone)": "تتبعني بالكاميرا الأمامية (تبقى الصورة على الهاتف)",
+      "Show the mouth": "إظهار الفم",
+      "Fool around after (minutes without a touch)": "المرح بعد (دقائق دون لمس)",
+      "Cyan": "سماوي",
+      "White": "أبيض",
+      "Amber": "كهرماني",
+      "Green": "أخضر",
+      "Pink": "وردي",
       "Reminder": "تذكير",
       "Off": "إيقاف",
       "At the prayer time": "عند وقت الصلاة",
@@ -1784,6 +1794,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "قوائم تشغيل Plex (دون تحديد = الكل)"
     },
     "panel": {
+      "Camera not allowed": "الكاميرا غير مسموح بها",
+      "No camera": "لا توجد كاميرا",
       "Time for {prayer}": "حان وقت {prayer}",
       "{prayer} in {n} min": "{prayer} بعد {n} دقيقة",
       "Keyboard": "لوحة المفاتيح",

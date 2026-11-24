@@ -28,8 +28,11 @@ Last updated: 2026-11-20 (PhoneBox 0.9.6).
   `~/Library/Application Support/PhoneBox` (macOS).
 - **Phone app**: caches (weather, rates, widget state) in its own app storage. The app asks for `INTERNET`,
   `VIBRATE` and `ACCESS_NETWORK_STATE` (only to tell which network is Wi-Fi when the Wake button sends its packet; Android
-  grants it without a prompt), and for the microphone (`RECORD_AUDIO`) only when a Dictation widget's button is tapped for
-  the first time.
+  grants it without a prompt), for the microphone (`RECORD_AUDIO`) only when a Dictation widget's button is tapped for
+  the first time, and for the camera (`CAMERA`, this fork) only when a Robot eyes widget with **Follow me with the front
+  camera** on starts. The Robot eyes widget looks at small grey frames (40 × 30) from the front camera on the phone, to
+  find a face or movement; no frame is stored, logged or sent anywhere, the camera is off unless that option is ticked,
+  and it stops while the widget or the panel is out of sight. You can take the permission back in Android's app settings.
 - **Computer data shown on the panel** (CPU, GPU, memory, disks, processes, media, volume, AI coding sessions and
   quotas, Docker / Podman, OBS) is read locally and goes only to your phone: over the USB cable (`adb reverse` to
   `127.0.0.1`, with a key only the PhoneBox app has) or, after pairing, over Wi-Fi / Tailscale with a pinned certificate and a key. On Linux, an Intel GPU's

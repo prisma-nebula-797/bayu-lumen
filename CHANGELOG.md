@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.29.2 — 2026-11-24
+
+Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.
+
+**Widgets**
+- New **Robot eyes** widget (135 widgets): Arduino-style OLED eyes and a mouth that blink and glance around, and with
+  **Follow me with the front camera** on (off by default) turn towards whoever is in front of the phone: a face when the
+  WebView has a FaceDetector, otherwise movement, from 40 × 30 grey frames looked at on the phone only. After a chosen
+  number of minutes without a touch (10 by default) they fool around: look around, yawn, fall asleep, wink, get dizzy,
+  heart eyes, laugh, look surprised, roll their eyes or look curious; a touch startles them back. Five colours. The
+  Android app asks for the camera the first time; the panel is the only page allowed to use it, and a refused camera is
+  not asked for again until the app restarts.
+
 ## 0.9.29.1 — 2026-11-24
 
 Fork release of bayu-lumen (prisma-nebula-797), on top of upstream 0.9.29.

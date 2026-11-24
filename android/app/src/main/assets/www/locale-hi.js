@@ -973,6 +973,16 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "s.cd.plexLoading": "लोड हो रहा है…"
     },
     "catalog": {
+      "Robot eyes": "रोबोट की आँखें",
+      "Arduino-style robot eyes and a mouth that blink, look around and follow you with the front camera; after a while without a touch they start fooling around.": "मुँह वाली Arduino-शैली की रोबोट आँखें जो पलक झपकाती हैं, इधर-उधर देखती हैं और सामने के कैमरे से आपका पीछा करती हैं; कुछ देर न छूने पर मस्ती करने लगती हैं।",
+      "Follow me with the front camera (the picture stays on the phone)": "सामने के कैमरे से मेरा पीछा करें (तस्वीर फ़ोन पर ही रहती है)",
+      "Show the mouth": "मुँह दिखाएँ",
+      "Fool around after (minutes without a touch)": "मस्ती शुरू करें (बिना छुए मिनट)",
+      "Cyan": "सियान",
+      "White": "सफ़ेद",
+      "Amber": "एम्बर",
+      "Green": "हरा",
+      "Pink": "गुलाबी",
       "Reminder": "रिमाइंडर",
       "Off": "बंद",
       "At the prayer time": "नमाज़ के समय पर",
@@ -1749,6 +1759,8 @@ window.PhoneBoxLocaleData = Object.assign(window.PhoneBoxLocaleData || {}, {
       "Plex playlists (none ticked = all)": "Plex प्लेलिस्ट (कोई चयनित नहीं = सभी)"
     },
     "panel": {
+      "Camera not allowed": "कैमरे की अनुमति नहीं",
+      "No camera": "कैमरा नहीं",
       "Time for {prayer}": "{prayer} का समय हो गया",
       "{prayer} in {n} min": "{n} मिनट में {prayer}",
       "Keyboard": "कीबोर्ड",

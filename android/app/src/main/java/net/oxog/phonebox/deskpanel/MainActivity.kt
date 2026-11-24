@@ -10,6 +10,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.res.Configuration
 import android.content.pm.ActivityInfo
+import android.Manifest
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -40,6 +41,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebSettings
 import android.webkit.WebView
+import android.webkit.PermissionRequest
 import android.webkit.WebChromeClient
 import android.webkit.WebViewClient
 import androidx.webkit.WebViewAssetLoader
@@ -75,6 +77,10 @@ class MainActivity : Activity(), SensorEventListener {
     private lateinit var link: AgentLink
     private lateinit var stream: AgentStream
     @Volatile private var resumed = false
+    /** The panel's camera request waiting for Android's permission prompt (Robot eyes widget). */
+    private var cameraRequest: PermissionRequest? = null
+    // below Android 6 the camera is granted when the app is installed
+    private fun cameraGranted() = Build.VERSION.SDK_INT < 23 || checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
     @Volatile private var volumeKeysFlipPages = true
     private val sensors by lazy { getSystemService(Context.SENSOR_SERVICE) as SensorManager? }
     private var lastLux = -1f
@@ -124,6 +130,21 @@ class MainActivity : Activity(), SensorEventListener {
         web.isVerticalScrollBarEnabled = false
         web.isHorizontalScrollBarEnabled = false
         web.webChromeClient = object : WebChromeClient() {
+            // The Robot eyes widget asks for the front camera. Only the panel itself gets it (not a sandboxed Custom HTML
+            // widget, whose origin is opaque), only video, and only once Android's camera permission is granted.
+            override fun onPermissionRequest(request: PermissionRequest) {
+                val video = PermissionRequest.RESOURCE_VIDEO_CAPTURE
+                if (request.origin?.host != ASSET_HOST || !request.resources.all { it == video }) { request.deny(); return }
+                if (cameraGranted()) { request.grant(arrayOf(video)); return }
+                cameraRequest?.deny()
+                cameraRequest = request
+                requestPermissions(arrayOf(Manifest.permission.CAMERA), CAMERA_REQUEST)
+            }
+
+            override fun onPermissionRequestCanceled(request: PermissionRequest) {
+                if (cameraRequest == request) cameraRequest = null
+            }
+
             override fun onConsoleMessage(message: ConsoleMessage): Boolean {
                 if (message.messageLevel() == ConsoleMessage.MessageLevel.ERROR)
                     Log.e("PhoneBoxWeb", "${message.sourceId()}:${message.lineNumber()} ${message.message()}")
@@ -335,6 +356,12 @@ class MainActivity : Activity(), SensorEventListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == Dictation.PERMISSION_REQUEST)
             dictation.onPermission(grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED)
+        if (requestCode == CAMERA_REQUEST) {
+            val request = cameraRequest ?: return
+            cameraRequest = null
+            if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) request.grant(arrayOf(PermissionRequest.RESOURCE_VIDEO_CAPTURE))
+            else request.deny()
+        }
     }
 
     override fun onPause() {
@@ -632,6 +659,7 @@ class MainActivity : Activity(), SensorEventListener {
 
     companion object {
         private const val ASSET_HOST = "appassets.androidplatform.net"
+        private const val CAMERA_REQUEST = 7302
         private val NO_STORE = mapOf("Cache-Control" to "no-store")
         private const val PANEL_HEADER = "X-PhoneBox-Panel"
         private val READ_ONLY_IMAGES = setOf("/agent/api/art", "/agent/api/procs/icon", "/agent/api/controls/radio-logo", "/agent/api/apps/icon", "/agent/api/discord/img", "/agent/api/shortcuts/icon",
